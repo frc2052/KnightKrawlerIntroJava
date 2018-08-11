@@ -1,4 +1,4 @@
-package com.team2052.KnightKrawlerIntroJava.Lesson00;
+package com.team2052.KnightKrawlerIntroJava.Lesson01;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
 package com.team2052.KnightKrawlerIntroJava;
 
-import com.team2052.KnightKrawlerIntroJava.Lesson00.BasicCalculator;
+import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 
 import java.util.Scanner;
 

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="596d8b3c-a034-4d68-96b4-273068c0bdc1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson00/BasicCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson01/BasicCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorialDocs/images/Lesson1a.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tutorialDocs/images/Lesson1a.PNG" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,8 +28,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson00/BasicCalculator.java">
+      <file leaf-file-name="BasicCalculator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson01/BasicCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
@@ -95,7 +97,7 @@
               <item name="KnightKrawlerIntroJava" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="KnightKrawlerIntroJava" type="462c0819:PsiDirectoryNode" />
-              <item name="Lesson00" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson01" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,7 +199,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson00/BasicCalculator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson01/BasicCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
@@ -228,7 +230,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson00/BasicCalculator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson01/BasicCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="43" />
@@ -249,20 +251,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson00/BasicCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/team2052/KnightKrawlerIntroJava/Lesson01/BasicCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
         </state>
       </provider>
     </entry>
