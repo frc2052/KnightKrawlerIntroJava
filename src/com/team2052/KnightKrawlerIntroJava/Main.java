@@ -6,28 +6,31 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Scanner input;
-    public static void main(String[] args) {
+    private static Scanner input; //this is a private class level variable, only code in this class can use this
 
-        input = new Scanner(System.in);
+    //the main method is the very first code that is called in a command line application
+    //this is where execution starts
+    public static void main(String[] args) {
+        input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
         System.out.println("Welcome to KnightKrawler java training");
-        ShowMenu();
+        ShowMenu(); //call a method to print the menu on the command line
         boolean keepGoing = true;
         while (keepGoing) {
-            String val = input.next();
+            String val = input.next(); //get the text the user typed on the command line
             if (val.trim().toLowerCase().equals("exit")) {
                 keepGoing = false;
             } else if (val.trim().toLowerCase().equals("help")) {
                 ShowMenu();
             } else if (val.trim().equals("1")) {
-                BasicCalculator calc = new BasicCalculator();
-                calc.Run();
+                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
+                calc.Run(); //call the "Run" method on the object
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
     }
 
+    //this is a private method, it can only be called from other methods in this class
     private static void ShowMenu() {
         System.out.println("exit -> Quitter!");
         System.out.println("help -> print the menu");
