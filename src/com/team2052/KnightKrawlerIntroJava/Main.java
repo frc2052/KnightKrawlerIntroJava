@@ -18,6 +18,8 @@ public class Main {
         while (keepGoing) {
             String val = input.next(); //get the text the user typed on the command line
             if (val.trim().toLowerCase().equals("exit")) {
+                //set keep going to false, which will cause the whileloop to exit,
+                // which will end execution of the "main" method, and the application will quit
                 keepGoing = false;
             } else if (val.trim().toLowerCase().equals("help")) {
                 ShowMenu();
