@@ -13,15 +13,15 @@ public class BasicCalculator {
     }
 
     //This method is public. It can be called from outside the class
-    public void Run()
+    public void run()
     {
         System.out.println("What would you like to do?");
-        System.out.println("1. Add two numbers");
+        System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
         System.out.println("3. Keep adding numbers until a non-number is entered");
         int option = scanner.nextInt();
         if (option == 1) {
-            Add();
+            add();
         } else if (option == 2) {
             //TODO: make a subtract method
         } else if (option == 3) {
@@ -33,7 +33,7 @@ public class BasicCalculator {
     }
 
     //this method is private, only other methods in this class can call this method
-    private void Add() {
+    private void add() {
         boolean keepGoing = true;
         while (keepGoing) {
             System.out.println("Please enter the first number.");

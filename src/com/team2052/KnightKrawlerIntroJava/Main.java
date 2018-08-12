@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
         System.out.println("Welcome to KnightKrawler java training");
-        ShowMenu(); //call a method to print the menu on the command line
+        showMenu(); //call a method to print the menu on the command line
         boolean keepGoing = true;
         while (keepGoing) {
             String val = input.next(); //get the text the user typed on the command line
@@ -22,10 +22,10 @@ public class Main {
                 // which will end execution of the "main" method, and the application will quit
                 keepGoing = false;
             } else if (val.trim().toLowerCase().equals("help")) {
-                ShowMenu();
+                showMenu();
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
-                calc.Run(); //call the "Run" method on the object
+                calc.run(); //call the "Run" method on the object
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -33,7 +33,7 @@ public class Main {
     }
 
     //this is a private method, it can only be called from other methods in this class
-    private static void ShowMenu() {
+    private static void showMenu() {
         System.out.println("exit -> Quitter!");
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
