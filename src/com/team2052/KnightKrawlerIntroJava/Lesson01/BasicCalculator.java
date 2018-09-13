@@ -1,5 +1,7 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson01;
 
+import com.team2052.KnightKrawlerIntroJava.Adder;
+
 import java.util.Scanner;
 
 public class BasicCalculator {
@@ -68,15 +70,17 @@ public class BasicCalculator {
     private void contAdd() {
         boolean keepGoing = true;
         System.out.println("enter numbers until you are finished, then enter 0 or a negative number");
+        Adder mySums= new Adder();
         while (keepGoing) {
-            int num = scanner.nextInt();
-            if (num <= 0){
+            int number = scanner.nextInt();
+            if (number <= 0){
+                System.out.println("final number " + mySums.getTotal());
                 keepGoing = false;
             }
-            else  (num > 0) {
-                int sum = num + total;
+            else  {
+                mySums.add(number);
+                System.out.println("total " + mySums.getTotal());
             }
-            System.out.println("total" + sum);
 
         }
     }
