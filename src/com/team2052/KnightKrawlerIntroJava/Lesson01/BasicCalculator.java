@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class BasicCalculator {
     //this is a private class level variable. only methods in this class can use this variable
     private Scanner scanner = null;
+    private int total;
 
     public BasicCalculator() {
         //this is a constructor. Constructor are called if someone calls "new BasicCalculator()" to create
@@ -19,13 +20,13 @@ public class BasicCalculator {
         System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
         System.out.println("3. Keep adding numbers until a non-number is entered");
-        int option = scanner.nextInt();
+        int option = scanner.nextInt(); //this scans for your input on the next line
         if (option == 1) {
             add();
         } else if (option == 2) {
-            //TODO: make a subtract method
+            subtract();
         } else if (option == 3) {
-            //TODO: make a continuous add method
+            continous();
             //HINT: you will need to create a class level variable to keep the running total
         } else {
             System.out.println("Invalid option. Returning to main menu.");
@@ -48,4 +49,39 @@ public class BasicCalculator {
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
-}
+    private void subtract() {
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number.");
+            int number1 = scanner.nextInt();
+            System.out.println("Please enter the second number");
+            int number2 = scanner.nextInt();
+            int sum = number1 - number2;
+            System.out.println("The sum of those two numbers is " + sum);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+        }
+    }
+    private void continous() {
+        boolean keepGoing = true;
+        System.out.println("enter numbers until you want to stop | enter 0 or <0 to stop");
+        while (keepGoing) {
+           int number = scanner.nextInt();
+           if (number <= 0){
+               System.out.println("your sum is " + total);
+               keepGoing = false;
+
+           }
+           else {
+               int sum = number + total;
+               System.out.println("total " + sum);
+               total = sum;
+           }
+        }
+    }
+
+    }
+
+

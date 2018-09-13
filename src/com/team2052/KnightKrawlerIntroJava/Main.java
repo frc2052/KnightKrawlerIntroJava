@@ -28,7 +28,10 @@ public class Main {
                 calc.run(); //call the "Run" method on the object
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
+            } else if (val.trim().equals("2")) {
+
             }
+
         }
     }
 
