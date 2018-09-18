@@ -1,7 +1,9 @@
 package com.team2052.KnightKrawlerIntroJava;
 
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
+import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 
+import java.awt.geom.Area;
 import java.util.Scanner;
 
 public class Main {
@@ -26,14 +28,18 @@ public class Main {
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
+            } else if(val.trim().equals("2")) {
+                AreaCalculator calc = new AreaCalculator();
+                calc.runArea();
             } else {
-                System.out.println("Option not recognized. Enter \"help\" for assistance");
-            } else if (val.trim().equals("2")) {
 
+                System.out.println("Option not recognized. Enter \"help\" for assistance");
+                //this is for the second lesson
+            }
             }
 
         }
-    }
+
 
     //this is a private method, it can only be called from other methods in this class
     private static void showMenu() {
