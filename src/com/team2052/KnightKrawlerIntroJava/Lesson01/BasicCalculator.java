@@ -13,8 +13,7 @@ public class BasicCalculator {
     }
 
     //This method is public. It can be called from outside the class
-    public void run()
-    {
+    public void run() {
         System.out.println("What would you like to do?");
         System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
@@ -23,9 +22,9 @@ public class BasicCalculator {
         if (option == 1) {
             add();
         } else if (option == 2) {
-            //TODO: make a subtract method
+            subtract();
         } else if (option == 3) {
-            //TODO: make a continuous add method
+            cont();
             //HINT: you will need to create a class level variable to keep the running total
         } else {
             System.out.println("Invalid option. Returning to main menu.");
@@ -48,4 +47,38 @@ public class BasicCalculator {
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
-}
+
+    private void subtract() {
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number.");
+            int number1 = scanner.nextInt();
+            System.out.println("Please enter the second number");
+            int number2 = scanner.nextInt();
+            int sub = number1 - number2;
+            System.out.println("The difference of those two numbers is " + sub);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+        }
+    }
+
+    private void cont() {
+        boolean keepGoing= true;
+        int total = 0;
+        while (keepGoing) {
+                System.out.println("enter number to add");
+                int number3 = scanner.nextInt();
+            if(number3 >0){
+                total = total + number3;
+            }
+            if(number3 <= 0) {
+                keepGoing = false;
+            }
+            }
+            System.out.println("Your total is " + total);
+        }
+    }
+
+
