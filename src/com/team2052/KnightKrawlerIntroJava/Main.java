@@ -37,7 +37,7 @@ public class Main {
             }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
-        }
+        }//must do work work work work work work work work work work work work work
     }
 
     //this is a private method, it can only be called from other methods in this class

@@ -25,10 +25,25 @@ public class MultiCalculator {
         }
 
         public int calculate() {
-            return getNumber1() + getNumber2();
+            if (getCalcOperation() == Operation.ADD) {
+                return this.getNumber1() + this.getNumber2();
+
+            } else if(getCalcOperation() == Operation.SUBTRACT) {
+                return this.getNumber1() - this.getNumber2();
+
+            } else if (getCalcOperation() == Operation.MULTIPLY){
+                return  this.getNumber1() * this.getNumber2();
+
+            } else if (getCalcOperation() == Operation.DIVIDE){
+                return this.getNumber1() / this.getNumber2();
+
+            } else {
+            return 0;
+            }
         }
 
         public Operation getCalcOperation() {
+
             return calcOperation;
         }
 
