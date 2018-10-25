@@ -8,7 +8,7 @@ public class AreaCalculator {
         System.out.println( rectArea );
         double cirArea = areaThing.circleArea( 3 );
         System.out.println( cirArea );
-        
+
     }
 
 
