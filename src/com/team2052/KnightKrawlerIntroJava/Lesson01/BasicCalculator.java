@@ -25,11 +25,15 @@ public class BasicCalculator {
         } else if (option == 2) {
             subtract();
         } else if (option == 3) {
+
+             sandwich();
             //TODO: make a continuous add method
             //HINT: you will need to create a class level variable to keep the running total
         } else {
             System.out.println("Invalid option. Returning to main menu.");
         }
+
+
     }
 
     //this method is private, only other methods in this class can call this method
@@ -47,7 +51,9 @@ public class BasicCalculator {
             String prompt = scanner.nextLine();
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
-    }  private void subtract() {
+    }
+
+    private void subtract() {
         boolean keepGoing = true;
         while (keepGoing) {
             System.out.println("Please enter the first number.");
@@ -60,6 +66,40 @@ public class BasicCalculator {
             scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
             String prompt = scanner.nextLine();
             keepGoing = prompt.trim().toLowerCase().equals("y");
+
         }
     }
+
+    private void sandwich() {
+        int sum = 0 ;
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println();
+            System.out.println("Please enter a number.");
+            int number = scanner.nextInt();
+            //sum = number + sum ;
+            /*
+            System.out.println("Please enter a number");
+            int number = scanner.nextInt();
+            */
+            if (number <=0) {
+                System.out.println("total = " + sum) ;
+                keepGoing = false ; }
+            else{
+                sum = number + sum;
+                keepGoing =  true ; }
+
+            // is number1 =< 0 if so display sum and set keepgoing to N
+            // if number >0 then Add sum to number1 and sent keepgoing to Y
+
+            /*
+            System.out.println("The sum of those two numbers is " + sum);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine();
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+            */
+        }
+    }
+
 }
