@@ -6,6 +6,7 @@ public class Lesson3Runner {
 
 
     Scanner scanner = new Scanner(System.in);
+
     private int number1;
 
     public int getNumber1() {
@@ -44,7 +45,7 @@ public class Lesson3Runner {
             add();
         } else if (option == 2) {
             subtract();
-        } else {
+    }else {
             System.out.println("Invalid option. Returning to main menu.");
         }
     }
@@ -84,10 +85,14 @@ public class Lesson3Runner {
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
-    public enum Operation {
-        ADD,
-        SUBTRACT,
-        MULTIPLY,
-        DIVIDE
+
+    public int calculate() {
+        if (getCalcOperation() == Operation.ADD) {
+            return this.getNumber1() + this.getNumber2();
+        } else {
+            return 0;
+        }
     }
+
+
 }

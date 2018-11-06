@@ -1,7 +1,18 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson03;
 
 public class MultiCalculator {
+    public enum Operation {
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE
+    }
 
+    private Operation calcOperation = Operation.ADD;
+
+    public int calculate() {
+        return getNumber1() + getNumber2();
+    }
 
     private int number1;
     public int getNumber1() {
@@ -26,7 +37,13 @@ public class MultiCalculator {
         }
     }
 
-    public int calculate() {
-        return getNumber1() + getNumber2();
+
+
+    public Operation getCalOperation() {
+        return calcOperation;
     }
+    public void setCalcOperation(Operation op) {
+        calcOperation = op;
+    }
+
 }
