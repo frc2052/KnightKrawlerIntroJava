@@ -1,6 +1,7 @@
 package com.team2052.KnightKrawlerIntroJava;
 
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
+import com.team2052.KnightKrawlerIntroJava.lesson02.AreaCalculator;
 
 import java.util.Scanner;
 
@@ -26,6 +27,10 @@ public class Main {
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
+            } else if (val.trim().equals("2")){
+                AreaCalculator calc = new AreaCalculator();
+                calc.run();
+
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
