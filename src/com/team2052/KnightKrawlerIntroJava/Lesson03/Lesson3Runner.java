@@ -3,7 +3,6 @@ package com.team2052.KnightKrawlerIntroJava.Lesson03;
 import java.util.Scanner;
 
 public class Lesson3Runner {
-    private MultiCalculator.Operation calcOperation = MultiCalculator.Operation.ADD;
     private Scanner scanner = null;
     public Lesson3Runner(){
         scanner = new Scanner(System.in);

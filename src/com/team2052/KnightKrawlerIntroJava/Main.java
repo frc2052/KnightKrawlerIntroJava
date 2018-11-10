@@ -3,6 +3,7 @@ package com.team2052.KnightKrawlerIntroJava;
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
 
 import java.util.Scanner;
 
@@ -34,6 +35,10 @@ public class Main {
             } else if (val.trim().equals("3")) {
                 Lesson3Runner lesson3 = new Lesson3Runner();
                 lesson3.run();
+            }
+            else if (val.trim().equals("4")) {
+                Lesson4Runner lesson4 = new Lesson4Runner();
+                lesson4.run();
             }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -46,6 +51,7 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
-        System.out.print("3 -> lesson 3, operations");
+        System.out.println("3 -> lesson 3, operations");
+        System.out.println("4 -> lesson 4");
     }
 }
