@@ -13,14 +13,14 @@ public class Lesson4Runner {
             System.out.println("Please enter your favorite number.");
             int number1 = scanner.nextInt();
             NumberTracker tracker1 = new NumberTracker();
-            FavoriteNumberTracker favorite1 = new FavoriteNumberTracker();
+            FavoriteNumberTracker favorite1 = FavoriteNumberTracker.getInstance();
             tracker1.setMyNumber(number1);
             favorite1.setMyNumber(number1);
 
             System.out.println("Please pick a new favorite number");
             int number2 = scanner.nextInt();
             NumberTracker tracker2 = new NumberTracker();
-            FavoriteNumberTracker favorite2 = new FavoriteNumberTracker();
+            FavoriteNumberTracker favorite2 = FavoriteNumberTracker.getInstance();
             tracker2.setMyNumber(number2);
             favorite2.setMyNumber(number2);
 
