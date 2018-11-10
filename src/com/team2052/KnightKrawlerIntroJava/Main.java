@@ -26,14 +26,14 @@ public class Main {
             } else if (val.trim().toLowerCase().equals("help")) {
                 showMenu();
             } else if (val.trim().equals("1")) {
-                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                BasicCalculator lesson1 = new BasicCalculator(); //create a new BasicCalculator ojbect
+                lesson1.run(); //call the "Run" method on the object
             } else if (val.trim().equals("2")) {
-                AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                AreaCalculator lesson2 = new AreaCalculator(); //create a new BasicCalculator ojbect
+                lesson2.run(); //call the "Run" method on the object
             } else if (val.trim().equals("3")) {
-                Lesson3Runner calc = new Lesson3Runner();
-                calc.run();
+                Lesson3Runner lesson3 = new Lesson3Runner();
+                lesson3.run();
             }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -46,6 +46,6 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
-        System.out.print("3 -> lesson 3, lesson3runner");
+        System.out.print("3 -> lesson 3, operations");
     }
 }

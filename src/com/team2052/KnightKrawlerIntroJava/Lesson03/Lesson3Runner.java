@@ -8,7 +8,48 @@ public class Lesson3Runner {
     public Lesson3Runner(){
         scanner = new Scanner(System.in);
     }
-    public void run() {
+
+
+    public void run(){
+        MultiCalculator calc = new MultiCalculator();
+        System.out.println("enter operation");
+        System.out.println("1:+");
+        System.out.println("2:-");
+        System.out.println("3:*");
+        System.out.println("4:/");
+        double operation = scanner.nextDouble();
+        if (operation == 1) {
+            calc.setCalcOperation(MultiCalculator.Operation.ADD);
+        }
+        else if (operation == 2) {
+            calc.setCalcOperation(MultiCalculator.Operation.SUBTRACT);
+        }
+        else if (operation == 3) {
+            calc.setCalcOperation(MultiCalculator.Operation.MULTIPLY);
+        }
+        else if (operation == 4) {
+            calc.setCalcOperation(MultiCalculator.Operation.DIVIDE);
+        }
+        System.out.println("enter number 1");
+        double number1 = scanner.nextDouble();
+        calc.setNumber1(number1);
+        System.out.println("enter number 2");
+        double number2 = scanner.nextDouble();
+        calc.setNumber2(number2);
+        System.out.println("Answer " + calc.calculate());
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /*public void run() {
         System.out.println("What would you like to do?");
         System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
@@ -18,11 +59,11 @@ public class Lesson3Runner {
         } //else if (option == 2) {
             //subtract();
             //HINT: you will need to create a class level variable to keep the running total
-        /*}*/ else {
+        else {
             System.out.println("Invalid option. Returning to main menu.");
-        }
-    }
-    private void add() {
+        }*/
+
+    /*private void add() {
         boolean keepGoing = true;
         while (keepGoing) {
             MultiCalculator calc = new MultiCalculator();
@@ -38,7 +79,7 @@ public class Lesson3Runner {
             scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
             String prompt = scanner.nextLine();
             keepGoing = prompt.trim().toLowerCase().equals("y");
-        }
+
+        }*/
     }
 
-}
