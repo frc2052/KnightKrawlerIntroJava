@@ -1,6 +1,5 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson03;
 
-import java.util.Scanner;
 
 public class MultiCalculator {
     private double number1;
