@@ -11,7 +11,7 @@ public class AreaCalculator {
         scanner = new Scanner(System.in);
     }
 
-    public void lightning()
+    public void areaCalculator()
         {
          System.out.println("1. CirculeArea");
          System.out.println("2. RectangleArea");

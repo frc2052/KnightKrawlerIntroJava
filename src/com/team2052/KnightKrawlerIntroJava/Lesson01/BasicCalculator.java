@@ -24,7 +24,7 @@ public class BasicCalculator {
             subtract();
         } else if (option == 3) {
 
-             sandwich();
+             mulitystep();
 
         } else {
             System.out.println("Invalid option. Returning to main menu.");
@@ -67,7 +67,7 @@ public class BasicCalculator {
         }
     }
 
-    private void sandwich() {
+    private void mulitystep() {
         int sum = 0 ;
         boolean keepGoing = true;
         while (keepGoing) {

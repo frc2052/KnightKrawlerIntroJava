@@ -30,7 +30,7 @@ public class Main {
                 calc.run(); //call the "Run" method on the object
             } else if (val.trim().equals("2")) {
                 AreaCalculator calc = new AreaCalculator();
-                calc.lightning();
+                calc.areaCalculator();
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
