@@ -8,13 +8,9 @@ public class MultiCalculator {
         DIVIDE
     }
 
-    private Operation calcOperation = Operation.ADD;
-
-    public int calculate() {
-        return getNumber1() + getNumber2();
-    }
 
     private int number1;
+
     public int getNumber1() {
         return number1;
     }
@@ -25,7 +21,10 @@ public class MultiCalculator {
             number1 = val;
         }
     }
+
+
     private int number2;
+
     public int getNumber2() {
         return number2;
     }
@@ -38,8 +37,14 @@ public class MultiCalculator {
     }
 
 
+    private Operation calcOperation = Operation.ADD;
 
-    public Operation getCalOperation() {
+    public int calculate() {
+        return getNumber1() + getNumber2();
+    }
+
+
+    public Operation getCalcOperation() {
         return calcOperation;
     }
     public void setCalcOperation(Operation op) {
