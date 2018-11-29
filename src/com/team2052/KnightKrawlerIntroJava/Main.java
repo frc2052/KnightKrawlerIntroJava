@@ -28,8 +28,8 @@ public class Main {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
             }  else if (val.trim(). equals("3")){
-                Lesson3Runner Lesson03 = new Lesson3Runner();
-                Lesson03.run();
+                Lesson3Runner lesson03 = new Lesson3Runner();
+                lesson03.run();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -42,5 +42,6 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
+        System.out.println("3. Run Lesson03")
     }
 }
