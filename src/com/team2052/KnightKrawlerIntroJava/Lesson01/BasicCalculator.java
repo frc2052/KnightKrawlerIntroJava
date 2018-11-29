@@ -22,16 +22,16 @@ public class BasicCalculator {
             add();
         } else if (option == 2) {
             subtract();
-        } else if (option == 3) {
+        } else if (option == 3)
 
-             mulitystep();
+            mulitystep();
 
         } else {
             System.out.println("Invalid option. Returning to main menu.");
         }
 
 
-    }
+
 
 
     private void add() {

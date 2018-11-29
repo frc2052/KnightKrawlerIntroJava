@@ -17,20 +17,18 @@ public class MultiCalculator {
 
     private int number2;
     public int getNumber2() {
-        return number1;
+        return number2;
     }
-    public void setNumber2(int val){
+    public void setNumber2(int val) {
         if (val < 0) {
-            number1 = 0;
+            number2 = 0;
         } else {
-            number1 = val;
+            number2 = val;
         }
-    }
+        public int calculate() {
+            return getNumber1() + getNumber2();
+        }
 
-    public int calculate() {
-        return getNumber1() + getNumber2();
-        int sum = number1 + number2;
-        System.out.println("this is the sum"+ sum );
     }
 }
 
