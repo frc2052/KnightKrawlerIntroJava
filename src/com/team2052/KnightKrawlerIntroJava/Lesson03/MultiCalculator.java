@@ -8,6 +8,7 @@ public class MultiCalculator {
         DIVIDE
     }
 
+    private Operation calcOperation = Operation.ADD;
 
     private int number1;
 
@@ -37,18 +38,26 @@ public class MultiCalculator {
     }
 
 
-    private Operation calcOperation = Operation.ADD;
-
-    public int calculate() {
-        return getNumber1() + getNumber2();
-    }
-
-
     public Operation getCalcOperation() {
         return calcOperation;
     }
     public void setCalcOperation(Operation op) {
         calcOperation = op;
+    }
+
+
+    public int calculate() {
+        if (getCalcOperation() == Operation.ADD) {
+            return this.getNumber1() + this.getNumber2();
+        } else if(getCalcOperation() == Operation.SUBTRACT) {
+            return this.getNumber1() - this.getNumber2();
+        } else if(getCalcOperation() == Operation.MULTIPLY) {
+            return this.getNumber1() * this.getNumber2();
+        } else if(getCalcOperation() == Operation.DIVIDE) {
+            return this.getNumber1() / this.getNumber2();
+        } else {
+            return 0;
+        }
     }
 
 }

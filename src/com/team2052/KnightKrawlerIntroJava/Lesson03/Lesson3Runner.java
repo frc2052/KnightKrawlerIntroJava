@@ -9,7 +9,7 @@ public class Lesson3Runner {
 
 
     //this method is private, only other methods in this class can call this method
-    private void run() {
+    public void run() {
         boolean keepGoing = true;
         while (keepGoing) {
             MultiCalculator calc = new MultiCalculator();
@@ -22,8 +22,11 @@ public class Lesson3Runner {
 
 
             System.out.println("What would you like to do?");
-            System.out.println("1. add two numbers");
+            System.out.println("1. Add two numbers");
             System.out.println("2. Subtract two numbers");
+            System.out.println("3. Multiply two numbers");
+            System.out.println("4. Divide two numbers");
+
             int option = scanner.nextInt();
             if (option == 1) {
                 calc.setCalcOperation(MultiCalculator.Operation.ADD);
@@ -43,13 +46,4 @@ public class Lesson3Runner {
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
-    public int calculate() {
-        if (getCalcOperation() == Operation.ADD) {
-            return this.getNumber1() + this.getNumber2();
-        } else {
-            return 0;
-        }
-    }
-
-
 }

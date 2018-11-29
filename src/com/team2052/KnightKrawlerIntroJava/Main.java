@@ -28,8 +28,8 @@ public class Main {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
             }  else if (val.trim(). equals("3")){
-                Lesson3Runner calcThingy2 = new Lesson3Runner();
-                calcThingy2.run();
+                Lesson3Runner Lesson03 = new Lesson3Runner();
+                Lesson03.run();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
