@@ -11,8 +11,7 @@ public class BasicCalculator {
         scanner = new Scanner(System.in);
     }
 
-    public void run()
-    {
+    public void run() {
         System.out.println("What would you like to do?");
         System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
@@ -22,14 +21,13 @@ public class BasicCalculator {
             add();
         } else if (option == 2) {
             subtract();
-        } else if (option == 3)
-
+        } else if (option == 3) {
             mulitystep();
-
         } else {
+
             System.out.println("Invalid option. Returning to main menu.");
         }
-
+    }
 
 
 
@@ -84,7 +82,9 @@ public class BasicCalculator {
                 keepGoing = false ; }
             else{
                 sum = number + sum;
-                keepGoing =  true ; }
+                keepGoing =  true ;
+                 System.out.println("current total" + sum);
+            }
 
             // is number1 =< 0 if so display sum and set keepgoing to N
             // if number >0 then Add sum to number1 and sent keepgoing to Y
