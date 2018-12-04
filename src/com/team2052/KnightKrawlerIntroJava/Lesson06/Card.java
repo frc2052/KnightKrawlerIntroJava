@@ -11,7 +11,7 @@ public class Card {
 
     //sometimes you need to pass a constructor parameters when it is created
     public Card (Suit suit, int number) {
-        //"this" is used to define a class level varriable when their are multiple variables of the same name
+        //"this" is used to define a class level variable when their are multiple variables of the same name
         this.suit = suit;
         this.number = number;
     }

@@ -10,6 +10,13 @@ public class Lesson6Runner {
 
 
     public  void run(){
-        
+            Shuffler shuffle= new Shuffler();
+            Card[] deck = shuffle.newDeck();
+            printDeck();
+
     }
+    private void printDeck(){
+           System.out.println();
+    }
+
 }
