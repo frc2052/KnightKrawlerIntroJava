@@ -2,6 +2,7 @@ package com.team2052.KnightKrawlerIntroJava;
 
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson04Runner;
 
 import java.util.Scanner;
 
@@ -30,6 +31,9 @@ public class Main {
             }  else if (val.trim(). equals("3")){
                 Lesson3Runner lesson03 = new Lesson3Runner();
                 lesson03.run();
+            }  else if (val.trim().equals("4")) {
+                Lesson04Runner lesson04 = new Lesson04Runner();
+                lesson04.run();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -42,6 +46,8 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
-        System.out.println("3. Run Lesson03")
+        System.out.println("3. Run Lesson03"); System.out.println("4. Run Lesson04");
     }
 }
+
+

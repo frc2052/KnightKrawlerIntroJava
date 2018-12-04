@@ -1,15 +1,22 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson04;
 
 public class NumberTracker {
+    private static NumberTracker instance = new NumberTracker();
+    private NumberTracker() {}
+    public static NumberTracker getInstance() {
+        return instance;
+    }
+
+    private int myNumber;
     public int getMyNumber() {
-        return MyNumber();
+        return myNumber;
     }
-    public void setmyNumber(int val){
-        if (val < 0) {
-            MyNumber = 0;
-        } else {
-            MyNumber = val;
-        }
+    public void setMyNumber(int val) {
+        myNumber = val;
     }
+
+
 }
+
+
 

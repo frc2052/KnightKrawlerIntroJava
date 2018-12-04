@@ -1,14 +1,27 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson04;
 
 public class BetterNumberTracker {
-    public int getMyNumber1() {
-        return MyNumber();
+    private static BetterNumberTracker instance = new BetterNumberTracker();
+    private BetterNumberTracker() {
     }
-    public void setMyNumber1(int val){
-        if (val < 0) {
-            MyNumber = 0;
-        } else {
-            MyNumber = val;
-        }
+    public static BetterNumberTracker getInstance() {
+        return instance;
+    }
+
+    private int myNumber;
+
+    public int getMyNumber() {
+        return myNumber;
+    }
+    public void setMyNumber(int val) {
+        myNumber = val;
     }
 }
+
+
+
+
+
+
+
+
