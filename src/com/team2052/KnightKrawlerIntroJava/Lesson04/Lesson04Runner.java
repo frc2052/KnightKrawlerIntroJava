@@ -35,6 +35,7 @@ public class Lesson04Runner {
         System.out.println("Favorite2 " + better2.getMyNumber());
 
     }
+    
 }
 
 
