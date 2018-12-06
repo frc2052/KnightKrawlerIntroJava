@@ -14,7 +14,7 @@ public class Shuffler {
                 cardSuit = Card.Suit.CLUBS;
             }
 
-            for (int j = 0; j < 52; j++) { //loop 13 times, once for each number A 2 3 4 5 6 7 8 9 10 J Q K
+            for (int j = 0; j < 13; j++) { //loop 13 times, once for each number A 2 3 4 5 6 7 8 9 10 J Q K
                 int pos = i * j; //hearts go in first 13 spots, hearts go in next 13, etc, etc
                 int cardNumber = j + 1; //j starts at 0, there is no 0 card, so add 1
                 deck[pos] = new Card(cardSuit, cardNumber);

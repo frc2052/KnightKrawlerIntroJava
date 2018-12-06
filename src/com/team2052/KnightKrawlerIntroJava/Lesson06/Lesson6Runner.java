@@ -12,7 +12,8 @@ public class Lesson6Runner {
     public  void run(){
             Shuffler shuffle= new Shuffler();
             Card[] deck = shuffle.newDeck();
-            printDeck();
+            System.out.println(deck);
+
 
     }
     private void printDeck(){
