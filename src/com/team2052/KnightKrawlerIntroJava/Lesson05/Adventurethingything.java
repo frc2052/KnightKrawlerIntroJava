@@ -11,7 +11,7 @@ package com.team2052.KnightKrawlerIntroJava.Lesson05;
         public Adventurethingything() {
             scanner = new Scanner(System.in);
         }
-
+        private boolean key = false;
         public void play()
         {
             System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
@@ -82,16 +82,72 @@ package com.team2052.KnightKrawlerIntroJava.Lesson05;
                         System.out.println("You can enter the dark crawl space \"E\" or choose to go back to the previous intersection \"B\"");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
-                            System.out.println("You get on you hands and knees and start crawling");
-                            System.out.println("You reach the end of crawl space and you are able to stand again");
-                            System.out.println("You stand and start to look around");
-                            System.out.println("As you look around you see a hallway to your North and to the west");
-                            System.out.println("You think you see a source of light at the end of the hallway to your west");
-
-
+                            currentPos = 5;
+                        } else if (move.toLowerCase().trim().equals("b")) {
+                            currentPos = 1;
                         }
-
+                        break;
+                    case 5:
+                        System.out.println("You get on you hands and knees and start crawling");
+                        System.out.println("You reach the end of crawl space and you are able to stand again");
+                        System.out.println("You stand and start to look around");
+                        System.out.println("You see a door to your North and to the west");
+                        System.out.println("You think you see a source of light coming for the door to your west and the door to your north looks broken");
+                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                        move = scanner.nextLine();
+                        if (move.toLowerCase().trim().equals("n")) {
+                            currentPos = 6;
+                        } else if (move.toLowerCase().trim().equals("w")) {
+                            currentPos = 7;
+                        } else if (move.toLowerCase().trim().equals("s")) {
+                            currentPos = 4;
+                        }
+                        break;
+                    case 6:
+                        System.out.println("You walk down the hallway in front of you and come to a room with a broken door");
+                        System.out.println("You walk inside and it looks like no one has been there in years");
+                        System.out.println("A shiny brass object catches your eye and you go to pick it up");
+                        System.out.println("**You Picked Up A Key**");
+                        System.out.println("You are now standing back at the intersection next to the crawl space");
+                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                        move = scanner.nextLine();
+                        key = true;
+                        if (move.toLowerCase().trim().equals("n")) {
+                            currentPos = 6;
+                        } else if (move.toLowerCase().trim().equals("w")) {
+                            currentPos = 7;
+                        } else if (move.toLowerCase().trim().equals("s")) {
+                            currentPos = 4;
+                        }
+                        break;
+                    case 7:
+                        if (key == false) {
+                            System.out.println("You come to a large metal door");
+                            System.out.println("The door is locked and wont seem to move no matter how hard you push");
+                            System.out.println("Your only option is to go back to the intersection next to the crawlspace");
+                            System.out.println("You are now standing back at the intersection next to the crawl space");
+                            System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                            move = scanner.nextLine();
+                            if (move.toLowerCase().trim().equals("n")) {
+                                currentPos = 6;
+                            } else if (move.toLowerCase().trim().equals("w")) {
+                                currentPos = 7;
+                            } else if (move.toLowerCase().trim().equals("s")) {
+                                currentPos = 4;
+                            }
+                        } else if (key == true) {
+                            System.out.println("You approach the large metal door");
+                            System.out.println("This time you notice a small key hole");
+                            System.out.println("You reach into your pocket to grab the key you found");
+                            System.out.println("You slide it into the key whole and twist it");
+                            System.out.println("You hear two loud metalic sounds and the door slowly starts to open");
+                            System.out.println("You are greeted by a blinding light but as your eyes adjust you can see that you made it to the surface");
+                            System.out.println("**Level 1 Passed**");
+                            currentPos = -1;
+                        }
+                        break;
                 }
+
             }
         }
     }
