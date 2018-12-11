@@ -12,12 +12,14 @@ public class Lesson6Runner {
     public  void run(){
             Shuffler shuffle= new Shuffler();
             Card[] deck = shuffle.newDeck();
-            System.out.println(deck);
+            printDeck(deck);
 
 
     }
-    private void printDeck(){
-           System.out.println();
+    private void printDeck(Card[] cards){
+           for (int i = 0; i<cards.length; i++) {
+               System.out.println(cards[i].getName());
+           }
     }
 
 }
