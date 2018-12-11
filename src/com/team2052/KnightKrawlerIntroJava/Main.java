@@ -30,7 +30,7 @@ public class Main {
                 AreaCalculator calc = new AreaCalculator();
                 calc.areaCalculator();
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
-            } else if (val.trim().equals("3")){
+            } else if (val.trim().equals("3")) {
                 MultiCalculator calc = new MultiCalculator();
                 System.out.println("Please enter the first number.");
                 int number1 = input.nextInt();
@@ -40,6 +40,10 @@ public class Main {
                 calc.setNumber2(number2);
                 int sum = calc.calculate();
                 System.out.println(sum);
+            } else if (val.trim().equals("4")){
+
+
+
 
 
 

@@ -58,7 +58,9 @@ public class MultiCalculator {
         } else if (getCalcOperation() == Operation.DIVIDE) {
             return this.getNumber1() / this.getNumber2();
         }
+
     }
+
 }
 
 
