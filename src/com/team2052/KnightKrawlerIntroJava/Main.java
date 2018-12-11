@@ -40,19 +40,14 @@ public class Main {
                 calc.setNumber2(number2);
                 int sum = calc.calculate();
                 System.out.println(sum);
-            } else if (val.trim().equals("4")){
-
-
-
-
-
-
-
-
+            } else if (val.trim().equals("4")) {
+                Card pickACard = new Card();
 
             }
+
         }
     }
+
 
 
     private static void showMenu() {

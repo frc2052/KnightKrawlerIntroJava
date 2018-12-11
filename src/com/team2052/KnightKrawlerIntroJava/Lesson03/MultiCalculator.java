@@ -48,7 +48,7 @@ public class MultiCalculator {
         calcOperation = value;
     }
 
-    public int calculate() {
+    public int calculate(){
         if (getCalcOperation() == Operation.ADD) {
             return this.getNumber1() + this.getNumber2();
         } else if (getCalcOperation() == Operation.SUBTRACT) {
@@ -62,6 +62,7 @@ public class MultiCalculator {
     }
 
 }
+
 
 
 
