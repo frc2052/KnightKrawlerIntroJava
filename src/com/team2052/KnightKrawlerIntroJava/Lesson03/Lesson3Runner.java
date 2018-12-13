@@ -8,7 +8,7 @@ public class Lesson3Runner {
     Scanner scanner = new Scanner(System.in);
 
 
-    //this method is private, only other methods in this class can call this method
+
     public void run() {
         boolean keepGoing = true;
         while (keepGoing) {

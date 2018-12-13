@@ -3,6 +3,8 @@ package com.team2052.KnightKrawlerIntroJava;
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson04Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson05.Adventurethingything;
 
 import java.util.Scanner;
 
@@ -30,22 +32,21 @@ public class Main {
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
-            } else if (val.trim().equals("2")) {
-                AreaCalculator calc = new AreaCalculator();
-                calc.run();
-            } else if (val.trim().equals("3")) {
-                //Lesson03Runner calc = new Lesson03Runner();
-                //calc.run();
-            }else if (val.trim().equals("4")) {
-                //Lesson04Runner calc = new Lesson04Runner();
-                //calc.run();
-            } else {
+            }  else if (val.trim(). equals("3")){
+                Lesson3Runner lesson03 = new Lesson3Runner();
+                lesson03.run();
+            }  else if (val.trim().equals("4")) {
+                Lesson04Runner lesson04 = new Lesson04Runner();
+                lesson04.run();
+            } else if (val.trim().equals("5")) {
+                Adventurethingything lesson05 = new Adventurethingything();
+                lesson05.play();
+            }
+            else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
-            }
-
         }
-
+    }
 
     //this is a private method, it can only be called from other methods in this class
     private static void showMenu() {
@@ -53,6 +54,9 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
-        System.out.println("3 -> lesson 3, Multi calculator");
+        System.out.println("3. Run Lesson03");
+        System.out.println("4. Run Lesson04");
     }
 }
+
+
