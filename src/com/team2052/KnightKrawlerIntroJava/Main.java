@@ -4,6 +4,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 
 import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.MultiCalculator;
+import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6runner;
 
 import java.util.Scanner;
 
@@ -32,16 +33,12 @@ public class Main {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             } else if (val.trim().equals("3")) {
                 MultiCalculator calc = new MultiCalculator();
-                System.out.println("Please enter the first number.");
-                int number1 = input.nextInt();
-                calc.setNumber1(number1);
-                System.out.println("Please enter the second number");
-                int number2 = input.nextInt();
-                calc.setNumber2(number2);
-                int sum = calc.calculate();
-                System.out.println(sum);
             } else if (val.trim().equals("4")) {
-                Card pickACard = new Card();
+                Lesson6runner calc = new Lesson6runner();
+                calc.run();
+
+
+
 
             }
 

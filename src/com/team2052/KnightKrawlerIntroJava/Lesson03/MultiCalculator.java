@@ -49,18 +49,18 @@ public class MultiCalculator {
     }
 
     public int calculate(){
+        int x = 0;
         if (getCalcOperation() == Operation.ADD) {
-            return this.getNumber1() + this.getNumber2();
+            x= this.getNumber1() + this.getNumber2();
         } else if (getCalcOperation() == Operation.SUBTRACT) {
-            return this.getNumber1() - this.getNumber2();
+            x= this.getNumber1() - this.getNumber2();
         } else if (getCalcOperation() == Operation.MULTIPLY) {
-            return this.getNumber1() * this.getNumber2();
+            x= this.getNumber1() * this.getNumber2();
         } else if (getCalcOperation() == Operation.DIVIDE) {
-            return this.getNumber1() / this.getNumber2();
+            x= this.getNumber1() / this.getNumber2();
         }
-
+        return x;
     }
-
 }
 
 
