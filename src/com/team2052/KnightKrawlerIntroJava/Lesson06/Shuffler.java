@@ -1,5 +1,8 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson06;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Shuffler {
 
     public Card[] newDeck() {
@@ -23,7 +26,13 @@ public class Shuffler {
         }
         return deck;
     }
+
+
     public void shuffleDeck(){
-        
+        Collections.shuffle(Arrays.asList(newDeck()));
     }
+
+
+
+
 }
