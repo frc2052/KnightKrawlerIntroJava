@@ -11,6 +11,7 @@ public class TextRoomsAdventure {
     private String move = null; //reuse the variable to collect user input
     private boolean key = false;
     private int roomNumber = 0;
+    private int caseBeforeRoom = 1;
     public TextRoomsAdventure() {
         scanner = new Scanner(System.in);
     }
@@ -32,13 +33,15 @@ public class TextRoomsAdventure {
                         }
                         break;
                     case 1:
+                        caseBeforeRoom = 1;
                         System.out.println("You are standing at a hallway intersection that moves in all four directions; north, south, east and west.");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 2;
                             roomNumber = 0;
                         } else if (move.toLowerCase().trim().equals("n")) {
-                            currentPos = 3;
+                            currentPos = 2;
+                            roomNumber = 1;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 4;
                         } else if (move.toLowerCase().trim().equals("s")) {
@@ -49,12 +52,12 @@ public class TextRoomsAdventure {
                         break;
                     case 2:
                         if(theRooms[roomNumber].getIsMonsterInside()){
-                            theRooms[roomNumber].getMonsterStory();
+                            System.out.println(theRooms[roomNumber].getMonsterStory());
                             currentPos = -1;
                         } else if (theRooms[roomNumber].getIsExit()){
                             if(room.getIsDoorLocked()){
                                 System.out.println(theRooms[roomNumber].getDoorDescription());
-                                currentPos = 1;
+                                currentPos = caseBeforeRoom;
 
                             } else{
                                 System.out.println(theRooms[roomNumber].getYouWinStory());
