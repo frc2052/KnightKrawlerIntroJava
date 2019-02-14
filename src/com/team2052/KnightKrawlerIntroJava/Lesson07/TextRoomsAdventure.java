@@ -10,6 +10,7 @@ public class TextRoomsAdventure {
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
     private boolean key = false;
+    private int roomNumber = 0;
     public TextRoomsAdventure() {
         scanner = new Scanner(System.in);
     }
@@ -35,6 +36,7 @@ public class TextRoomsAdventure {
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 2;
+                            roomNumber = 0;
                         } else if (move.toLowerCase().trim().equals("n")) {
                             currentPos = 3;
                         } else if (move.toLowerCase().trim().equals("w")) {
@@ -46,20 +48,20 @@ public class TextRoomsAdventure {
                         }
                         break;
                     case 2:
-                        if(theRooms[0].getIsMonsterInside()){
-                            theRooms[0].getMonsterStory();
+                        if(theRooms[roomNumber].getIsMonsterInside()){
+                            theRooms[roomNumber].getMonsterStory();
                             currentPos = -1;
-                        } else if (theRooms[0].getIsExit()){
+                        } else if (theRooms[roomNumber].getIsExit()){
                             if(room.getIsDoorLocked()){
-                                System.out.println(theRooms[0].getDoorDescription());
+                                System.out.println(theRooms[roomNumber].getDoorDescription());
                                 currentPos = 1;
 
                             } else{
-                                System.out.println(theRooms[0].getYouWinStory());
+                                System.out.println(theRooms[roomNumber].getYouWinStory());
                                 currentPos = -1;
                             }
-                        } else if (theRooms[0].getIsKeyInside()) {
-                            System.out.println(theRooms[0].getKeyStory());
+                        } else if (theRooms[roomNumber].getIsKeyInside()) {
+                            System.out.println(theRooms[roomNumber].getKeyStory());
                             room.setIsDoorLocked(false);
                         }
                         /*
