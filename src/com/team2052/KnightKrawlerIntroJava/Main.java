@@ -66,7 +66,7 @@ public class Main {
         System.out.println("3 -> lesson 3, operations");
         System.out.println("4 -> lesson 4");
         System.out.println("5 -> lesson 5");
-        System.out.println("6 -> loops");
-        System.out.println("7 refactoring");
+        System.out.println("6 -> lesson 6, loops");
+        System.out.println("7 -> lesson 7, refactoring");
     }
 }

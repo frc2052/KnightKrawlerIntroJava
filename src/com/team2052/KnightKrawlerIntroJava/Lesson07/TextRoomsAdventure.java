@@ -1,22 +1,22 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
 import java.util.Scanner;
+
 import com.team2052.KnightKrawlerIntroJava.Lesson07.Room;
 
 public class TextRoomsAdventure {
-    private boolean playAgain =true;
+    private boolean playAgain = true;
     private int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
     private boolean key = false;
-
     public TextRoomsAdventure() {
         scanner = new Scanner(System.in);
     }
 
     public void play() {
         Room room = new Room();
-
+        Room[] theRooms = room.newRooms();
         while (playAgain) {
             System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
             while (currentPos >= 0) {
@@ -31,12 +31,7 @@ public class TextRoomsAdventure {
                         }
                         break;
                     case 1:
-                        
-
-
-
-
-                        /*System.out.println("You are standing at a hallway intersection that moves in all four directions; north, south, east and west.");
+                        System.out.println("You are standing at a hallway intersection that moves in all four directions; north, south, east and west.");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 2;
@@ -48,9 +43,26 @@ public class TextRoomsAdventure {
                             currentPos = 0;
                         } else {
                             System.out.println("Invalid direction. Only \"N\", \"S\", \"E\", \"W\",  are valid");
-                        }*/
+                        }
                         break;
                     case 2:
+                        if(theRooms[0].getIsMonsterInside()){
+                            theRooms[0].getMonsterStory();
+                            currentPos = -1;
+                        } else if (theRooms[0].getIsExit()){
+                            if(room.getIsDoorLocked()){
+                                System.out.println(theRooms[0].getDoorDescription());
+                                currentPos = 1;
+
+                            } else{
+                                System.out.println(theRooms[0].getYouWinStory());
+                                currentPos = -1;
+                            }
+                        } else if (theRooms[0].getIsKeyInside()) {
+                            System.out.println(theRooms[0].getKeyStory());
+                            room.setIsDoorLocked(false);
+                        }
+                        /*
                         System.out.println("You have found a large wooden door that is latched from the outside. Do you enter \"T\" or Go Back \"B\"");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("t")) {
@@ -63,7 +75,7 @@ public class TextRoomsAdventure {
                             currentPos = 1;
                         } else {
                             System.out.println("Invalid direction. Only \"T\" and \"B\" are valid");
-                        }
+                        }*/
                         break;
                     case 3:
                         if (key) {
@@ -125,7 +137,7 @@ public class TextRoomsAdventure {
                             }
                         } else if (move.toLowerCase().trim().equals("b")) {
                             currentPos = 5;
-                        }else {
+                        } else {
                             System.out.println("Invalid option.  Only \"");
                         }
                         break;
@@ -142,9 +154,8 @@ public class TextRoomsAdventure {
             move = scanner.nextLine();
             if (move.toLowerCase().trim().equals("n")) {
                 playAgain = false;
-            }
-            else {
-                currentPos =0;
+            } else {
+                currentPos = 0;
 
             }
         }
