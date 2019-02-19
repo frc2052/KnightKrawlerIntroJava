@@ -30,42 +30,43 @@ public class Main {
             } else if (val.trim().toLowerCase().equals("help")) {
                 showMenu();
             } else if (val.trim().equals("1")) {
-                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                BasicCalculator lesson1 = new BasicCalculator(); //create a new BasicCalculator ojbect
+                lesson1.run(); //call the "Run" method on the object
             } else if (val.trim().equals("2")) {
-                AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                AreaCalculator lesson2 = new AreaCalculator(); //create a new BasicCalculator ojbect
+                lesson2.run(); //call the "Run" method on the object
             } else if (val.trim().equals("3")) {
-                Lesson3Runner runner = new Lesson3Runner();
-                runner.run();
-            } else if (val.trim().equals("4")) {
-                Lesson4Runner runner = new Lesson4Runner();
-                runner.run();
-            } else if (val.trim().equals("5")) {
-                AdventureGame game = new AdventureGame();
-                game.play();
-            } else if (val.trim().equals("6")) {
-                Lesson6Runner runner = new Lesson6Runner();
-                runner.run();
-            } else if (val.trim().equals("7")) {
-                TextRoomsAdventure game = new TextRoomsAdventure();
-                game.play();
+                Lesson3Runner lesson3 = new Lesson3Runner();
+                lesson3.run();
+            }
+            else if (val.trim().equals("4")) {
+                Lesson4Runner lesson4 = new Lesson4Runner();
+                lesson4.run();
+            }else if (val.trim().equals("5")) {
+                AdventureGame lesson5 = new AdventureGame();
+                lesson5.play();
+            }else if (val.trim().equals("6")) {
+                Lesson6Runner lesson6 = new Lesson6Runner();
+                lesson6.run();
+            }else if (val.trim().equals("7")) {
+                TextRoomsAdventure lesson7 = new TextRoomsAdventure();
+                lesson7.play();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
     }
 
-        //this is a private method, it can only be called from other methods in this class
-        private static void showMenu () {
-            System.out.println("exit -> Quitter!");
-            System.out.println("help -> print the menu");
-            System.out.println("1 -> lesson 1, variables and methods");
-            System.out.println("2 -> lesson 2, classes");
-            System.out.println("3 -> lesson 3, getters and setters");
-            System.out.println("4 -> lesson 4, favorite numbers");
-            System.out.println("5 -> lesson 5, adventure game");
-            System.out.println("6 -> lesson 6, cards");
-            System.out.println("7 -> lesson 7, better adventure game");
-        }
+    //this is a private method, it can only be called from other methods in this class
+    private static void showMenu() {
+        System.out.println("exit -> Quitter!");
+        System.out.println("help -> print the menu");
+        System.out.println("1 -> lesson 1, variables and methods");
+        System.out.println("2 -> lesson 2, classes");
+        System.out.println("3 -> lesson 3, operations");
+        System.out.println("4 -> lesson 4");
+        System.out.println("5 -> lesson 5");
+        System.out.println("6 -> lesson 6, loops");
+        System.out.println("7 -> lesson 7, refactoring");
     }
+}
