@@ -3,6 +3,10 @@ package com.team2052.KnightKrawlerIntroJava;
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
+import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
 
 import java.util.Scanner;
 
@@ -32,20 +36,36 @@ public class Main {
                 AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
             } else if (val.trim().equals("3")) {
-                Lesson3Runner calc = new Lesson3Runner();
-                calc.run();
-            }else {
+                Lesson3Runner runner = new Lesson3Runner();
+                runner.run();
+            } else if (val.trim().equals("4")) {
+                Lesson4Runner runner = new Lesson4Runner();
+                runner.run();
+            } else if (val.trim().equals("5")) {
+                AdventureGame game = new AdventureGame();
+                game.play();
+            } else if (val.trim().equals("6")) {
+                Lesson6Runner runner = new Lesson6Runner();
+                runner.run();
+            } else if (val.trim().equals("7")) {
+                TextRoomsAdventure game = new TextRoomsAdventure();
+                game.play();
+            } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
     }
 
-    //this is a private method, it can only be called from other methods in this class
-    private static void showMenu() {
-        System.out.println("exit -> Quitter!");
-        System.out.println("help -> print the menu");
-        System.out.println("1 -> lesson 1, variables and methods");
-        System.out.println("2 -> lesson 2, classes");
-        System.out.print("3 -> lesson 3, lesson3runner");
+        //this is a private method, it can only be called from other methods in this class
+        private static void showMenu () {
+            System.out.println("exit -> Quitter!");
+            System.out.println("help -> print the menu");
+            System.out.println("1 -> lesson 1, variables and methods");
+            System.out.println("2 -> lesson 2, classes");
+            System.out.println("3 -> lesson 3, getters and setters");
+            System.out.println("4 -> lesson 4, favorite numbers");
+            System.out.println("5 -> lesson 5, adventure game");
+            System.out.println("6 -> lesson 6, cards");
+            System.out.println("7 -> lesson 7, better adventure game");
+        }
     }
-}
