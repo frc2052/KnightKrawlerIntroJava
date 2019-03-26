@@ -2,7 +2,7 @@ package com.team2052.KnightKrawlerIntroJava.Lesson06;
 
 import java.util.Random;
 
-public class Shuffle {
+public class    Shuffle {
 
     public Card[] createDeck() {
         Card[] deck = new Card[52];

@@ -1,4 +1,4 @@
-package com.team2052.KnightKrawlerIntroJava.Lesson07;
+/*package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
 import java.util.Scanner;
 
@@ -63,7 +63,7 @@ public class TextRoomsAdventure {
                         currentPos = 1;
                     } else {
                         System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
-                    }*/
+                    }
                     break;
                 case 3:
                     System.out.println("You come to a large metal door that is ajar");
@@ -156,4 +156,4 @@ public class TextRoomsAdventure {
 
         }
     }
-}
+}*/

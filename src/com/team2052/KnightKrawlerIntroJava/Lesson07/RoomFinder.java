@@ -24,4 +24,13 @@ public class RoomFinder {
         private String monsterStory;
         public String getMonsterStory() { return monsterStory; }
         public void setMonsterStory(String value) { monsterStory = value; }
-    }
+        public Room[] FindRoomerer() {
+            Room[] FindRoom = new Room[5];
+            FindRoom[0] = new Room();
+            FindRoom[1] = new Room();
+            FindRoom[2] = new Room();
+            FindRoom[3] = new Room();
+            FindRoom[4] = new Room();
+            return FindRoom;
+        }
+}
