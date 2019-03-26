@@ -5,6 +5,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson04Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson05.Adventurethingything;
+import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomAdventures;
 
 import java.util.Scanner;
 
@@ -41,6 +42,9 @@ public class Main {
             } else if (val.trim().equals("5")) {
                 Adventurethingything lesson05 = new Adventurethingything();
                 lesson05.play();
+            } else if (val.trim().equals("7")) {
+                TextRoomAdventures adventure = new TextRoomAdventures();
+                adventure.play();
             }
             else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
