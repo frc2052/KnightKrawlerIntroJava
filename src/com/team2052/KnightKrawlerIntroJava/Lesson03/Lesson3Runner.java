@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 public class Lesson3Runner {
 
-    private Scanner scanner = null;
+   private Scanner scanner = null;
+
+    public Lesson3Runner(){
+         scanner = new Scanner(System.in);
+    }
+
+
 
     public void run() {
         System.out.println("What would you like to do?");
@@ -16,6 +22,8 @@ public class Lesson3Runner {
             Addition();
         } else if (option == 2) {
             subtract();
+        } else if (option == 3) {
+            Infinite();
         }
     }
 
@@ -51,6 +59,24 @@ public class Lesson3Runner {
             String prompt = scanner.nextLine();
             keepGoing = prompt.trim().toLowerCase().equals("y");
 
+        }
+    }
+
+    private void Infinite() {
+        boolean keepGoing = true;
+        System.out.println("type in number");
+        int sum = scanner.nextInt();
+        while (keepGoing) {
+            System.out.println("type in another number or press a 0 to stop");
+            int number2 = scanner.nextInt();
+            sum = sum + number2;
+            System.out.println("current total " + sum);
+            if (number2 <= 0) {
+                System.out.println("total " + sum);
+                keepGoing = false;
+            }
+           // else if int ( x > 0)
+           // (keepgoing)
         }
     }
 }

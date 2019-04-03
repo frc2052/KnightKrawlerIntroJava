@@ -11,30 +11,49 @@ public class AreaCalculator {
         scanner = new Scanner(System.in);
     }
 
-    public void lightning()
-        {
-         System.out.println("1. circuleArea");
-         System.out.println("2. rectangleArea");
+    public void areaCalculator() {
+        System.out.println("1. CirculeArea");
+        System.out.println("2. RectangleArea");
 
-            int option = scanner.nextInt();
-            if (option == 1) {
-               circuleArea ();
-            } else if (option == 2) {
-                rectangleArea();
+        int option = scanner.nextInt();
 
+        if (option == 1) {
+            CircleArea();
 
-            private double circleArea(int radius) {
-            return radius * radius * Math.PI;
-
+        } else if (option == 2) {
+            RectangleArea();
         }
 
-            private int rectangleArea(int height, int width) {
-            return height * width;
-
-
-        }
 
     }
+
+    private void CircleArea() {
+
+        System.out.println("Please enter the radius.");
+        int radius = scanner.nextInt();
+
+        System.out.println("the final product is " + circleArea(radius));
+
+
+    }
+
+    private double circleArea(int radius) {
+        return radius * radius * Math.PI;
+    }
+
+    private void RectangleArea() {
+        boolean keepGoing = true;
+        System.out.println("Please enter the first number.");
+        int height = scanner.nextInt();
+        System.out.println("Please enter the second number");
+        int width = scanner.nextInt();
+        int product = height * width;
+        System.out.println("the product of this is " + product);
+
+
+    }
+
 }
+
 
 

@@ -3,6 +3,7 @@ package com.team2052.KnightKrawlerIntroJava;
 import com.team2052.KnightKrawlerIntroJava.Lesson01.BasicCalculator;
 
 import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
+import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.MultiCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6runner;
 
@@ -32,18 +33,20 @@ public class Main {
                 calc.areaCalculator();
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             } else if (val.trim().equals("3")) {
-                MultiCalculator calc = new MultiCalculator();
-            } else if (val.trim().equals("4")) {
-                Lesson6runner calc = new Lesson6runner();
+                Lesson3Runner calc = new Lesson3Runner();
                 calc.run();
-
-
+            } else if (val.trim().equals("4")) {
+                    Lesson6runner calc = new Lesson6runner();
+                    calc.run();
+                }
 
 
             }
 
         }
-    }
+
+
+
 
 
 
@@ -52,5 +55,7 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
+        System.out.println("3 -> lesson 3, getters and setters");
+        System.out.println("4 -> lesson 4, static keyboard and singleton classes"); //incomplete
     }
 }
