@@ -5,6 +5,7 @@ public class Room {
     private boolean isExit;
     public boolean getIsExit() { return isExit; }
     public void setIsExit(boolean value) { isExit = value; }
+       // System.out.println("isExit =" + value);}
 
     private boolean isDoorLocked;
     public boolean getIsDoorLocked() { return isDoorLocked; }
@@ -26,19 +27,7 @@ public class Room {
     public String getMonsterStory() { return monsterStory; }
     public void setMonsterStory(String value) { monsterStory = value; }
 
-    Room[] rooms() {
-        Room[] createRooms = new Room[4];
-        createRooms[0] = new Room();
-        createRooms[0].setIsExit(true);
-        createRooms[0].setIsDoorLocked(true);
-        createRooms[1] = new Room();
-        createRooms[1].setIsMonsterInside(true);
-        createRooms[2] = new Room();
-        createRooms[2].setIsKeyInside(true);
-        createRooms[3] = new Room();
-        createRooms[3].setIsMonsterInside(true);
-        return rooms();
-
-    }
-
+    private String roomDiscryption;
+    public String getRoomDiscryption() { return roomDiscryption; }
+    public void setRoomDiscryption(String value) { roomDiscryption = value; }
 }

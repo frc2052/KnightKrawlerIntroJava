@@ -1,32 +1,56 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
+import com.team2052.KnightKrawlerIntroJava.Lesson07.Room;
+
 import java.util.Scanner;
 
-public class TextRoomsAdventure {
-    int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
 
+public class TextRoomsAdventure{
+    private int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
-    Room roomDefiner = new Room();
 
     public TextRoomsAdventure() {
         scanner = new Scanner(System.in);
-
     }
-
     private boolean key = false;
 
+    private Room monster1;
+    private Room monster2;
+    private Room brasskey;
+    private Room exit;
+    private Room escape;
+
     public void play() {
-
-        Room[] rooms = roomDefiner.rooms();
-
         System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
+
+        monster1 = new Room();
+        monster1.setIsMonsterInside(true);
+        monster1.setDoorDescription("You have found a large wooden door that is latched from the outside. Do you enter \"E\" or Go Back \"B\"");
+        monster1.setMonsterStory( "You unlock the door and slowly push the door open. As you enter the room a small candle on the table catches your attention. As you are mesmerized by the flame, you fail to notice the witch who casts a spell to turn you to stone. You will forever adorn her room. You have died.");
+
+        monster2 = new Room();
+        monster2.setIsMonsterInside(true);
+        monster2.setDoorDescription("You are standing in front of a large metal door that is ajar");
+        monster2.setMonsterStory("You push the massive door open. You are now thirsty from doing all that work, but luckily you see a pool of water across the room. The water looks clean enough and you decide to start drinking the water. While you are drinking the water a golden glimmer coming from the water catches your eye. You reach for it. But right before you are able to grab the object, an unseen force grabs you and pulls you into the deep water. You kick and punch but your efforts are useless. As the last bit of air slips out of your lungs and through your lips, you drown");
+
+        brasskey = new Room();
+        brasskey.setIsKeyInside(true);
+        brasskey.setRoomDiscryption("You walk down the hallway in front of you and come to a room with a broken door. You walk inside and it looks like no one has been there in years. A shiny brass object catches your eye and you go to pick it up. **You Picked Up A Key** You are now standing back at the intersection next to the crawl space. Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+
+        exit = new Room();
+        exit.setRoomDiscryption("You come to a large metal door. The door is locked and wont seem to move no matter how hard you push. Your only option is to go back to the intersection next to the crawlspace. You are now standing back at the intersection next to the crawl space. Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+
+
+
         while (currentPos >= 0) {
-            switch (currentPos) {
+            switch (currentPos)
+            {
                 case 0:
                     System.out.println("You are at the entrance, you can only go north. Type \"N\" to go north.");
                     move = scanner.nextLine();
-                    if (move.toLowerCase().trim().equals("n")) {
+                    if (move.toLowerCase().trim().equals("n"))
+                    {
                         currentPos = 1;
                     } else {
                         System.out.println("Invalid direction. Only \"N\" is valid");
@@ -49,35 +73,37 @@ public class TextRoomsAdventure {
                     }
                     break;
                 case 2:
-
-
-                    /*System.out.println("You have found a large wooden door that is latched from the outside. Do you enter \"E\" or Go Back \"B\"");
+                    System.out.println(monster1.getDoorDescription());
+                    //System.out.println("You have found a large wooden door that is latched from the outside. Do you enter \"E\" or Go Back \"B\"");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
-                        System.out.println("You unlock the door and slowly push the door open.");
-                        System.out.println("As you enter the room a small candle on the table catches your attention.");
-                        System.out.println("As you are mesmerized by the flame, you fail to notice the witch who casts a spell to turn you to stone.");
-                        System.out.println("You will forever adorn her room. You have died.");
+                        System.out.println(monster1.getMonsterStory());
+                            /*System.out.println("You unlock the door and slowly push the door open.");
+                            System.out.println("As you enter the room a small candle on the table catches your attention.");
+                            System.out.println("As you are mesmerized by the flame, you fail to notice the witch who casts a spell to turn you to stone.");
+                            System.out.println("You will forever adorn her room. You have died.");*/
                         currentPos = -1;
                     } else if (move.toLowerCase().trim().equals("b")) {
                         currentPos = 1;
                     } else {
                         System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
-                    }*/
+                    }
                     break;
                 case 3:
-                    System.out.println("You come to a large metal door that is ajar");
+                    System.out.println(monster2.getDoorDescription());
+                    //System.out.println("You come to a large metal door that is ajar");
                     System.out.println("You can choose to enter the room ahead \"E\", or turn back to the previous intersection \"B\"");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
-                        System.out.println("You push the massive door open.");
-                        System.out.println("You are now thirsty from doing all that work, but luckily you see a pool of water across the room.");
-                        System.out.println("The water looks clean enough and you decide to start drinking the water.");
-                        System.out.println("While you are drinking the water a golden glimmer coming from the water catches your eye.");
-                        System.out.println("You reach for it.");
-                        System.out.println("But right before you are able to grab the object, an unseen force grabs you and pulls you into the deep water.");
-                        System.out.println("You kick and punch but your efforts are useless");
-                        System.out.println("As the last bit of air slips out of your lungs and through your lips, you drown");
+                        System.out.println(monster2.getMonsterStory());
+                            /*System.out.println("You push the massive door open.");
+                            System.out.println("You are now thirsty from doing all that work, but luckily you see a pool of water across the room.");
+                            System.out.println("The water looks clean enough and you decide to start drinking the water.");
+                            System.out.println("While you are drinking the water a golden glimmer coming from the water catches your eye.");
+                            System.out.println("You reach for it.");
+                            System.out.println("But right before you are able to grab the object, an unseen force grabs you and pulls you into the deep water.");
+                            System.out.println("You kick and punch but your efforts are useless");
+                            System.out.println("As the last bit of air slips out of your lungs and through your lips, you drown");*/
                         currentPos = -1;
                     } else if (move.toLowerCase().trim().equals("b")) {
                         currentPos = 1;
@@ -110,12 +136,13 @@ public class TextRoomsAdventure {
                     }
                     break;
                 case 6:
-                    System.out.println("You walk down the hallway in front of you and come to a room with a broken door");
-                    System.out.println("You walk inside and it looks like no one has been there in years");
-                    System.out.println("A shiny brass object catches your eye and you go to pick it up");
-                    System.out.println("**You Picked Up A Key**");
-                    System.out.println("You are now standing back at the intersection next to the crawl space");
-                    System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                    System.out.println(brasskey.getRoomDiscryption());
+                        /*System.out.println("You walk down the hallway in front of you and come to a room with a broken door");
+                        System.out.println("You walk inside and it looks like no one has been there in years");
+                        System.out.println("A shiny brass object catches your eye and you go to pick it up");
+                        System.out.println("**You Picked Up A Key**");
+                        System.out.println("You are now standing back at the intersection next to the crawl space");
+                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");*/
                     move = scanner.nextLine();
                     key = true;
                     if (move.toLowerCase().trim().equals("n")) {
@@ -128,11 +155,12 @@ public class TextRoomsAdventure {
                     break;
                 case 7:
                     if (key == false) {
-                        System.out.println("You come to a large metal door");
-                        System.out.println("The door is locked and wont seem to move no matter how hard you push");
-                        System.out.println("Your only option is to go back to the intersection next to the crawlspace");
-                        System.out.println("You are now standing back at the intersection next to the crawl space");
-                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                        System.out.println(exit.getRoomDiscryption());
+                            /*System.out.println("You come to a large metal door");
+                            System.out.println("The door is locked and wont seem to move no matter how hard you push");
+                            System.out.println("Your only option is to go back to the intersection next to the crawlspace");
+                            System.out.println("You are now standing back at the intersection next to the crawl space");
+                            System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");*/
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("n")) {
                             currentPos = 6;
