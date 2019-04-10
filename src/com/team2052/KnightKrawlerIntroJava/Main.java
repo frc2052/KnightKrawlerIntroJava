@@ -6,6 +6,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson02.AreaCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.Lesson3Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson03.MultiCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6runner;
 
 import java.util.Scanner;
@@ -42,6 +43,9 @@ public class Main {
             } else if (val.trim().equals("4")) {
                 Lesson4Runner calc = new Lesson4Runner();
                 calc.run();
+            } else if (val.trim().equals("5")) {
+                AdventureGame calc = new AdventureGame();
+                calc.play();
             }
 
 
