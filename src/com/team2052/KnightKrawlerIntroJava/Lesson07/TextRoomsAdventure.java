@@ -144,23 +144,6 @@ public class TextRoomsAdventure{
                             currentPos = 5;
                         }
                     }
-
-                    System.out.println(brasskey.getRoomDiscryption());
-                        /*System.out.println("You walk down the hallway in front of you and come to a room with a broken door");
-                        System.out.println("You walk inside and it looks like no one has been there in years");
-                        System.out.println("A shiny brass object catches your eye and you go to pick it up");
-                        System.out.println("**You Picked Up A Key**");
-                        System.out.println("You are now standing back at the intersection next to the crawl space");
-                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");*/
-                    move = scanner.nextLine();
-                    key = true;
-                    if (move.toLowerCase().trim().equals("n")) {
-                        currentPos = 6;
-                    } else if (move.toLowerCase().trim().equals("w")) {
-                        currentPos = 7;
-                    } else if (move.toLowerCase().trim().equals("s")) {
-                        currentPos = 4;
-                    }
                     break;
                 case 7:
                     if (key == false) {
@@ -209,20 +192,27 @@ public class TextRoomsAdventure{
                 currentPos = -1;
                 return true; //finishes the game
             }
+        }else if (room.getIsMonsterInside()) {
+            System.out.println(room.getDoorDescription());
+            currentPos = -1;
+            return true;
+        } else if (room.getIsKeyInside()) {
+            System.out.println(room.getDoorDiscryption());
+            key = true; //give player the key
+            return false;
         } else {
             System.out.println(room.getDoorDescription());
         }
         return false; //Game is not over yet
     }
     private boolean showRoomDis (Room room) {
-        if (room.getIsMonsterInside()) {
-            System.out.println(room.getMonsterStory());
-            currentPos = -1;
-            return true;
-        } else if (room.getIsKeyInside()) {
-            System.out.println(room.getRoomDiscryption());
-            key = true; //give player the key
-            return false;
+        if (room.getIsMonsterInside) {
+            System.out.println(room.getMonsterStory);
+        } else if (room.getIsKeyInside){
+            System.out.println(room.getRoomDiscryption);
+        } else {
+            System.out.println(room.getRoomDiscryption);
         }
+
     }
 }

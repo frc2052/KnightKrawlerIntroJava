@@ -24,6 +24,7 @@ public class RoomFinder {
         private String monsterStory;
         public String getMonsterStory() { return monsterStory; }
         public void setMonsterStory(String value) { monsterStory = value; }
+
         public Room[] FindRoomerer() {
             Room[] FindRoom = new Room[5];
             FindRoom[0] = new Room();
