@@ -3,13 +3,15 @@ package com.team2052.KnightKrawlerIntroJava.Lesson05;
 import java.util.Scanner;
 
 public class AdventureGame {
-
+    private boolean key = false;
         private int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
         private Scanner scanner = null; //object to get user input from command line
         private String move = null; //reuse the variable to collect user input
 
         public AdventureGame() {
             scanner = new Scanner(System.in);
+
+
         }
 
         public void play()
@@ -57,13 +59,18 @@ public class AdventureGame {
                         }
                         break;
                     case 3:
-                        System.out.println("you found a steel door,  Do you enter \"E\" or Go Back \"B\"");
-                        move = scanner.nextLine();
-                        if (move.toLowerCase().trim().equals("E")) ;
-                        System.out.println("luckly you knew how to lockpick easy doors.");
-                        System.out.println("you find a room full of stuff, but only choose to pick up a key");
-                        currentPos = 1;
-
+                        if (key = true){
+                            System.out.println("the room has nothing except a delicious chinken sandwich");
+                            currentPos = 1;
+                        }
+                        else {
+                            System.out.println("you found a steel door,  Do you enter \"E\" or Go Back \"B\"");
+                            move = scanner.nextLine();
+                            if (move.toLowerCase().trim().equals("E")) ;
+                            System.out.println("luckly you knew how to lockpick easy doors.");
+                            System.out.println("you find a room full of stuff, but only choose to pick up a key");
+                            currentPos = 1;
+                        }
                         if (move.toLowerCase().trim().equals("b")) {
                             currentPos = 1;
                         }
