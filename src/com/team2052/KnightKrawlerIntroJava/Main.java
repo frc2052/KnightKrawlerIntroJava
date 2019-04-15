@@ -64,6 +64,9 @@ public class Main {
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
-        System.out.println("4 -> lesson 4, static keyboard and singleton classes"); //incomplete
+        System.out.println("4 -> lesson 4, static keyboard and singleton classes");
+        System.out.println("5--> lesson 5, adventure game/case statement");//working on it
+        System.out.println("6--> lesson 6, Constants, arrays, and 'for' loop");//work in progress
+
     }
 }
