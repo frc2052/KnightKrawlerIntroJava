@@ -5,7 +5,6 @@ public class Card {
     public static final int KING = 13;
     public static final int QUEEN = 12;
     public static final int JACK =11;
-    //TODO: create constants for Jack, Queen, King
 
     private Suit suit;
     private int number;
@@ -38,7 +37,6 @@ public class Card {
                 return "Queen";
             case JACK:
                 return "Jack";
-            //TODO: create case statements for Jack, Queen, King
             default: // if anything doesn't line up with any of the options it will resort to default
                 return number + ""; //force the integer to a string
         }

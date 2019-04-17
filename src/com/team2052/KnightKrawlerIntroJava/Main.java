@@ -8,6 +8,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson03.MultiCalculator;
 import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6runner;
+import com.team2052.KnightKrawlerIntroJava.Lesson6_V2.Lesson6_V2Runner;
 
 import java.util.Scanner;
 
@@ -38,7 +39,7 @@ public class Main {
                 Lesson3Runner calc = new Lesson3Runner();
                 calc.run();
             } else if (val.trim().equals("6")) {
-                Lesson6runner calc = new Lesson6runner();
+                Lesson6_V2Runner calc = new Lesson6_V2Runner();
                 calc.run();
             } else if (val.trim().equals("4")) {
                 Lesson4Runner calc = new Lesson4Runner();
@@ -65,7 +66,7 @@ public class Main {
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
         System.out.println("4 -> lesson 4, static keyboard and singleton classes");
-        System.out.println("5--> lesson 5, adventure game/case statement");//working on it
+        System.out.println("5--> lesson 5, adventure game/case statement");
         System.out.println("6--> lesson 6, Constants, arrays, and 'for' loop");//work in progress
 
     }
