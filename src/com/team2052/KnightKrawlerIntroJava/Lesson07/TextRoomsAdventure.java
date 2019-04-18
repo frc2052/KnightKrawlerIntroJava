@@ -1,7 +1,9 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
+import com.team2052.KnightKrawlerIntroJava.Lesson06.Card;
 import com.team2052.KnightKrawlerIntroJava.Lesson07.Room;
 
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -20,6 +22,17 @@ public class TextRoomsAdventure{
     private Room brasskey;
     private Room exit;
     private Room escape;
+
+    public static Room[] RandomizeArray(Room[] array){
+        Random rgen = new Random();  // Random number generator
+        for (int i=0; i<array.length; i++) {
+            int randomPosition = rgen.nextInt(array.length);
+            Room temp = array[i];
+            array[i] = array[randomPosition];
+            array[randomPosition] = temp;
+        }
+        return array;
+    }
 
     public void play() {
         System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
@@ -48,6 +61,7 @@ public class TextRoomsAdventure{
         rooms[2] = brasskey;
         rooms[3] = exit;
 
+        rooms = RandomizeArray(rooms);
 
         while (currentPos >= 0) {
             switch (currentPos)
@@ -203,7 +217,7 @@ public class TextRoomsAdventure{
                 System.out.println("This time you notice a small key hole");
                 System.out.println("You reach into your pocket to grab the key you found");
                 System.out.println("You slide it into the key whole and twist it");
-                System.out.println("You hear two loud metalic sounds and the door slowly starts to open");
+                System.out.println("You hear two loud metallic sounds and the door slowly starts to open");
                 System.out.println("You are greeted by a blinding light but as your eyes adjust you can see that you made it to the surface");
                 System.out.println("**Level 1 Passed**");
                 currentPos = -1;
@@ -223,6 +237,7 @@ public class TextRoomsAdventure{
             System.out.println(room.getRoomDiscryption());
             key = true; //give player the key
             return false;
-        }
+        } else
+            return false;
     }
 }

@@ -2,7 +2,7 @@ package com.team2052.KnightKrawlerIntroJava.Lesson06;
 
 import java.util.Random;
 
-public class    Shuffle {
+public class Shuffle {
 
     public Card[] createDeck() {
         Card[] deck = new Card[52];
@@ -27,7 +27,6 @@ public class    Shuffle {
 
     public static Card[] RandomizeArray(Card[] array){
         Random rgen = new Random();  // Random number generator
-
         for (int i=0; i<array.length; i++) {
             int randomPosition = rgen.nextInt(array.length);
             Card temp = array[i];
