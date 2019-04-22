@@ -1,5 +1,7 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson6_V2;
 
+import java.util.Random;
+
 public class Shuffler {
     public Card[] createDeck() {
         Card[] deck = new Card[52];
@@ -20,5 +22,17 @@ public class Shuffler {
             }
         }
         return deck;
+
+    }public static Card[] RandomizeArray(Card[] array){
+        Random rgen = new Random();  // Random number generator
+
+        for (int i=0; i<array.length; i++) {
+            int randomPosition = rgen.nextInt(array.length);
+            Card temp = array[i];
+            array[i] = array[randomPosition];
+            array[randomPosition] = temp;
+        }
+
+        return array;
     }
 }
