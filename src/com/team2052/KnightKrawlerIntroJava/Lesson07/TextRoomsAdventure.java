@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-import com.team2052.KnightKrawlerIntroJava.Lesson07.Room;
-
 public class TextRoomsAdventure {
     private boolean playAgain = true;
     private int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
@@ -25,8 +23,12 @@ public class TextRoomsAdventure {
         while (playAgain) {
             Collections.shuffle(Arrays.asList(theRooms));
             key = false;
+            room.setIsDoorLocked(true);
             System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
+            currentPos = 0;
+
             while (currentPos >= 0) {
+
                 switch (currentPos) {
                     case 0:
                         System.out.println("You are at the entrance, you can only go north. Type \"N\" to go north.");
@@ -115,9 +117,6 @@ public class TextRoomsAdventure {
             move = scanner.nextLine();
             if (move.toLowerCase().trim().equals("n")) {
                 playAgain = false;
-            } else {
-                currentPos = 0;
-
             }
         }
     }

@@ -7,6 +7,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
+import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.TheGame;
 
 import java.util.Scanner;
 
@@ -51,7 +52,10 @@ public class Main {
             }else if (val.trim().equals("7")) {
                 TextRoomsAdventure lesson7 = new TextRoomsAdventure();
                 lesson7.play();
-            } else {
+            }else if (val.trim().equals("8")) {
+                TheGame theGame = new TheGame();
+                theGame.play();
+            }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
@@ -68,5 +72,6 @@ public class Main {
         System.out.println("5 -> lesson 5");
         System.out.println("6 -> lesson 6, loops");
         System.out.println("7 -> lesson 7, refactoring");
+        System.out.println("8 -> the game");
     }
 }
