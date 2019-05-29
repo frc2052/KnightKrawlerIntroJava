@@ -197,7 +197,7 @@ public class TextRoomsAdventure{
             currentPos = -1;
             return true;
         } else if (room.getIsKeyInside()) {
-            System.out.println(room.getDoorDiscryption());
+            System.out.println(room.getDoorDescription());
             key = true; //give player the key
             return false;
         } else {
@@ -205,13 +205,13 @@ public class TextRoomsAdventure{
         }
         return false; //Game is not over yet
     }
-    private boolean showRoomDis (Room room) {
-        if (room.getIsMonsterInside) {
-            System.out.println(room.getMonsterStory);
-        } else if (room.getIsKeyInside){
-            System.out.println(room.getRoomDiscryption);
+    private void showRoomDis (Room room) {
+        if (room.getIsMonsterInside()) {
+            System.out.println(room.getMonsterStory());
+        } else if (room.getIsKeyInside()){
+            System.out.println(room.getRoomDiscryption());
         } else {
-            System.out.println(room.getRoomDiscryption);
+            System.out.println(room.getRoomDiscryption());
         }
 
     }

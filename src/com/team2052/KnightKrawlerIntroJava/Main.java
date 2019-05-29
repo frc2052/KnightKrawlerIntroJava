@@ -7,6 +7,7 @@ import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson04Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson05.Adventurethingything;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson06Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomAdventures;
+import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
 
 import java.util.Scanner;
 
@@ -47,7 +48,7 @@ public class Main {
                 Lesson06Runner lesson06 = new Lesson06Runner();
                 lesson06.run();
             } else if (val.trim().equals("7")){
-                TextRoomAdventures textRoomsAdventure = new TextRoomAdventures();
+                TextRoomsAdventure textRoomsAdventure = new TextRoomsAdventure();
                 textRoomsAdventure.play();
             }
             else {

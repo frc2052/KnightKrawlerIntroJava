@@ -1,5 +1,7 @@
 package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
+import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
+
 public class Room {
 
     private boolean isExit;

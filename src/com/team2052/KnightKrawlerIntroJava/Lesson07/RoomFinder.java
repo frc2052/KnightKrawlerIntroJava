@@ -1,4 +1,4 @@
-package com.team2052.KnightKrawlerIntroJava.Lesson07;
+/* package com.team2052.KnightKrawlerIntroJava.Lesson07;
 
 public class RoomFinder {
         private boolean isExit;
@@ -34,4 +34,4 @@ public class RoomFinder {
             FindRoom[4] = new Room();
             return FindRoom;
         }
-}
+} */
