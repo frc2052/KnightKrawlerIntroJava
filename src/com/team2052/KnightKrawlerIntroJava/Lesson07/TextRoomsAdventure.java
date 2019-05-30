@@ -20,6 +20,8 @@ public class TextRoomsAdventure{
     private Room brasskey;
     private Room exit;
     private Room escape;
+    boolean youWereAreadyAtTheCrawlSpaceExit = false;
+    boolean youWereAlreadyAtTheCrawlSpaceEnterance = false;
 
     public void play() {
         System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
@@ -37,6 +39,7 @@ public class TextRoomsAdventure{
         brasskey = new Room();
         brasskey.setIsKeyInside(true);
         brasskey.setRoomDiscryption("You walk down the hallway in front of you and come to a room with a broken door. You walk inside and it looks like no one has been there in years. A shiny brass object catches your eye and you go to pick it up. **You Picked Up A Key** You are now standing back at the intersection next to the crawl space. Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+        brasskey.setDoorDescription("You walk up to this nasty old spiderweb lookin door.");
 
         exit = new Room();
         exit.setRoomDiscryption("You come to a large metal door. The door is locked and wont seem to move no matter how hard you push. Your only option is to go back to the intersection next to the crawlspace. You are now standing back at the intersection next to the crawl space. Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
@@ -81,15 +84,19 @@ public class TextRoomsAdventure{
                 case 2:
                     boolean isGameOver2 = showDoorDis(rooms[0]);
                     if (!isGameOver2) {
-                        System.out.println("You can choose to enter the room ahead \"E\", or turn back to the previous intersection \"B\"");
+                        //System.out.println(showDoorDis(rooms[0]));
+                        //System.out.println("You can choose to enter the room ahead \"E\", or turn back to the previous intersection \"B\"");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
                             showRoomDis(rooms[0]);
+
                         } else if (move.toLowerCase().trim().equals("b")) {
                             currentPos = 1;
                         } else {
                             System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
                         }
+                    } else {
+                        currentPos = -1;
                     }
                     break;
                 case 3:
@@ -107,7 +114,11 @@ public class TextRoomsAdventure{
                     }
                     break;
                 case 4:
-                    System.out.println("You walk down the hallway and as it seems to end you notice a small crawl space to the north");
+                    if (youWereAlreadyAtTheCrawlSpaceEnterance == true) {
+                        System.out.println("You get on your hands and knees and go back throught the crawl space");
+                    } else {
+                        System.out.println("You walk down the hallway and as it seems to end you notice a small crawl space to the north");
+                    }
                     System.out.println("You can enter the dark crawl space \"E\" or choose to go back to the previous intersection \"B\"");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
@@ -117,12 +128,17 @@ public class TextRoomsAdventure{
                     }
                     break;
                 case 5:
-                    System.out.println("You get on you hands and knees and start crawling");
-                    System.out.println("You reach the end of crawl space and you are able to stand again");
-                    System.out.println("You stand and start to look around");
-                    System.out.println("You see a door to your North and to the west");
-                    System.out.println("You think you see a source of light coming for the door to your west and the door to your north looks broken");
-                    System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                    if (youWereAreadyAtTheCrawlSpaceExit == true) {
+                        System.out.println("You are back at the crawl space");
+                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                    } else {
+                        System.out.println("You get on you hands and knees and start crawling");
+                        System.out.println("You reach the end of crawl space and you are able to stand again");
+                        System.out.println("You stand and start to look around");
+                        System.out.println("You see a door to your North and to the west");
+                        System.out.println("You think you see a source of light coming for the door to your west and the door to your north looks broken");
+                        System.out.println("Do you move to the North (\"n\"), West (\"w\"), or South (\"s\"), and go back through the crawlspace");
+                    }
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("n")) {
                         currentPos = 6;
@@ -130,6 +146,7 @@ public class TextRoomsAdventure{
                         currentPos = 7;
                     } else if (move.toLowerCase().trim().equals("s")) {
                         currentPos = 4;
+                        youWereAlreadyAtTheCrawlSpaceEnterance = true;
                     }
                     break;
                 case 6:
@@ -139,10 +156,14 @@ public class TextRoomsAdventure{
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("e")) {
                             showRoomDis(rooms[2]);
+                            youWereAreadyAtTheCrawlSpaceExit = true;
                             currentPos = 5;
                         } else if (move.toLowerCase().trim().equals("b")) {
                             currentPos = 5;
+                            youWereAreadyAtTheCrawlSpaceExit = true;
                         }
+                    } else {
+                        currentPos = -1;
                     }
                     break;
                 case 7:
@@ -194,20 +215,23 @@ public class TextRoomsAdventure{
             }
         }else if (room.getIsMonsterInside()) {
             System.out.println(room.getDoorDescription());
-            currentPos = -1;
-            return true;
+
+            //System.out.println("Game is over");
+            return false;
         } else if (room.getIsKeyInside()) {
             System.out.println(room.getDoorDescription());
             key = true; //give player the key
             return false;
         } else {
             System.out.println(room.getDoorDescription());
+            return false;
         }
         return false; //Game is not over yet
     }
     private void showRoomDis (Room room) {
         if (room.getIsMonsterInside()) {
             System.out.println(room.getMonsterStory());
+            currentPos = -1;
         } else if (room.getIsKeyInside()){
             System.out.println(room.getRoomDiscryption());
         } else {
