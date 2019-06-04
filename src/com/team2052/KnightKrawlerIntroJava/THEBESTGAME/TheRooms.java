@@ -7,7 +7,7 @@ public class TheRooms {
         return instance;
     }
 
-        public class Rooms {
+       /* public class Rooms {
             public boolean isIntersection = false;
             public boolean getIsIntersection() { return isIntersection; }
             public void setIsIntersection(boolean value) { isIntersection = value; }
@@ -31,5 +31,5 @@ public class TheRooms {
     public enum roomTypes {
 
     }
-
+*/
 }
