@@ -8,6 +8,8 @@ public class TheGame {
     private boolean shield = false;
     private boolean armor = false;
     private boolean sword = false;
+    private boolean foundMonk = false;
+    private boolean slayedDragon = false;
     private static TheGame instance = null;
 
     public static TheGame getInstance() {
@@ -55,7 +57,7 @@ public class TheGame {
                         currentPos = 5;
                         break;
                     case 4: //Shield Room
-                        if (shield == false){
+                        if (!shield){
                             System.out.println("You enter the room. In the dim lighting you see a shimmer in the back of the room. As you approach it you see that it is a rusty old shield. You pick it up. **You picked up a Shield**");
                             shield = true;
                             System.out.println("You are standing in the room and you see an exit to the north, \"N\", one to the south, \"S\", and one to the east, \"E\", Which do you choose?");
@@ -119,7 +121,7 @@ public class TheGame {
                         System.out.println("you enter another bend in the hallway. their is a mysterious chest lying in the center. it is locked. You can go East \"E\", West \"W\" or South \"S\". Which do you choose?");
                         move = scanner.nextLine();
                         if (sword && move.toLowerCase().trim().equals("open chest")){
-                            System.out.println("You break the lock with your sword and open the chest. It contains a note that says \"The Game, created by Ciocci and Chris\". The note seems ueseless, but you keep it anyway. You can go west, east, or south");
+                            System.out.println("You break the lock with your sword and open the chest. It contains a note that says \"The Game is the best game\". The note seems useless, but you keep it anyway. You can go west, east, or south");
                             move = scanner.nextLine();
                         }
 
@@ -132,7 +134,7 @@ public class TheGame {
                         }
                         break;
                     case 10:
-                        System.out.println("you see a door with a sign that says \"Danger! Enter with caution\" do go in the room\"I\", go down the hallway to the east\"E\", or go down the hallway to the south\"S\". Which do you choose?");
+                        System.out.println("you see a door with a sign that says \"Danger! Enter with caution\" do go in the room \"I\", go down the hallway to the east \"E\", or go down the hallway to the south \"S\". Which do you choose?");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("i")){
                             currentPos = 14;
@@ -143,7 +145,7 @@ public class TheGame {
                         }
                         break;
                     case 11:
-                        System.out.println("you see a door to the north with a painting of a young man. Do you go in the room \"I\", go down the hallway to the south \"S\", or go down the hallway to the west \"W\"");
+                        System.out.println("you see a door to the north with a painting of a young man. Do you go in the room \"I\", go down the hallway to the south \"S\", or go down the hallway to the west \"W\" Which do you choose?");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("i")){
                             currentPos = 13;
@@ -151,6 +153,49 @@ public class TheGame {
                             currentPos = 12;
                         }else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 9;
+                        }
+                        break;
+                    case 12:
+                        System.out.println("You have found a sword");
+                        sword = true;
+                        currentPos = 11;
+                        break;
+                    case 13:
+                        if (!foundMonk) {
+                            System.out.println("You open the door and see a old man sitting on a chair. He opens his eyes and looks at you. \"I've been waiting for you.\" he says. I've been trapped down here for a while now. The way out will only open if you kill a monstrous dragon. I'm too old to kill him. Your must slay the dragon and release both of us from this eternal dungeon! Go now, but make sure you are prepared. The dragon will not easily be beaten.");
+                            foundMonk = true;
+                            currentPos = 11;
+                        } else if (slayedDragon){
+                            System.out.println("You walk into the room and find that the old man is gone. But you also see a door that wasn't opened the last time you were here.");
+                            System.out.println("You walk through the door. Down a long hallway, you start to run in hopes of getting free. You see a light. It's getting closer! You finally get to the source of the light. It's just a bared window on the celing. The old man lied to you!");
+                            System.out.println("*Level one Complete*");
+                            System.out.println("Made by Ciocci Venterea and Chris Hardwick");
+                            currentPos = -1;
+                        } else {
+                            System.out.println("You walk into the room and find the old man sitting on his chair. \"remember, you must slay the dragon in order to free us.\"");
+                            currentPos = 11;
+                        }
+                        break;
+                    case 14:
+                        if (!slayedDragon) {
+                            System.out.println("As you walk down a hallway, you hear a voice \"Who dares disturb my rest\"");
+                            System.out.println("\"Why have you come here?\"");
+                            System.out.println("You walk through the hallway and finally come to a big door");
+                            System.out.println("Do you go in? \"I\" or turn back \"B\", before its to late");
+                            move = scanner.nextLine();
+                            if (move.trim().toLowerCase().equals("b")){
+                                currentPos = 10;
+                            } else if (move.trim().toLowerCase().equals("i")){
+                                System.out.println("You open the door and see a massive dragon sitting on a rock.");
+                                if (armor && sword && shield) {
+                                    slayedDragon = true;
+                                    System.out.println("You have slayed the dragon!");
+                                    currentPos = 10;
+                                } else {
+                                    System.out.println("\"You came ill prepared, prepare to die\" The dragon pounces on you. You have died!\"");
+                                    currentPos = -1;
+                                }
+                            }
                         }
                         break;
                 }
@@ -170,6 +215,8 @@ public class TheGame {
         sword = false;
         shield = false;
         armor = false;
+        slayedDragon = false;
+        foundMonk = false;
 
     }
 }
