@@ -160,7 +160,8 @@ public class TheGame {
                         }
                         break;
                     case 12:
-                        System.out.println("You have found a sword");
+                        System.out.println("You walk into an empty room. You find a old sword. It's not much, but it'll do.");
+                        System.out.println("*You have found a sword* ");
                         sword = true;
                         currentPos = 11;
                         break;
