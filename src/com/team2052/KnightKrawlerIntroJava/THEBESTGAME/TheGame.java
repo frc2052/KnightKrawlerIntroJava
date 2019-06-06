@@ -52,8 +52,12 @@ public class TheGame {
                         currentPos = -1;
                         break;
                     case 3 :
-                        System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Pick up Armor**");
-                        armor = true;
+                        if (!armor) {
+                            System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Pick up Armor**");
+                            armor = true;
+                        } else{
+                            System.out.println("This is the room that you found the armor, their is nothing here.");
+                        }
                         currentPos = 5;
                         break;
                     case 4: //Shield Room
@@ -161,11 +165,17 @@ public class TheGame {
                         currentPos = 11;
                         break;
                     case 13:
-                        if (!foundMonk) {
+                        if (!foundMonk && !slayedDragon) {
                             System.out.println("You open the door and see a old man sitting on a chair. He opens his eyes and looks at you. \"I've been waiting for you.\" he says. I've been trapped down here for a while now. The way out will only open if you kill a monstrous dragon. I'm too old to kill him. Your must slay the dragon and release both of us from this eternal dungeon! Go now, but make sure you are prepared. The dragon will not easily be beaten.");
                             foundMonk = true;
                             currentPos = 11;
-                        } else if (slayedDragon){
+                        } else if (slayedDragon && !foundMonk){
+                            System.out.println("you walk into a room, it looks like someone has been living here for a while. You see a open door in the back of the room");
+                            System.out.println("You walk through the door. Down a long hallway, you start to run in hopes of getting free. You see a light. It's getting closer! You finally get to the source of the light. It's just a bared window on the celing.");
+                            System.out.println("*Level one Complete*");
+                            System.out.println("Made by Ciocci Venterea and Chris Hardwick");
+                            currentPos = -1;
+                        } else if (slayedDragon && foundMonk){
                             System.out.println("You walk into the room and find that the old man is gone. But you also see a door that wasn't opened the last time you were here.");
                             System.out.println("You walk through the door. Down a long hallway, you start to run in hopes of getting free. You see a light. It's getting closer! You finally get to the source of the light. It's just a bared window on the celing. The old man lied to you!");
                             System.out.println("*Level one Complete*");
@@ -188,6 +198,7 @@ public class TheGame {
                             } else if (move.trim().toLowerCase().equals("i")){
                                 System.out.println("You open the door and see a massive dragon sitting on a rock.");
                                 if (armor && sword && shield) {
+                                    System.out.println("After a long and hard fight, you are victorious!");
                                     slayedDragon = true;
                                     System.out.println("You have slayed the dragon!");
                                     currentPos = 10;
@@ -196,6 +207,9 @@ public class TheGame {
                                     currentPos = -1;
                                 }
                             }
+                        } else {
+                            System.out.println("this is room that you slayed the dragon, their is nothing here");
+                            currentPos = 10;
                         }
                         break;
                 }
