@@ -15,7 +15,7 @@ public class BasicCalculator {
     //This method is public. It can be called from outside the class
     public void run()
     {
-        System.out.println("What would you like to do?");
+        System.out.println("What would you like to do? Go now.");
         System.out.println("1. add two numbers");
         System.out.println("2. Subtract two numbers");
         System.out.println("3. Keep adding numbers until a non-number is entered");
