@@ -1,5 +1,6 @@
 package com.team2052.KnightKrawlerIntroJava.THEBESTGAME;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TheGame {
@@ -11,6 +12,9 @@ public class TheGame {
     private boolean foundMonk = false;
     private boolean slayedDragon = false;
     private static TheGame instance = null;
+
+    private ArrayList<Inventory> inventory = new ArrayList<>();
+
 
     public static TheGame getInstance() {
         instance = new TheGame();
@@ -26,6 +30,14 @@ public class TheGame {
     public TheGame() {
         scanner = new Scanner(System.in);
         theRooms = TheRooms.getInstance();
+    }
+    public void createEquipment(String name, int damage, int armor, int durability){
+        Inventory equipment = new Inventory();
+        equipment.name = name;
+        equipment.damage = damage;
+        equipment.armor = armor;
+        equipment.durability = durability;
+        inventory.add(inventory.size(),equipment);
     }
 
     public void play() {
@@ -54,6 +66,8 @@ public class TheGame {
                     case 3 :
                         if (!armor) {
                             System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Pick up Armor**");
+                            String armor1 = "startingArmor";
+                            createEquipment(armor1, 0, 10, 100);
                             armor = true;
                         } else{
                             System.out.println("This is the room that you found the armor, their is nothing here.");
@@ -234,6 +248,19 @@ public class TheGame {
         foundMonk = false;
 
     }
+    private void getInventory(){
+
+    }
+
+    public class Inventory{
+        public String name;
+        public int durability;
+        public int damage;
+        public int armor;
+
+    }
 }
+
+
 
 
