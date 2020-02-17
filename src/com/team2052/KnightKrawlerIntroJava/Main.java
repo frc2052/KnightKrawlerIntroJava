@@ -8,6 +8,8 @@ import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
 import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.TheGame;
+import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.Inventory;
+
 
 import java.util.Scanner;
 
@@ -53,8 +55,10 @@ public class Main {
                 TextRoomsAdventure lesson7 = new TextRoomsAdventure();
                 lesson7.play();
             }else if (val.trim().equals("8")) {
-                TheGame theGame = new TheGame();
+                Inventory inventory = new Inventory();
+                TheGame theGame = new TheGame(inventory);
                 theGame.play();
+                showMenu();
             }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
