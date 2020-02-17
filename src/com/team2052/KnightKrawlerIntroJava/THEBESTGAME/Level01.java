@@ -1,9 +1,10 @@
 package com.team2052.KnightKrawlerIntroJava.THEBESTGAME;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class TheGame {
+public class Level01 {
 
     private boolean playAgain = true;
     private boolean shield = false;
@@ -11,7 +12,7 @@ public class TheGame {
     private boolean sword = false;
     private boolean foundMonk = false;
     private boolean slayedDragon = false;
-    private static TheGame instance = null;
+    private static Level01 instance = null;
     private Inventory inventory;
 
 
@@ -21,13 +22,14 @@ public class TheGame {
 
     private int currentPos = 0;
 
-    public TheGame(Inventory m_inventory) {
+    public Level01(Inventory m_inventory) {
         inventory = m_inventory;
         scanner = new Scanner(System.in);
         theRooms = TheRooms.getInstance();
     }
 
     public void play() {
+        playAgain = true;
         while (playAgain) {
             reset();
             while (currentPos >= 0) {
@@ -274,7 +276,6 @@ public class TheGame {
         armor = false;
         slayedDragon = false;
         foundMonk = false;
-
     }
 }
 

@@ -23,12 +23,22 @@ public class Inventory {
             InventoryParameters item = inventory.get(i);
             System.out.println(item.name);
             System.out.println("Durability: " + item.durability);
-            if (item.type == ItemTypeEnum.ARMOR || item.type == ItemTypeEnum.SHIELD) {
+            if (item.type == ItemTypeEnum.ARMOR) {
                 System.out.println("Defense: " + item.defense);
-            } else if (item.type == ItemTypeEnum.WEAPON || item.type == ItemTypeEnum.SHIELD) {
+            } else if (item.type == ItemTypeEnum.WEAPON) {
                 System.out.println("Damage: " + item.damage);
+            } else if (item.type == ItemTypeEnum.SHIELD){
+                System.out.println("Damage: " + item.damage);
+                System.out.println("Defense: " + item.defense);
             }
         }
+    }
+    public ArrayList<InventoryParameters> getInventoryObject(){
+        return inventory;
+    }
+
+    public void clearInventory(){
+        inventory.clear();
     }
 
 

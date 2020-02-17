@@ -7,15 +7,18 @@ import com.team2052.KnightKrawlerIntroJava.Lesson04.Lesson4Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson05.AdventureGame;
 import com.team2052.KnightKrawlerIntroJava.Lesson06.Lesson6Runner;
 import com.team2052.KnightKrawlerIntroJava.Lesson07.TextRoomsAdventure;
-import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.TheGame;
+import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.Level01;
 import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.Inventory;
+import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.Level02;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
+
 
     //the main method is the very first code that is called in a command line application
     //this is where execution starts
@@ -56,8 +59,16 @@ public class Main {
                 lesson7.play();
             }else if (val.trim().equals("8")) {
                 Inventory inventory = new Inventory();
-                TheGame theGame = new TheGame(inventory);
-                theGame.play();
+                System.out.println("1 -> level 1");
+                System.out.println("2 -> level 2");
+                String select = input.next();
+                if(select.trim().equals("1")) {
+                    Level01 level01 = new Level01(inventory);
+                    level01.play();
+                } else if (select.trim().equals("2")){
+                    Level02 level02 = new Level02(inventory);
+                    level02.play();
+                }
                 showMenu();
             }else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
