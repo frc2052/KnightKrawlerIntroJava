@@ -18,11 +18,14 @@ import java.util.Scanner;
 public class Main {
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
+    private ArrayList<Inventory.InventoryParameters> playerInventory;
 
 
     //the main method is the very first code that is called in a command line application
     //this is where execution starts
     public static void main(String[] args) {
+        Inventory inventory = new Inventory();
+
         input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
         System.out.println("Welcome to KnightKrawler java training");
         showMenu(); //call a method to print the menu on the command line
@@ -58,7 +61,6 @@ public class Main {
                 TextRoomsAdventure lesson7 = new TextRoomsAdventure();
                 lesson7.play();
             }else if (val.trim().equals("8")) {
-                Inventory inventory = new Inventory();
                 System.out.println("1 -> level 1");
                 System.out.println("2 -> level 2");
                 String select = input.next();

@@ -268,7 +268,6 @@ public class Level01 {
                 playAgain = false;
             }
         }
-
     }
     private void reset(){
         sword = false;
