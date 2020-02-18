@@ -53,7 +53,7 @@ public class Room {
         room[2].setMonsterStory("You walk outside and breathe a breath of fresh air.  You turn around to see a wolf crouched on a rock. The wolf pounces on you and eats you for dinner. You have died");
         room[3] = new Room();
         room[3].setIsKeyInside(true);
+        room[3].setKeyStory("You enter a dark room, you see a light coming from a hidden source shining on a key, You have found a key");
         return room;
-
     }
 }
