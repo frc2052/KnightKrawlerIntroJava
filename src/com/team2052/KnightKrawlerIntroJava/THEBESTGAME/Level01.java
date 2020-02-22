@@ -1,9 +1,9 @@
 package com.team2052.KnightKrawlerIntroJava.THEBESTGAME;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TheGame {
+
+public class Level01 {
 
     private boolean playAgain = true;
     private boolean shield = false;
@@ -11,15 +11,9 @@ public class TheGame {
     private boolean sword = false;
     private boolean foundMonk = false;
     private boolean slayedDragon = false;
-    private static TheGame instance = null;
+    private static Level01 instance = null;
+    private Inventory inventory;
 
-    private ArrayList<Inventory> inventory = new ArrayList<>();
-
-
-    public static TheGame getInstance() {
-        instance = new TheGame();
-        return instance;
-    }
 
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
@@ -27,26 +21,26 @@ public class TheGame {
 
     private int currentPos = 0;
 
-    public TheGame() {
+    public Level01(Inventory m_inventory) {
+        inventory = m_inventory;
         scanner = new Scanner(System.in);
         theRooms = TheRooms.getInstance();
     }
-    public void createEquipment(String name, int damage, int armor, int durability){
-        Inventory equipment = new Inventory();
-        equipment.name = name;
-        equipment.damage = damage;
-        equipment.armor = armor;
-        equipment.durability = durability;
-        inventory.add(inventory.size(),equipment);
-    }
 
     public void play() {
+        playAgain = true;
         while (playAgain) {
             reset();
             while (currentPos >= 0) {
                 switch (currentPos) {
                     case 0:
-                        System.out.println("You were just locked a dungeon!!! The only way out is to get past an evil wizard who needs you to slay the Dragon for him. Your only choice now is to go forward");
+                        System.out.println("You were just locked in a dungeon!!! The only way out is to get past an evil wizard who needs you to slay a Dragon for him.");
+                        System.out.println("When you open your eyes you see a faint glimmer of something on the ground");
+                        System.out.println("You walk toward it and see that it is a small golden key shaped like a dragon");
+                        System.out.println("You put it in your pocket, not knowing when it will be used");
+                        System.out.println("*You found a key!*");
+                        System.out.println("Type \"inventory\" at any time to see your inventory");
+                        inventory.addItem("Dragon Key", Inventory.ItemTypeEnum.KEY, 1000, 100, 1, 0, 0);
                         currentPos = 1;
                     case 1:
                         System.out.println("You are standing at a four way intersection, and there is a door in front of you with a painting of a skinny little dude sitting in front of a computer working on something called The Game. You can enter the room to the north \"N\" or go east \"E\" or go west \"W\". Which do you choose?" );
@@ -57,6 +51,10 @@ public class TheGame {
                             currentPos = 6; //intersection 6
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 5; //Two door intersection thingy
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 2: //Spike Death
@@ -65,9 +63,8 @@ public class TheGame {
                         break;
                     case 3 :
                         if (!armor) {
-                            System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Pick up Armor**");
-                            String armor1 = "startingArmor";
-                            createEquipment(armor1, 0, 10, 100);
+                            System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Found Some Rusty Armor**");
+                            inventory.addItem("Rusty Armor", Inventory.ItemTypeEnum.ARMOR, 100, 100, 0, 0, 10);
                             armor = true;
                         } else{
                             System.out.println("This is the room that you found the armor, their is nothing here.");
@@ -77,6 +74,7 @@ public class TheGame {
                     case 4: //Shield Room
                         if (!shield){
                             System.out.println("You enter the room. In the dim lighting you see a shimmer in the back of the room. As you approach it you see that it is a rusty old shield. You pick it up. **You picked up a Shield**");
+                            inventory.addItem("Rusty Shield", Inventory.ItemTypeEnum.SHIELD, 100, 100, 5, 0,7);
                             shield = true;
                             System.out.println("You are standing in the room and you see an exit to the north, \"N\", one to the south, \"S\", and one to the east, \"E\", Which do you choose?");
                         } else {
@@ -89,6 +87,10 @@ public class TheGame {
                             currentPos = 1;
                         }else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 8;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 5:
@@ -100,6 +102,10 @@ public class TheGame {
                             currentPos = 2;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 3;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 6:
@@ -111,14 +117,18 @@ public class TheGame {
                             currentPos = 8;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 1;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 7:
                         System.out.println("You open the door and walk down a small skinny hallway. You get to the end and are attacked by three rabid dogs");
-                        if (shield == true || armor == true) {
+                        if (shield || armor) {
                             System.out.println("you are swarmed by the three dogs, but you are able to defend yourself and retreat back down the hallway.");
                             currentPos = 6;
-                        } else if (sword == true){
+                        } else if (sword){
                             System.out.println("you are swarmed by the dogs, you swing your sword and you manage to  kill one but the other two devour you. You have died.");
                         } else {
                             System.out.println("you are swarmed by the dogs and they devour you. You have died.");
@@ -133,6 +143,10 @@ public class TheGame {
                             currentPos = 6;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 4;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 9:
@@ -149,6 +163,10 @@ public class TheGame {
                             currentPos = 8;
                         }  else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 11;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 10:
@@ -160,6 +178,10 @@ public class TheGame {
                             currentPos = 4;
                         } else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 9;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 11:
@@ -171,17 +193,24 @@ public class TheGame {
                             currentPos = 12;
                         }else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 9;
+                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                            inventory.listInventory();
+                        } else {
+                            System.out.println("invalid option");
                         }
                         break;
                     case 12:
                         System.out.println("You walk into an empty room. You find a old sword. It's not much, but it'll do.");
                         System.out.println("*You have found a sword* ");
+                        inventory.addItem("Rusty Sword", Inventory.ItemTypeEnum.WEAPON, 100, 100, 10, 10,0);
                         sword = true;
                         currentPos = 11;
                         break;
                     case 13:
                         if (!foundMonk && !slayedDragon) {
                             System.out.println("You open the door and see a old man sitting on a chair. He opens his eyes and looks at you. \"I've been waiting for you.\" he says. I've been trapped down here for a while now. The way out will only open if you kill a monstrous dragon. I'm too old to kill him. Your must slay the dragon and release both of us from this eternal dungeon! Go now, but make sure you are prepared. The dragon will not easily be beaten.");
+                            System.out.println("You silently nod in agreement");
+                            System.out.println("You turn around and exit the room");
                             foundMonk = true;
                             currentPos = 11;
                         } else if (slayedDragon && !foundMonk){
@@ -238,7 +267,6 @@ public class TheGame {
                 playAgain = false;
             }
         }
-
     }
     private void reset(){
         sword = false;
@@ -246,21 +274,7 @@ public class TheGame {
         armor = false;
         slayedDragon = false;
         foundMonk = false;
-
-    }
-    private void getInventory(){
-
-    }
-
-    public class Inventory{
-        public String name;
-        public int durability;
-        public int damage;
-        public int armor;
-
     }
 }
-
-
 
 
