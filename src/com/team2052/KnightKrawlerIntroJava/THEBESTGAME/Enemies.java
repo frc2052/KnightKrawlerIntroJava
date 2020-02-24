@@ -2,7 +2,7 @@ package com.team2052.KnightKrawlerIntroJava.THEBESTGAME;
 
 public class Enemies {
 
-    public Enemy[] enemies = new Enemy[1];
+    public Enemy[] enemies = new Enemy[2];
 
 
     public Enemies(){
@@ -12,12 +12,16 @@ public class Enemies {
         littleOrc.standardDamage = 2;
         littleOrc.heavyDamage = 3;
         littleOrc.bashDamage = 1;
-        enemies[0] = littleOrc;
+        enemies[1] = littleOrc;
+
+        Enemy HEHEHEHEHEHEHEHE = new Enemy();
+        HEHEHEHEHEHEHEHE.name = "HEHEHEHEHEHEHEHEHEHEHEHEHEHE";
+        enemies[0] = HEHEHEHEHEHEHEHE;
     }
 
     public int findEnemy(String enemy){
         for (int i = 0; i < enemies.length; i++){
-            if (enemy == enemies[i].name){
+            if (enemy.equals(enemies[i].name)){
                 return i;
             }
         }

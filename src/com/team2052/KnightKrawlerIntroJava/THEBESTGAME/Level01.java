@@ -40,8 +40,8 @@ public class Level01 {
                         System.out.println("You walk toward it and see that it is a small golden key shaped like a dragon");
                         System.out.println("You put it in your pocket, not knowing when it will be used");
                         System.out.println("*You found a key!*");
-                        System.out.println("Type \"inventory\" at any time to see your inventory");
-                        inventory.addItem("Dragon Key", Inventory.ItemTypeEnum.KEY, 1000, 100, 1, 2, 0);
+                        System.out.println("Type \"playerInventory\" at any time to see your playerInventory");
+                        inventory.addItem("Dragon Key", Inventory.ItemTypeEnum.KEY, 1000, 100, 1, 2,0);
                         currentPos = 1;
                     case 1:
                         System.out.println("You are standing at a four way intersection, and there is a door in front of you with a painting of a skinny little dude sitting in front of a computer working on something called The Game. You can enter the room to the north \"N\" or go east \"E\" or go west \"W\". Which do you choose?" );
@@ -52,7 +52,7 @@ public class Level01 {
                             currentPos = 6; //intersection 6
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 5; //Two door intersection thingy
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -88,7 +88,7 @@ public class Level01 {
                             currentPos = 1;
                         }else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 8;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -103,7 +103,7 @@ public class Level01 {
                             currentPos = 2;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 3;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -118,7 +118,7 @@ public class Level01 {
                             currentPos = 8;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 1;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -144,7 +144,7 @@ public class Level01 {
                             currentPos = 6;
                         } else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 4;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -164,7 +164,7 @@ public class Level01 {
                             currentPos = 8;
                         }  else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 11;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -179,7 +179,7 @@ public class Level01 {
                             currentPos = 4;
                         } else if (move.toLowerCase().trim().equals("e")) {
                             currentPos = 9;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
@@ -194,7 +194,7 @@ public class Level01 {
                             currentPos = 12;
                         }else if (move.toLowerCase().trim().equals("w")) {
                             currentPos = 9;
-                        } else if (move.toLowerCase().trim().equals("inventory")) {
+                        } else if (move.toLowerCase().trim().equals("playerInventory")) {
                             inventory.listInventory();
                         } else {
                             System.out.println("invalid option");
