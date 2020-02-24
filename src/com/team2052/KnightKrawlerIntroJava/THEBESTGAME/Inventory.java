@@ -70,7 +70,7 @@ public class Inventory {
     }
 
     public void printAttackChoices(){
-        System.out.println("PRINTING ATTACK CHOICES!!!!!!!!!!!!!!!");
+        System.out.println("What do you want to attack with?");
         int itemNumber = 1;
         listType(ItemTypeEnum.WEAPON);
         listType(ItemTypeEnum.SHIELD);

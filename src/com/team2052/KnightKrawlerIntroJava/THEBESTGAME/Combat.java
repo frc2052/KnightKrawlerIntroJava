@@ -9,6 +9,7 @@ public class Combat {
     private Inventory inventory;
     private String input = null;
     private Scanner scanner = null;
+    private attackTypeEnum playerAttackType;
 
     public Combat(Inventory inventory){
         this.inventory = inventory;
@@ -20,15 +21,49 @@ public class Combat {
         enemyHealth = enemy.health;
         while (playerHealth > 0 && enemyHealth > 0){
             System.out.println(enemy.name + " is at " + enemyHealth + " health!");
-            System.out.println("What do you want to attack with?");
             inventory.printAttackChoices();
             input = scanner.nextLine();
-            System.out.println("player choice (hehe) " + inventory.playerInventory.get(inventory.findAttackChoice(Integer.parseInt(input))).name);
-            playerHealth = -1;
-
-
+            int attackChoicePosInt = inventory.findAttackChoice(Integer.parseInt(input));
+            System.out.println("player choice (hehe) " + inventory.playerInventory.get(attackChoicePosInt).name);
+            setPlayerAttackType(inventory.playerInventory.get(attackChoicePosInt).type);
+            System.out.println("player attack choice " + playerAttackType);
+            doDamage(attackChoicePosInt);
         }
         return playerHealth;
+    }
+
+    public void setPlayerAttackType(Inventory.ItemTypeEnum type){
+
+        if (type == Inventory.ItemTypeEnum.WEAPON){
+            System.out.println("1 -> Standard Attack");
+            System.out.println("2 -> Heavy Attack");
+            int input = Integer.parseInt(scanner.nextLine());
+            if (input == 1){
+                playerAttackType = attackTypeEnum.STANDARD;
+            } else if (input == 2){
+                playerAttackType = attackTypeEnum.HEAVY;
+            }
+        } else if (type == Inventory.ItemTypeEnum.SHIELD){
+            System.out.println("1 -> block/parry");
+            System.out.println("2 -> Shield bash");
+            int input = Integer.parseInt(scanner.nextLine());
+            if (input == 1){
+                playerAttackType = attackTypeEnum.PARRY;
+            } else if (input == 2){
+                playerAttackType = attackTypeEnum.BASH;
+            }
+        }
+    }
+    public void doDamage(int playerChoice){
+        if (playerAttackType == attackTypeEnum.STANDARD){
+            enemyHealth = enemyHealth - inventory.playerInventory.get(playerChoice).damage1;
+        } else if (playerAttackType == attackTypeEnum.HEAVY){
+            enemyHealth = enemyHealth - inventory.playerInventory.get(playerChoice).damage2;
+        } else if (playerAttackType == attackTypeEnum.PARRY){
+            enemyHealth = enemyHealth - inventory.playerInventory.get(playerChoice).damage2;
+        } else if (playerAttackType == attackTypeEnum.BASH){
+            enemyHealth = enemyHealth - inventory.playerInventory.get(playerChoice).damage1;
+        }
     }
 
     public enum attackTypeEnum{

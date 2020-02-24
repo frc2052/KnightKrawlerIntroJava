@@ -30,6 +30,7 @@ public class Level02 {
                 playerInventory.addItem("HEHE3", Inventory.ItemTypeEnum.ARMOR, 10000000, 100, 0, 0, 10);
                 System.out.println("You Have encountered a " + enemies.enemies[enemies.findEnemy("little Orc")].name);
                 playerHealth = combat.fight(playerHealth, enemies.enemies[enemies.findEnemy("little Orc")]);
+                
             }
             System.out.println("do you want to play again?");
             System.out.println("\"Y\" or \"N\"");
