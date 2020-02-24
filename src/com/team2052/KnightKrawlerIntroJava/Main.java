@@ -26,6 +26,7 @@ public class Main {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
 
+
         input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
         System.out.println("Welcome to KnightKrawler java training");
         showMenu(); //call a method to print the menu on the command line

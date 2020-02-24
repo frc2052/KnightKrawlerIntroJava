@@ -1,17 +1,18 @@
 package com.team2052.KnightKrawlerIntroJava.THEBESTGAME;
 
-import com.team2052.KnightKrawlerIntroJava.THEBESTGAME.Inventory;
-
 public class Level02 {
     private Inventory playerInventory;
-    private Inventory enemyInventory = new Inventory();
+    private Combat combat;
 
     public Level02(Inventory m_inventory){
         playerInventory = m_inventory;
+         combat = new Combat(playerInventory);
     }
 
     public void play(){
         playerInventory.listInventory();
+        
+
     }
 
 

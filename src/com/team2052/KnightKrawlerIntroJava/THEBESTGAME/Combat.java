@@ -10,12 +10,16 @@ public class Combat {
         this.inventory = inventory;
     }
 
-    public int fight(int startingPlayerHealth, String enemyName, int startingEnemyHealth, int eDamage){
+    public int fight(int startingPlayerHealth, Enemies.Enemy enemy){
         playerHealth = startingPlayerHealth;
-        enemyHealth = startingEnemyHealth;
+        enemyHealth = enemy.health;
         while (playerHealth > 0 && enemyHealth > 0){
 
         }
         return playerHealth;
+    }
+
+    public enum attackTypeEnum{
+
     }
 }

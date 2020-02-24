@@ -39,14 +39,20 @@ public class Inventory {
             }
         }
     }
-    public void listWeapons(){
+    public void listType(ItemTypeEnum itemType){
         if(inventory.size() == 0){
             System.out.println("you have nothing in your inventory");
         } else {
-            System.out.println("Weapons: ");
+            if (itemType == ItemTypeEnum.WEAPON) {
+                System.out.println("Weapons: ");
+            } else if (itemType == ItemTypeEnum.ARMOR){
+                System.out.println("Armor: ");
+            } else if (itemType == ItemTypeEnum.SHIELD){
+                System.out.println("Shields: ");
+            }
             for(int i = 0; i < inventory.size(); i++){
                 InventoryParameters item = inventory.get(i);
-                if(item.type == ItemTypeEnum.WEAPON){
+                if(item.type == itemType){
                     System.out.println(item.name);
                     System.out.println("Standard Damage: " + item.damage1);
                     System.out.println("Heavy Damage: " + item.damage2);
