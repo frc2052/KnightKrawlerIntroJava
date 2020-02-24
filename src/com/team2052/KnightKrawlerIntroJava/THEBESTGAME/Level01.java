@@ -41,7 +41,7 @@ public class Level01 {
                         System.out.println("You put it in your pocket, not knowing when it will be used");
                         System.out.println("*You found a key!*");
                         System.out.println("Type \"inventory\" at any time to see your inventory");
-                        inventory.addItem("Dragon Key", Inventory.ItemTypeEnum.KEY, 1000, 100, 1, 0);
+                        inventory.addItem("Dragon Key", Inventory.ItemTypeEnum.KEY, 1000, 100, 1, 2, 0);
                         currentPos = 1;
                     case 1:
                         System.out.println("You are standing at a four way intersection, and there is a door in front of you with a painting of a skinny little dude sitting in front of a computer working on something called The Game. You can enter the room to the north \"N\" or go east \"E\" or go west \"W\". Which do you choose?" );
@@ -65,7 +65,7 @@ public class Level01 {
                     case 3 :
                         if (!armor) {
                             System.out.println("You enter the wolf room and look around. You notice that there is a skeleton in the corner just chillin. So you walk over to him and see that he has really nice armor. **You Found Some Rusty Armor**");
-                            inventory.addItem("Rusty Armor", Inventory.ItemTypeEnum.ARMOR, 100, 100, 0, 10);
+                            inventory.addItem("Rusty Armor", Inventory.ItemTypeEnum.ARMOR, 100, 100, 0, 0, 10);
                             armor = true;
                         } else{
                             System.out.println("This is the room that you found the armor, their is nothing here.");
@@ -75,7 +75,7 @@ public class Level01 {
                     case 4: //Shield Room
                         if (!shield){
                             System.out.println("You enter the room. In the dim lighting you see a shimmer in the back of the room. As you approach it you see that it is a rusty old shield. You pick it up. **You picked up a Shield**");
-                            inventory.addItem("Rusty Shield", Inventory.ItemTypeEnum.SHIELD, 100, 100, 5, 7);
+                            inventory.addItem("Rusty Shield", Inventory.ItemTypeEnum.SHIELD, 100, 100, 5, 0, 7);
                             shield = true;
                             System.out.println("You are standing in the room and you see an exit to the north, \"N\", one to the south, \"S\", and one to the east, \"E\", Which do you choose?");
                         } else {
@@ -203,7 +203,7 @@ public class Level01 {
                     case 12:
                         System.out.println("You walk into an empty room. You find a old sword. It's not much, but it'll do.");
                         System.out.println("*You have found a sword* ");
-                        inventory.addItem("Rusty Sword", Inventory.ItemTypeEnum.WEAPON, 100, 100, 10, 0);
+                        inventory.addItem("Rusty Sword", Inventory.ItemTypeEnum.WEAPON, 100, 100, 10, 15, 0);
                         sword = true;
                         currentPos = 11;
                         break;
