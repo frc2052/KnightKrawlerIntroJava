@@ -12,8 +12,8 @@ public class Inventory {
         equipment.type = itemType;
         equipment.durability = itemDurability;
         equipment.dropPercent = itemDropPercent;
-        equipment.damage1 = itemDamage;
-        equipment.damage2 = itemDamage2;
+        equipment.standardDamage = itemDamage;
+        equipment.heavyDamage = itemDamage2;
         equipment.defense = itemDefense;
         playerInventory.add(equipment);
     }
@@ -30,10 +30,10 @@ public class Inventory {
                 if (item.type == ItemTypeEnum.ARMOR) {
                     System.out.println("Defense: " + item.defense);
                 } else if (item.type == ItemTypeEnum.WEAPON) {
-                    System.out.println("Standard Damage: " + item.damage1);
-                    System.out.println("Heavy Damage: " + item.damage2);
+                    System.out.println("Standard Damage: " + item.standardDamage);
+                    System.out.println("Heavy Damage: " + item.heavyDamage);
                 } else if (item.type == ItemTypeEnum.SHIELD) {
-                    System.out.println("Damage: " + item.damage1);
+                    System.out.println("Damage: " + item.standardDamage);
                     System.out.println("Defense: " + item.defense);
                 }
             }
@@ -56,11 +56,11 @@ public class Inventory {
                     System.out.println(item.name);
                     System.out.println("Durability: " + item.durability);
                     if(itemType == ItemTypeEnum.WEAPON) {
-                        System.out.println("Standard Damage: " + item.damage1);
-                        System.out.println("Heavy Damage: " + item.damage2);
+                        System.out.println("Standard Damage: " + item.standardDamage);
+                        System.out.println("Heavy Damage: " + item.heavyDamage);
                     } else if (itemType == ItemTypeEnum.SHIELD){
                         System.out.println("Defense: " + item.defense);
-                        System.out.println("Bash Damage: " + item.damage1);
+                        System.out.println("Bash Damage: " + item.standardDamage);
                     } else if (itemType == ItemTypeEnum.ARMOR){
                         System.out.println("Defense: " + item.defense);
                     }
@@ -111,8 +111,8 @@ public class Inventory {
         public ItemTypeEnum type;
         public int durability;
         public double dropPercent;
-        public int damage1;
-        public int damage2;
+        public int standardDamage;
+        public int heavyDamage;
         public int defense;
     }
 

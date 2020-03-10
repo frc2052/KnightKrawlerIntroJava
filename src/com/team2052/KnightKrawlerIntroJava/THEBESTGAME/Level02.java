@@ -24,13 +24,15 @@ public class Level02 {
         playAgain = true;
         while(playAgain) {
             reset();
-            while(playerHealth >= 0) {
+            while(playerHealth > 0) {
                 playerInventory.addItem("HeHe", Inventory.ItemTypeEnum.WEAPON, 10000000, 100, 10, 20, 0);
                 playerInventory.addItem("hehe2", Inventory.ItemTypeEnum.SHIELD, 10000000, 100, 4, 0, 5);
                 playerInventory.addItem("HEHE3", Inventory.ItemTypeEnum.ARMOR, 10000000, 100, 0, 0, 10);
                 System.out.println("You Have encountered a " + enemies.enemies[enemies.findEnemy("little Orc")].name);
                 playerHealth = combat.fight(playerHealth, enemies.enemies[enemies.findEnemy("little Orc")]);
-                
+                System.out.println("You have defeated the little orc! Now you die");
+                playerHealth = 0;
+
             }
             System.out.println("do you want to play again?");
             System.out.println("\"Y\" or \"N\"");
