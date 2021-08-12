@@ -3,6 +3,8 @@ package com.team2052.javaintro;
 import java.util.Scanner;
 
 import com.team2052.javaintro.lesson01.BasicCalculator;
+import com.team2052.javaintro.lesson02.AreaCalculator;
+
 
 
 public class Main {
@@ -27,7 +29,12 @@ public class Main {
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
-            } else {
+            } 
+            else if (val.trim().equals("2")) {
+                AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
+                calc.run(); //call the "Run" method on the object
+            }
+            else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
