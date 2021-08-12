@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class BasicCalculator {
     //this is a private class level variable. only methods in this class can use this variable
     private Scanner scanner = null;
+    private int total;
 
     public BasicCalculator() {
         //this is a constructor. Constructor are called if someone calls "new BasicCalculator()" to create
@@ -23,9 +24,9 @@ public class BasicCalculator {
         if (option == 1) {
             add();
         } else if (option == 2) {
-            //TODO: make a subtract method
             subtract();
         } else if (option == 3) {
+            nonStopAddition();
             //TODO: make a continuous add method
             //HINT: you will need to create a class level variable to keep the running total
         } else {
@@ -64,5 +65,31 @@ public class BasicCalculator {
                 String prompt = scanner.nextLine();
                 keepGoing = prompt.trim().toLowerCase().equals("y"); 
             }
+    }
+
+    private void nonStopAddition() {
+        boolean keepGoing = true;
+        System.out.println("Enter numbers to be added to one another until you want to stop.");
+        System.out.println("To stop and see the total, enter 0 or <0");
+        while (keepGoing) {
+           int number = scanner.nextInt();
+           
+           if (number <=0){
+            System.out.println("Your total is " + total);
+            keepGoing = false;
+
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+            total = 0;
+           }
+
+           else if (number >0){
+               int sum = number + total;
+               total = sum;
+           }
+
+        }
     }
 }
