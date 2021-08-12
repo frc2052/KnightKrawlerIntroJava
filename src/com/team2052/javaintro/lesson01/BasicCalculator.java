@@ -27,7 +27,6 @@ public class BasicCalculator {
             subtract();
         } else if (option == 3) {
             nonStopAddition();
-            //TODO: make a continuous add method
             //HINT: you will need to create a class level variable to keep the running total
         } else {
             System.out.println("Invalid option. Returning to main menu.");
