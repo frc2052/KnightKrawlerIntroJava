@@ -63,5 +63,6 @@ public class BasicCalculator {
                 scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
                 String prompt = scanner.nextLine();
                 keepGoing = prompt.trim().toLowerCase().equals("y"); 
+            }
     }
 }
