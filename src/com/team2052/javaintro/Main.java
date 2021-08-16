@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.team2052.javaintro.lesson01.BasicCalculator;
 import com.team2052.javaintro.lesson02.AreaCalculator;
+import com.team2052.javaintro.lesson03.Lesson3Runner;
 
 
 
@@ -34,6 +35,10 @@ public class Main {
                 AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
             }
+            else if (val.trim().equals("3")) {
+                Lesson3Runner calc = new Lesson3Runner(); //create a new BasicCalculator ojbect
+                calc.run(); //call the "Run" method on the object
+            }
             else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -46,5 +51,6 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
+        System.out.println("3 -> lesson 3, getters and setters");
     }
 }
