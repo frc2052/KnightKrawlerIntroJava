@@ -19,7 +19,7 @@ public class Lesson3Runner {
             System.out.println("2--> SUBTRACT");
             System.out.println("3--> MULTIPLY");
             System.out.println("4--> DIVIDE");
-             int option = scanner.nextInt();
+            double option = scanner.nextDouble();
             if (option == 1) {
                 calc.setCalcOperation(MultiCalculator.Operation.ADD);
             } else if (option == 2) {
@@ -31,20 +31,13 @@ public class Lesson3Runner {
             }else {
             System.out.println("Invalid option. Returning to main menu.");
             }
-            input();
-    }
 
-    private void input() {
-        boolean keepGoing = true;
-        while (keepGoing) {
-            MultiCalculator calc = new MultiCalculator();
             System.out.println("Please enter the first number.");
-            int number1 = scanner.nextInt();
+            double number1 = scanner.nextDouble();
             calc.setNumber1(number1);
             System.out.println("Please enter the second number");
-            int number2 = scanner.nextInt();
+            double number2 = scanner.nextDouble();
             calc.setNumber2(number2);
             System.out.println("Answer " + calc.calculate());
         }
     }
-}

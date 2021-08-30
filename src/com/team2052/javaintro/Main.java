@@ -28,16 +28,16 @@ public class Main {
             } else if (val.trim().toLowerCase().equals("help")) {
                 showMenu();
             } else if (val.trim().equals("1")) {
-                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                BasicCalculator lesson1 = new BasicCalculator(); //create a new BasicCalculator ojbect
+                lesson1.run(); //call the "Run" method on the object
             } 
             else if (val.trim().equals("2")) {
-                AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                AreaCalculator lesson2 = new AreaCalculator(); //create a new BasicCalculator ojbect
+                lesson2.run(); //call the "Run" method on the object
             }
             else if (val.trim().equals("3")) {
-                Lesson3Runner calc = new Lesson3Runner(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                Lesson3Runner lesson3 = new Lesson3Runner(); //create a new BasicCalculator ojbect
+                lesson3.run(); //call the "Run" method on the object
             }
             else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");

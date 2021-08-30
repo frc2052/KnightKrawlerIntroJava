@@ -2,8 +2,8 @@ package com.team2052.javaintro.lesson03;
 
 
 public class MultiCalculator {
-    private int number1;
-    private int number2;
+    private double number1;
+    private double number2;
     private Operation calcOperation;
 
     public MultiCalculator() {
@@ -11,19 +11,19 @@ public class MultiCalculator {
     }
 
 
-    public int getNumber1() {
+    public double getNumber1() {
         return number1;
     }
 
-    public void setNumber1(int val){
+    public void setNumber1(double val){
         number1 = val;
     }
 
-    public int getNumber2() {
+    public double getNumber2() {
         return number2;
     }
 
-    public void setNumber2(int val){
+    public void setNumber2(double val){
         number2 = val;
     }
 
@@ -36,7 +36,7 @@ public class MultiCalculator {
         calcOperation = val;
     }
 
-    public int calculate() {
+    public double calculate() {
         if (getCalcOperation() == Operation.ADD) {
             return this.getNumber1() + this.getNumber2();
         } else if (getCalcOperation() == Operation.SUBTRACT) {
@@ -48,6 +48,7 @@ public class MultiCalculator {
         } else {
             System.out.println("Error :(");;
         }
+        return number1;
     }
 
     
