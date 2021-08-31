@@ -5,6 +5,8 @@ import java.util.Scanner;
 import com.team2052.javaintro.lesson01.BasicCalculator;
 import com.team2052.javaintro.lesson02.AreaCalculator;
 import com.team2052.javaintro.lesson03.Lesson3Runner;
+import com.team2052.javaintro.lesson04.Lesson4Runner;
+
 
 
 
@@ -38,6 +40,10 @@ public class Main {
             else if (val.trim().equals("3")) {
                 Lesson3Runner lesson3 = new Lesson3Runner(); //create a new BasicCalculator ojbect
                 lesson3.run(); //call the "Run" method on the object
+            }
+            else if (val.trim().equals("4")) {
+                Lesson4Runner lesson4 = new Lesson4Runner(); //create a new BasicCalculator ojbect
+                lesson4.run(); //call the "Run" method on the object
             }
             else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
