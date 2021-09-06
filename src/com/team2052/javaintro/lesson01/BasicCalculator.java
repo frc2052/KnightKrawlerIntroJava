@@ -75,7 +75,7 @@ public class BasicCalculator {
             int number1 = scanner.nextInt();
             System.out.println("Please enter the second number");
             int number2 = scanner.nextInt();
-            int difference = number1 + number2;
+            int difference = number1 - number2;
             System.out.println("The difference of those two numbers is " + difference);
             System.out.println("Run Again? (enter \"y\" to continue)");
             scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
