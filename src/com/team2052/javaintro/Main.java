@@ -6,7 +6,7 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 import com.team2052.javaintro.lesson02.AreaCalculator;
 import com.team2052.javaintro.lesson03.Lesson3Runner;
 import com.team2052.javaintro.lesson04.Lesson4Runner;
-
+import com.team2052.javaintro.lesson05.AdventureGame;
 
 
 
@@ -45,6 +45,10 @@ public class Main {
                 Lesson4Runner lesson4 = new Lesson4Runner(); //create a new BasicCalculator ojbect
                 lesson4.run(); //call the "Run" method on the object
             }
+            else if (val.trim().equals("5")) {
+                    AdventureGame lesson5 = new AdventureGame(); //create a new BasicCalculator ojbect
+                    lesson5.play(); //call the "Run" method on the object
+            }
             else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -58,6 +62,7 @@ public class Main {
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
-        System.out.println("3 -> lesson 4,");
+        System.out.println("3 -> lesson 4, favorite numbers");
+        System.out.println("3 -> lesson 5, T.A.G");
     }
 }
