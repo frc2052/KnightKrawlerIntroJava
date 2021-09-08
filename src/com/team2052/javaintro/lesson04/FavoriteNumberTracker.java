@@ -1,27 +1,19 @@
 package com.team2052.javaintro.lesson04;
 
 public class FavoriteNumberTracker {
-    private int number1;
-    private int number2;
-    //private Operation calcOperation;
+private static FavoriteNumberTracker instance = new FavoriteNumberTracker();
+private FavoriteNumberTracker() {}
+public static FavoriteNumberTracker getInstance() {
+    return instance;
+}
 
-    public FavoriteNumberTracker() {
+    private int number;
+    public int getMyNumber() {
+        return number;
     }
 
-
-    public int getNumber1() {
-        return number1;
+    public void setMyNumber(Integer val){
+        number = val;
     }
 
-    public void setNumber1(Integer val){
-        number1 = val;
-    }
-
-    public int getNumber2() {
-        return number2;
-    }
-
-    public void setNumber2(int val){
-        number2 = val;
-    }
 }

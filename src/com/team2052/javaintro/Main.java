@@ -58,5 +58,6 @@ public class Main {
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
+        System.out.println("3 -> lesson 4,");
     }
 }
