@@ -1,15 +1,15 @@
 package com.team2052.javaintro;
 
-import com.team2052.javaintro.lesson01.BasicCalculator;
-
 import java.util.Scanner;
+
+import com.team2052.javaintro.lesson01.BasicCalculator;
 
 public class Main {
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
-
     //the main method is the very first code that is called in a command line application
     //this is where execution starts
+
     public static void main(String[] args) {
         input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
         System.out.println("Welcome to KnightKrawler java training");
