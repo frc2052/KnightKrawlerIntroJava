@@ -9,7 +9,7 @@ public class AdventureGame {
     private String move = null; //reuse the variable to collect user input
     //int scrolls = 10;
     boolean scrolls = false;
-    boolean lichAlive = true;
+    boolean lichAlive = false;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -151,18 +151,13 @@ public class AdventureGame {
                             favorite1.setMyNumber(number1);
                                 if (number1 > 35 )
                                     {
-                                        System.out.println(" ");
-                                        System.out.println(" 'I'm truly amazed, you're power level...' ");
+                                        System.out.println("\n 'I'm truly amazed, your power level...' ");
                                         System.out.println(" 'It's lower than anything I've ever seen!' ");
-                                        System.out.println(" ");
-                                        System.out.println("You lose your balance, sudden dizzyness overcoming you.");
-                                        System.out.println("");
-                                        System.out.println("Emerald colored smoke fills your lungs.");
-                                        System.out.println(" ");
-                                        System.out.println("The last thing you hear is the lich's voice.");
-                                        System.out.println("");
-                                        System.out.println(" 'You should have been more humble, young adventurer!' ");
-                                        System.out.println("You died.");
+                                        System.out.println("\nYou lose your balance, sudden dizzyness overcoming you.");
+                                        System.out.println("\nEmerald colored smoke fills your lungs.");
+                                        System.out.println("\nThe last thing you hear is the lich's voice.");
+                                        System.out.println("\n 'You should have been more humble, young adventurer!' ");
+                                        System.out.println("\nYou died.");
                                         currentPos = 0;
                                     }
                                 if (number1 < 35 )
@@ -182,65 +177,38 @@ public class AdventureGame {
                                 if (number1 == 35)
                                     {
                                         System.out.println("You don't have a weapon but...");
-                                        System.out.println("");
-                                        System.out.println("Running, you grab one of the torches on the wall.");
-                                        System.out.println("");
-                                        System.out.println("You bare it's heat until you get close enought to the lich. After all, he can't move.");
-                                        System.out.println("");
-                                        System.out.println("The rags on the nearly decomposed body ignite easily.");
-                                        System.out.println("");
-                                        System.out.println(" 'I know, I know, why aren't I fighting? Don't I have something to protect?' ");
-                                        System.out.println("");
-                                        System.out.println("The flames climb higher. He leans down toward you.");
-                                        System.out.println(" 'When you've been undead as long as I have, nothing really matters anymore.' ");
-                                        System.out.println("");
-                                        System.out.println(" The lich burns, chains and all. A new dust falls upon the floor.");
-                                        System.out.println("You won!");
-                                        System.out.println(" ");
-                                        System.out.println(" ");
-                                        System.out.println(" The same whispery voice you first heard when you fell into this dunegon speaks again.");
-                                        System.out.println("");
-                                        System.out.println(" 'What... intuition. It isn't often someone like that comes along.");
-                                        System.out.println("");
-                                        System.out.println("Your pocket has a certain heft that wasn't there before.");
-                                        System.out.println("");
-                                        System.out.println("You reach, and produce a teardrop ruby ammulet.");
-                                        System.out.println("");
-                                        System.out.println("It sits perfectly around your neck");
-                                        System.out.println(" ");
-                                        System.out.println(" ");
-                                        System.out.println(" ");
+                                        System.out.println("\nRunning, you grab one of the torches on the wall.");
+                                        System.out.println("\nYou bare it's heat until you get close enought to the lich. After all, he can't move.");
+                                        System.out.println("\nThe rags on the nearly decomposed body ignite easily.");
+                                        System.out.println("\n 'I know, I know, why aren't I fighting? Don't I have something to protect?' ");
+                                        System.out.println("\nThe flames climb higher. He leans down toward you.");
+                                        System.out.println("\n 'When you've been undead as long as I have, nothing really matters anymore.' ");
+                                        System.out.println("\n The lich burns, chains and all. A new dust falls upon the floor.");
+                                        System.out.println("\nYou won!");
+                                        System.out.println("\n\n The same whispery voice you first heard when you fell into this dunegon speaks again.");
+                                        System.out.println("\n 'What... intuition. It isn't often someone like that comes along.");
+                                        System.out.println("\nYour pocket has a certain heft that wasn't there before.");
+                                        System.out.println("\nYou reach, and produce a teardrop ruby ammulet.");
+                                        System.out.println("\nIt sits perfectly around your neck\n\n\n");
                                         currentPos = 21;
                                     }
                                 //currentPos = -1;
-                    } else if (move.toLowerCase().trim().equals("b")) {
-                        System.out.println("     ");
-                        System.out.println("     ");
-                        System.out.println("You notice a dusty plaque next to the door.");
-                        System.out.println("");
-                        System.out.println("You reach out and brush it off.");
-                        System.out.println("     ");
-                        System.out.println("It reads:");
-                        System.out.println("     ");
-                        System.out.println("");
-                        System.out.println("Long ago when man thought he conquered gods.");
-                        System.out.println("");
-                        System.out.println("A dark and powerful foe was made.");
-                        System.out.println("");
-                        System.out.println("Living to dead, now stands on death's treasure.");
-                        System.out.println("");
-                        System.out.println("To stay until the world decays.");
-                        System.out.println("");
-                        System.out.println("     ");
-                        System.out.println("     ");
-                        System.out.println("Creepy...");
-                        currentPos = 1;
-                    } else {
-                        System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
-                    }
-                    break;
-                    }
-                    else if(lichAlive = false)
+                            } else if (move.toLowerCase().trim().equals("b")) {
+                                System.out.println("\n\nYou notice a dusty plaque next to the door.");
+                                System.out.println("\nYou reach out and brush it off.");
+                                System.out.println("\nIt reads:");
+                                System.out.println("\n\nLong ago when man thought he conquered gods.");
+                                System.out.println("\nA dark and powerful foe was made.");
+                                System.out.println("\nLiving to dead, now stands on death's treasure.");
+                                System.out.println("\nTo stay until the world decays.");
+                                System.out.println("\n\n\nCreepy...");
+                                currentPos = 1;
+                            }else {
+                            System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
+                            }
+                            break;
+                        }
+                    else
                     {
                         System.out.println("\n The door still stands ajar");
                         System.out.println("As you enter, a chill seeps through you");
