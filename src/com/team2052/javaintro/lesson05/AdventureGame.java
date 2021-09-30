@@ -211,9 +211,9 @@ public class AdventureGame {
                     else
                     {
                         System.out.println("\n The door still stands ajar");
-                        System.out.println("As you enter, a chill seeps through you");
-                        System.out.println("It's as if the lich's haunted laughter still fills the hall.");
-                        System.out.println("The torches now flicker yellow, the emerald hue lost.");
+                        System.out.println("\nAs you enter, a chill seeps through you");
+                        System.out.println("\nIt's as if the lich's haunted laughter still fills the hall.");
+                        System.out.println("\nThe torches now flicker yellow, the emerald hue lost.");
                         currentPos = 21;
                         break;
                     }
@@ -237,38 +237,22 @@ public class AdventureGame {
 
                     case 22:
                     System.out.println("A set of stairs lead down to a dimly lit tunnel.");
-                    System.out.println("");
-                    System.out.println("The ground here isn't the polished stone like above.");
-                    System.out.println("");
-                    System.out.println("Hard packed earth lines the floor and walls. Crude timber supports hold the ceiling, at least they look sturdy.");
-                    System.out.println("");
-                    System.out.println(" A short walk leads you to another set of doors.");
-                    System.out.println("");
-                    System.out.println("They open at the slightest touch.");
-                    System.out.println("");
-                    System.out.println(" A simple pedestal stands at the back of the small room.");
-                    System.out.println("");
-                    System.out.println(" The walls are adorned with symbols carved into the solid dirt");
-                    System.out.println("");
-                    System.out.println(" Based on the repetion, and punctuation, they must be a language.");
-                    System.out.println("");
-                    System.out.println("On the pedestal, there's an ancient but sturdy looking scroll.");
-                    System.out.println("");
-                    System.out.println("The scroll rests on the left side of the stand, with the right exposed, but free of dust.");
-                    System.out.println("");
-                    System.out.println("As you weigh the decision of talking the scroll, you place your hand on the open wood.");
-                    System.out.println("");
-                    System.out.println("It begins to glow as recessed gemstones come up. It warms under your touch.");
-                    System.out.println("");
-                    System.out.println("Whispers stream from the runes on the walls");
-                    System.out.println("");
-                    System.out.println(" 'go on,' they chorus, 'take it'");
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println("Do you take the scrolls?");
-                    System.out.println(" 'E' to take the scrolls, 'B' to decide not to.");
-
-                    //scrolls = 20;
+                    System.out.println("\nThe ground here isn't the polished stone like above.");
+                    System.out.println("\nHard packed earth lines the floor and walls. Crude timber supports hold the ceiling, at least they look sturdy.");
+                    System.out.println("\nA short walk leads you to another set of doors.");
+                    System.out.println("\nThey open at the slightest touch.");
+                    System.out.println("\nA simple pedestal stands at the back of the small room.");
+                    System.out.println("\nThe walls are adorned with symbols carved into the solid dirt");
+                    System.out.println("\nBased on the repetion, and punctuation, they must be a language.");
+                    System.out.println("\nOn the pedestal, there's an ancient but sturdy looking scroll.");
+                    System.out.println("\nThe scroll rests on the left side of the stand, with the right exposed, but free of dust.");
+                    System.out.println("\nAs you weigh the decision of talking the scroll, you place your hand on the open wood.");
+                    System.out.println("\nIt begins to glow as recessed gemstones come up. It warms under your touch.");
+                    System.out.println("\nWhispers stream from the runes on the walls");
+                    System.out.println("\n 'go on,' they chorus, 'take it'");
+                    System.out.println("\n\nDo you take the scrolls?");
+                    System.out.println("\n 'E' to take the scrolls, 'B' to decide not to.");
+                    
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
                         
