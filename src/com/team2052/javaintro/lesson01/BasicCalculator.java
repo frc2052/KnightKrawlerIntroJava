@@ -23,8 +23,9 @@ public class BasicCalculator {
         if (option == 1) {
             add();
         } else if (option == 2) {
-            //TODO: make a subtract method
+            subtract();
         } else if (option == 3) {
+    
             //TODO: make a continuous add method
             //HINT: you will need to create a class level variable to keep the running total
         } else {
@@ -48,4 +49,20 @@ public class BasicCalculator {
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
+
+    private void subtract() {
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number.");
+            int number1 = scanner.nextInt();
+            System.out.println("Please enter the second number");
+            int number2 = scanner.nextInt();
+            int sum = number1 - number2;
+            System.out.println("The sum of those two numbers is " + sum);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+    }
+}
 }
