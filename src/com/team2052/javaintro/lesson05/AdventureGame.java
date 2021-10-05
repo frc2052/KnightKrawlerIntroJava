@@ -9,7 +9,7 @@ public class AdventureGame {
     private String move = null; //reuse the variable to collect user input
     //int scrolls = 10;
     boolean scrolls = false;
-    boolean lichAlive = false;
+    boolean lichAlive = true;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -69,7 +69,7 @@ public class AdventureGame {
                         } else if (move.toLowerCase().trim().equals("s")) {
                             currentPos = 0;
                         } else if (move.toLowerCase().trim().equals("c")) {
-                            currentPos = 0;
+                            currentPos = 32;
                         } else {
                             System.out.println("Invalid direction. Only \"N\", \"S\", \"E\", \"W\",  are valid");
                         }
@@ -255,7 +255,13 @@ public class AdventureGame {
                     
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
-                        
+                        System.out.println("\nThe scroll is sturdy despite its age.");
+                        System.out.println("\nThe floor begins to tremble, did you make the wrong choice?");
+                        System.out.println("\nTiles beneath you crumble.");
+                        System.out.println("\nAs you fall you hear the lich's laughter.");
+                        System.out.println("\n\n\nYou sit up, shaking the fogginess from your head.");
+                        scrolls = true;
+                        currentPos = 1;
                     } else if (move.toLowerCase().trim().equals("b")) {
                         System.out.println("");
                         System.out.println("");
@@ -269,14 +275,14 @@ public class AdventureGame {
                     }
                     break;
 
-                    case 2000:
+                    case 32:
                     System.out.println(" ");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
                         
                     } else if (move.toLowerCase().trim().equals("b")) {
                     } else {
-                        System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
+                        System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");
                     }
                     break;
 
