@@ -64,18 +64,17 @@ public class BasicCalculator {
         }
     }
     private void runningTotal() {
-        private int variable = 0; 
+        int variable = 0; 
         boolean keepGoing = true;
         while (keepGoing) {
-            System.out.println("Please enter the a number.");
+            System.out.println("Please enter a number.");
             int newNumber1 = scanner.nextInt();
-            int total = variable + newNumber1;
-            System.out.println("The differnce of those two numbers is " );
-            System.out.println("Run Again? (enter \"y\" to continue)");
-            scanner.nextLine(); //scanner isn't very smart. this will pickup the last return after "nextInt", clear it
-            String prompt = scanner.nextLine();
-            private int variable = 0 + total + newNumber1; 
-            keepGoing = prompt.trim().toLowerCase().equals("y");
+            if (newNumber1 <= 0){
+                System.out.println("The running total is " + variable);
+                break;
+            }
+            variable += newNumber1;
+            
        
         }
     }
