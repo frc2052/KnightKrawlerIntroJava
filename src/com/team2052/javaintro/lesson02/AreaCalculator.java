@@ -16,19 +16,19 @@ public class AreaCalculator {
     private int rectangleArea(int height, int width) {
         return height * width;
     }
+    public void circle() {
+        System.out.println("What radius is the circle?");
+        int radius = scanner.nextInt();
+        double circleArea = circleArea(radius);
+        System.out.println(circleArea);
+    }
     public void run() { 
         System.out.println("What would you like to do?");
         System.out.println("1. Find area of a circle.");
         System.out.println("2. Find area of a rectangle");
         int option = scanner.nextInt();
         if (option == 1) {
-            circleArea();
-        }
-        public void circleArea() {
-            System.out.println("What radius is the circle?");
-            int radius = scanner.nextInt();
-            double circleArea = circleArea(radius);
-            System.out.println(circleArea);
+            circle();
         }
         
 
