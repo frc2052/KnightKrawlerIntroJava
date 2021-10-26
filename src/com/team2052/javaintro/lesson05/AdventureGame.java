@@ -1,6 +1,9 @@
 package com.team2052.javaintro.lesson05;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.xml.crypto.dsig.spec.TransformParameterSpec;
 
 
 public class AdventureGame {
@@ -17,29 +20,16 @@ public class AdventureGame {
 
     public void play()
     {
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("You stare up at the dim light coming from the top of the hole you fell in.");
-        System.out.println(" ");
-        System.out.println("The slimey, moss covered stone is far to difficult to climb.");
-        System.out.println(" ");
-        System.out.println("A voice echo's through the small cavern.");
-        System.out.println(" ");
-        System.out.println("Beware, young adventurer, the only way forward is north.");
-        System.out.println(" ");
+        System.out.println("\n\n\n\n\n\n\n\n\n\nYou stare up at the dim light coming from the top of the hole you fell in.");
+        System.out.println("\nThe slimey, moss covered stone is far to difficult to climb.");
+        System.out.println("\nA voice echo's through the small cavern.");
+        System.out.println("\nBeware, young adventurer, the only way forward is north.\n");
         while (currentPos >= 0) {
             switch (currentPos)
             {
                 case 0:
+                    boolean scrolls = false;
+                    boolean lichAlive = true;
                     System.out.println("You are at the entrance to a large cavern. Type \"N\" to go north.");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("n"))
@@ -69,7 +59,7 @@ public class AdventureGame {
                         } else if (move.toLowerCase().trim().equals("s")) {
                             currentPos = 0;
                         } else if (move.toLowerCase().trim().equals("c")) {
-                            currentPos = 32;
+                            currentPos = 5;
                         } else {
                             System.out.println("Invalid direction. Only \"N\", \"S\", \"E\", \"W\",  are valid");
                         }
@@ -108,44 +98,22 @@ public class AdventureGame {
                         System.out.println(".    .");
                         move = scanner.nextLine();
                             if (move.toLowerCase().trim().equals("e")) {
-                            System.out.println(".    .");
-                            System.out.println(".    .");
-                            System.out.println(".    .");
-                            System.out.println("You unlock the door and slowly push the it open.");
-                            System.out.println("");
-                            System.out.println("As you cross the threshold, green flames errupt from the stone torches on the wall");
-                            System.out.println("");
-                            System.out.println("The door locks behind you.");
-                            System.out.println("");
-                            System.out.println(".    .");
-                            System.out.println("In the center of the stone floor is an eleaboratly decorated trap door");
-                            System.out.println("");
-                            System.out.println("But what really catches your eye, is the body suspended over it.");
-                            System.out.println("");
-                            System.out.println("Each limb is anchored to the floor or the ceiling by a chain.");
-                            System.out.println("");
-                            System.out.println("You step towards the trap door");
-                            System.out.println("");
-                            System.out.println(".    .");
-                            System.out.println("The humidity of the chamber rises, you feel like you're drowning in your own skin.");
-                            System.out.println("");
-                            System.out.println("Low echoing laugh fills the room.");
-                            System.out.println("");
-                            System.out.println("The head on the body snaps up, as if awakened.");
-                            System.out.println("");
-                            System.out.println(".    .");
-                            System.out.println("It looks straight at you, grinning");
-                            System.out.println("");
-                            System.out.println("'You really thought I was asleep? Well perhaps I dozed a little.'");
-                            System.out.println(" 'Aren't I glad for the innteruption! Oh, there's no where to go now!' ");
-                            System.out.println("");
-                            System.out.println(" The lich can't move, but his aura is substantial.");
-                            System.out.println("");
-                            System.out.println(" 'I don't take well to cowardice, so come on! I can't promise a painless death, but at least you'll have tried!' ");
-                            System.out.println("");
-                            System.out.println(".    .");
-                            System.out.println("Please enter a number between 1-100.");
-                            System.out.println(".    .");
+                            System.out.println("\n\n\nYou unlock the door and slowly push the it open.");
+                            System.out.println("\nAs you cross the threshold, green flames errupt from the stone torches on the wall");
+                            System.out.println("\nThe door locks behind you.");
+                            System.out.println("\n\nIn the center of the stone floor is an eleaboratly decorated trap door");
+                            System.out.println("\nBut what really catches your eye, is the body suspended over it.");
+                            System.out.println("\nEach limb is anchored to the floor or the ceiling by a chain.");
+                            System.out.println("\nYou step towards the trap door");
+                            System.out.println("\n\nThe humidity of the chamber rises, you feel like you're drowning in your own skin.");
+                            System.out.println("\nLow echoing laugh fills the room.");
+                            System.out.println("\nThe head on the body snaps up, as if awakened.");
+                            System.out.println("\n\nIt looks straight at you, grinning");
+                            System.out.println("\n 'You really thought I was asleep? Well perhaps I dozed a little.'");
+                            System.out.println("\n 'Aren't I glad for the innteruption! Oh, there's no where to go now!' ");
+                            System.out.println("\nThe lich can't move, but his aura is substantial.");
+                            System.out.println("\n 'I don't take well to cowardice, so come on! I can't promise a painless death, but at least you'll have tried!' ");
+                            System.out.println("\n\nPlease enter a number between 1-100.\n");
                             int number1 = scanner.nextInt();
                             BattleNumber favorite1 = BattleNumber.getInstance();
                             favorite1.setMyNumber(number1);
@@ -275,12 +243,52 @@ public class AdventureGame {
                     }
                     break;
 
-                    case 32:
-                    System.out.println(" ");
+                    case 5:
+                    System.out.println("You head north, using your hand to guide you along the dim passage.");
+                    System.out.println("As you walk, you feel you hand catch on a groove in the wall.");
+                    System.out.println("You pause... it couldn't be...");
+                    System.out.println("e to investigate further, b to continue on.");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
-                        
+                        System.out.println("Pressing your hand into the rut, you feel it continue up the wall.");
+                        System.out.println("You reach, finding a spot that fits your hand.");
+                        System.out.println("The seemingly random cracks in the wall begin to glow.");
+                        System.out.println("A small rumbling begins near your feet.");
+                        System.out.println("Now illuminated, you see that they weren't cracks at all.");
+                        System.out.println("The same runes as the scroll cavern shine a coral light.");
+                        System.out.println("You look down, and see a small door has opened.");
+                        System.out.println("It seems to be about three feet in height, if you crawl...");
+                        System.out.println("w to enter, z to return.");
+                        move = scanner.nextLine();
+                        if (move.toLowerCase().trim().equals("w")) {
+                            //double trap = Math.random() * 3;
+                            //System.out.println(trap);
+                            //if (trap < 1){
+                                //currentPos = 0;
+                                //TRAP 1
+                            //}
+                            //if (trap > 1 == trap < 2){
+                                //currentPos = 1;
+                                //TRAP 2
+                            //}
+                            //if (trap > 2){
+                                //currentPos = 2;
+                                //TRAP 3
+                            //}
+                            ArrayList<Integer> trap = new ArrayList();
+                                trap.add(new trap(1));
+                                trap.add(new trap(2));
+                                trap.add(new trap(3));
+                            
+
+                        } else if (move.toLowerCase().trim().equals("z")) {
+                            currentPos = 1;
+                        }else {
+                            System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");
+                        }
+
                     } else if (move.toLowerCase().trim().equals("b")) {
+                        currentPos = 1;
                     } else {
                         System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");
                     }
