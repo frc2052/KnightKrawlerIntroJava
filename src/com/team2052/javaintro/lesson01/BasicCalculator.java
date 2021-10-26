@@ -23,8 +23,10 @@ public class BasicCalculator {
         if (option == 1) {
             add();
         } else if (option == 2) {
+            subtract();
             //TODO: make a subtract method
         } else if (option == 3) {
+            runningTotal();
             //TODO: make a continuous add method
             //HINT: you will need to create a class level variable to keep the running total
         } else {
@@ -47,5 +49,33 @@ public class BasicCalculator {
             String prompt = scanner.nextLine();
             keepGoing = prompt.trim().toLowerCase().equals("y");
         }
+    }
+
+    private void subtract() {
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number.");
+            int number1 = scanner.nextInt();
+            System.out.println("Please enter the second number.");
+            int number2 = scanner.nextInt();
+            int difference = number1 - number2;
+            System.out.println("The difference of those two numbers is " + difference);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine();
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
+                
+        }
+    }
+    private void runningTotal() {
+        int runningTotal = 0;
+        while (true) {
+            System.out.println("Please enter 0 or a negativ1e number to exit.");
+            int newNumber = scanner.nextInt();
+            if(newNumber <= 0) {
+                break;
+            }
+            runningTotal += newNumber;
+        } System.out.println(runningTotal);
     }
 }

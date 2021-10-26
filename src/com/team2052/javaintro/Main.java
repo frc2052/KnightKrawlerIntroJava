@@ -1,8 +1,8 @@
 package com.team2052.javaintro;
 
-import com.team2052.javaintro.lesson01.BasicCalculator;
-
 import java.util.Scanner;
+
+import com.team2052.javaintro.lesson01.BasicCalculator;
 
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
             } else if (val.trim().toLowerCase().equals("help")) {
                 showMenu();
             } else if (val.trim().equals("1")) {
-                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
+                BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator object
                 calc.run(); //call the "Run" method on the object
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
