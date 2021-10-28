@@ -16,7 +16,7 @@ public class BasicCalculator {
     public void run()
     {
         System.out.println("What would you like to do?");
-        System.out.println("1. add two numbers");
+        System.out.println("1. Add two numbers");
         System.out.println("2. Subtract two numbers");
         System.out.println("3. Keep adding numbers until a non-number is entered");
         int option = scanner.nextInt();
@@ -67,6 +67,7 @@ public class BasicCalculator {
                 
         }
     }
+
     private void runningTotal() {
         int runningTotal = 0;
         while (true) {
