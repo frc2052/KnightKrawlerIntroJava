@@ -6,6 +6,7 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 import com.team2052.javaintro.lesson02.AreaCalculator;
 import com.team2052.javaintro.lesson03.Lesson3Runner;
 import com.team2052.javaintro.lesson04.Lesson4Runner;
+import com.team2052.javaintro.lesson05.AdventureGame;
 
 public class Main {
 
@@ -15,7 +16,7 @@ public class Main {
     //this is where execution starts
     public static void main(String[] args) {
         input = new Scanner(System.in); //create a new Scanner object. This is used to get user input from the command line
-        System.out.println("Welcome to KnightKrawler java training");
+        System.out.println("Welcome to KnightKrawler java training!");
         showMenu(); //call a method to print the menu on the command line
         boolean keepGoing = true;
         while (keepGoing) {
@@ -38,6 +39,9 @@ public class Main {
             } else if (val.trim().equals("4")) {
                 Lesson4Runner calc = new Lesson4Runner();
                 calc.run();
+            } else if (val.trim().equals("5")) {
+                AdventureGame game = new AdventureGame();
+                game.run();
             }
         }
     }
@@ -50,5 +54,6 @@ public class Main {
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
         System.out.println("4 -> lesson 4, singletons");
+        System.out.println("5 -> lesson 5, state machines");
     }
 }
