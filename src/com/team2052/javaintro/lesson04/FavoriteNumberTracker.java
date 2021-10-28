@@ -1,12 +1,17 @@
 package com.team2052.javaintro.lesson04;
 
 public class FavoriteNumberTracker {
-    
-    private int myNumber1;
-    public int getMyNumber1() {
-        return myNumber1;
+    private static FavoriteNumberTracker instance = new FavoriteNumberTracker();
+    FavoriteNumberTracker() {}
+    public static FavoriteNumberTracker getInstance() {
+        return instance;
     }
-    public void setMyNumber1(int val) {
-        myNumber1 = val;
+    
+    private int myNumber;
+    public int getMyNumber() {
+        return myNumber;
+    }
+    public void setMyNumber(int val) {
+        myNumber = val;
     }
 }
