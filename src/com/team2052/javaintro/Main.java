@@ -1,8 +1,10 @@
 package com.team2052.javaintro;
 
+import java.util.Scanner;
+
 import com.team2052.javaintro.lesson01.BasicCalculator;
 
-import java.util.Scanner;
+
 
 public class Main {
 

@@ -24,11 +24,43 @@ public class BasicCalculator {
             add();
         } else if (option == 2) {
             //TODO: make a subtract method
-        } else if (option == 3) {
+            subtract();
+          } else if (option == 3) {
             //TODO: make a continuous add method
+            deathAdder();
             //HINT: you will need to create a class level variable to keep the running total
         } else {
             System.out.println("Invalid option. Returning to main menu.");
+        }
+    }
+
+    private void deathAdder() {
+        int runningTotal = 0;
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number. enter negative number to exit.");
+            int number = scanner.nextInt();
+            if (number <= 0) {
+                keepGoing = false;
+            }
+            runningTotal += number;
+            System.out.println(runningTotal);
+        }
+    }
+
+    private void subtract() {
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.println("Please enter the first number.");
+            int number1 = scanner.nextInt();
+            System.out.println("Please enter the second number");
+            int number2 = scanner.nextInt();
+            int difference = number1 - number2;
+            System.out.println("The difference of those two numbers is " + difference);
+            System.out.println("Run Again? (enter \"y\" to continue)");
+            scanner.nextLine();
+            String prompt = scanner.nextLine();
+            keepGoing = prompt.trim().toLowerCase().equals("y");
         }
     }
 
