@@ -1,9 +1,6 @@
 package com.team2052.javaintro.lesson05;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.xml.crypto.dsig.spec.TransformParameterSpec;
 
 
 public class AdventureGame {
@@ -11,8 +8,12 @@ public class AdventureGame {
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
     //int scrolls = 10;
-    boolean scrolls = false;
-    boolean lichAlive = true;
+    boolean scrolls;
+    boolean lichAlive;
+    boolean trapDone = false;
+    boolean trap1IsComplete = false;
+    boolean trap2IsComplete = false;
+    boolean trap3IsComplete = false;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -20,6 +21,8 @@ public class AdventureGame {
 
     public void play()
     {
+        boolean scrolls = false;
+        boolean lichAlive = true;
         System.out.println("\n\n\n\n\n\n\n\n\n\nYou stare up at the dim light coming from the top of the hole you fell in.");
         System.out.println("\nThe slimey, moss covered stone is far to difficult to climb.");
         System.out.println("\nA voice echo's through the small cavern.");
@@ -28,8 +31,6 @@ public class AdventureGame {
             switch (currentPos)
             {
                 case 0:
-                    boolean scrolls = false;
-                    boolean lichAlive = true;
                     System.out.println("You are at the entrance to a large cavern. Type \"N\" to go north.");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("n"))
@@ -261,24 +262,57 @@ public class AdventureGame {
                         System.out.println("w to enter, z to return.");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("w")) {
-                            //double trap = Math.random() * 3;
+                            System.out.println("\nDucking, you crawl through the miniature door");
+                            System.out.println("\nYou now stand in what seems to be a miniature town");
+                            System.out.println("\nA bustling village center is surrounded by rolling fields and edged by a forest");
+                            System.out.println("\n 'Excuse me!' someone squeeks from behind you");
+                            System.out.println("\nYou back up against the wall, and man moves around your feet.");
+                            System.out.println("\nHe couldn't be more than ten inches tall.");
+                            System.out.println("\nLooking over the town, you spot a clearing in the forest at the other end of the room.");
+                            System.out.println("\nSomething gold glints in it's center. A key?...");
+                            //double trap = 0.7;//Math.random() * 3;
                             //System.out.println(trap);
-                            //if (trap < 1){
-                                //currentPos = 0;
-                                //TRAP 1
-                            //}
-                            //if (trap > 1 == trap < 2){
-                                //currentPos = 1;
-                                //TRAP 2
-                            //}
-                            //if (trap > 2){
-                                //currentPos = 2;
-                                //TRAP 3
-                            //}
-                            ArrayList<Integer> trap = new ArrayList();
-                                trap.add(new trap(1));
-                                trap.add(new trap(2));
-                                trap.add(new trap(3));
+                            // if (trap < 1){
+                            //     currentPos = 0;
+                            //     System.out.println("Trap 1");
+                            //     System.out.println("\nYou move forward, trying your best to avoid the rest of the village.");
+                            //     System.out.println("\nUp head, there seems to be a large dirt circle");
+                            //     System.out.println("\nWhat a nice place to rest, after all the roads out here are just barely as wide as your two feet.");
+                            //     System.out.println("\nTake a rest (e), or stick to the path (b)");
+                            //     move = scanner.nextLine();
+                            //     if (move.toLowerCase().trim().equals("e")){
+                            //         System.out.println("\n\nYou flop down, so relieved to be off your feet.");
+                            //         System.out.println("\nHowever, you failed to notice the intricate webbing underneath you.");
+                            //         System.out.println("\nYou're pulled up towards the ceiling, it seems the rope--no, silk--is quite strong.");
+                            //         System.out.println("\nFour sets of rougish, beady eyes desend down towards you.");
+                            //         System.out.println("\nAt the sight of the spider's fangs, you faint.");
+                            //         trapDone = true;
+                            //         currentPos = 0;
+                            //     }
+                            //     else if (move.toLowerCase().trim().equals("b")){
+                            //         System.out.println("\n B");
+                            //         System.out.println("\n You continue on towards the ");
+                            //         trap = 1.5;
+                            //     }
+                            // }
+                            // if (trap >= 1 == trap < 2){
+                            //     currentPos = 1;
+                            //     System.out.println("Trap 2");
+                            // }
+                            // if (trap > 2){
+                            //     currentPos = 2;
+                            //     System.out.println("Trap 3");
+                            // }
+                            
+                            while (true){
+                                if{
+
+                                }else(trap1IsComplete && trap2IsComplete && trap3IsComplete){
+
+                                }
+                            }
+                            
+                            
                             
 
                         } else if (move.toLowerCase().trim().equals("z")) {
