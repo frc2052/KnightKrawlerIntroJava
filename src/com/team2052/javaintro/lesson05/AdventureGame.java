@@ -14,6 +14,8 @@ public class AdventureGame {
     boolean trap1IsComplete = false;
     boolean trap2IsComplete = false;
     boolean trap3IsComplete = false;
+    boolean playerDead = false;
+    boolean allTrapsDone = false;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -303,13 +305,29 @@ public class AdventureGame {
                             //     currentPos = 2;
                             //     System.out.println("Trap 3");
                             // }
-                            
-                            while (true){
-                                if{
+                            while (!trap1IsComplete || !trap2IsComplete || !trap3IsComplete){
 
-                                }else(trap1IsComplete && trap2IsComplete && trap3IsComplete){
-
+                                int index = (int)(Math.random()*3);
+                                if (index == 0 && !trap1IsComplete ){
+                                    System.out.println("\ntrap 1");
+                                    trap1IsComplete = true;
                                 }
+                                else if (index == 1 && !trap2IsComplete){
+                                    System.out.println("\ntrap 2");
+                                    trap2IsComplete = true;
+                                }
+                                else if (index == 2 && !trap3IsComplete){
+                                    System.out.println("\n");
+                                    System.out.println("\ntrap 3");
+                                    if (playerDead = true){
+                                        PlayerDeath();
+                                        break;
+                                    }
+                                    else{
+                                        trap3IsComplete = true;
+                                    }
+                                }
+                                
                             }
                             
                             
@@ -339,22 +357,20 @@ public class AdventureGame {
                     }
                     break;
 
-                    case 4:
-                    System.out.println("You have found a large wooden door that is latched from the outside. Do you enter \"E\" or Go Back \"B\"");
-                    move = scanner.nextLine();
-                    if (move.toLowerCase().trim().equals("e")) {
-                        System.out.println("You unlock the door and slowly push the door open.");
-                        System.out.println("As you enter the room a small candle on the table catches your attention.");
-                        System.out.println("As you are mesmerized by the flame, you fail to notice the witch who casts a spell to turn you to stone.");
-                        System.out.println("You will forever adorn her room. You have died.");
-                        currentPos = -1;
-                    } else if (move.toLowerCase().trim().equals("b")) {
-                        currentPos = 2;
-                    } else {
-                        System.out.println("Invalid direction. Only \"E\" and \"B\" are valid");
-                    }
-                    break;
             }
         }
     }
+
+    public void PlayerDeath(){
+        System.out.println("\nThe world fades.");
+        System.out.println("\nA strange sense of falling envelops you.");
+        System.out.println("\n\n\nYou awaken--groggy--on the stone floor.");
+        System.out.println("\nIt seems like you've done this before.");
+        lichAlive = true;
+        scrolls = false;
+        
+    }
+
+
+
 }
