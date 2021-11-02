@@ -41,7 +41,7 @@ public class Main {
                 calc.run();
             } else if (val.trim().equals("5")) {
                 AdventureGame game = new AdventureGame();
-                game.run();
+                game.play();
             }
         }
     }
