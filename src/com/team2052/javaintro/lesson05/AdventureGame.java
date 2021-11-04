@@ -10,6 +10,7 @@ public class AdventureGame {
     //int scrolls = 10;
     boolean scrolls;
     boolean lichAlive;
+    boolean ammulet = false;
     boolean trapDone = false;
     boolean trap1IsComplete = false;
     boolean trap2IsComplete = false;
@@ -23,8 +24,11 @@ public class AdventureGame {
 
     public void play()
     {
-        boolean scrolls = false;
-        boolean lichAlive = true;
+        scrolls = false;
+        lichAlive = true;
+        trap3IsComplete = false;
+        trap1IsComplete = false;
+        trap2IsComplete = false;
         System.out.println("\n\n\n\n\n\n\n\n\n\nYou stare up at the dim light coming from the top of the hole you fell in.");
         System.out.println("\nThe slimey, moss covered stone is far to difficult to climb.");
         System.out.println("\nA voice echo's through the small cavern.");
@@ -161,12 +165,13 @@ public class AdventureGame {
                                         System.out.println("\nYour pocket has a certain heft that wasn't there before.");
                                         System.out.println("\nYou reach, and produce a teardrop ruby ammulet.");
                                         System.out.println("\nIt sits perfectly around your neck\n\n\n");
+                                        ammulet = true;
                                         currentPos = 21;
                                     }
                                 //currentPos = -1;
                             } else if (move.toLowerCase().trim().equals("b")) {
                                 System.out.println("\n\nYou notice a dusty plaque next to the door.");
-                                System.out.println("\nYou reach out and brush it off.");
+                                System.out.println("\nReaching out and you brush it off.");
                                 System.out.println("\nIt reads:");
                                 System.out.println("\n\nLong ago when man thought he conquered gods.");
                                 System.out.println("\nA dark and powerful foe was made.");
@@ -247,21 +252,21 @@ public class AdventureGame {
                     break;
 
                     case 5:
-                    System.out.println("You head north, using your hand to guide you along the dim passage.");
+                    System.out.println("You walk ahead, using your hand to guide you along the dim passage.");
                     System.out.println("As you walk, you feel you hand catch on a groove in the wall.");
                     System.out.println("You pause... it couldn't be...");
                     System.out.println("e to investigate further, b to continue on.");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
-                        System.out.println("Pressing your hand into the rut, you feel it continue up the wall.");
-                        System.out.println("You reach, finding a spot that fits your hand.");
-                        System.out.println("The seemingly random cracks in the wall begin to glow.");
-                        System.out.println("A small rumbling begins near your feet.");
-                        System.out.println("Now illuminated, you see that they weren't cracks at all.");
-                        System.out.println("The same runes as the scroll cavern shine a coral light.");
-                        System.out.println("You look down, and see a small door has opened.");
-                        System.out.println("It seems to be about three feet in height, if you crawl...");
-                        System.out.println("w to enter, z to return.");
+                        System.out.println("\nPressing your hand into the rut, you feel it continue up the wall.");
+                        System.out.println("\nYou reach, finding a spot that fits your hand.");
+                        System.out.println("\nThe seemingly random cracks in the wall begin to glow.");
+                        System.out.println("\nA small rumbling begins near your feet.");
+                        System.out.println("\nNow illuminated, you see that they weren't cracks at all.");
+                        System.out.println("\nThe same runes as the scroll cavern shine a coral light.");
+                        System.out.println("\nYou look down, and see a small door has opened.");
+                        System.out.println("\nIt seems to be about three feet in height, if you crawl...");
+                        System.out.println("\nw to enter, z to return.");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("w")) {
                             System.out.println("\nDucking, you crawl through the miniature door");
@@ -272,67 +277,77 @@ public class AdventureGame {
                             System.out.println("\nHe couldn't be more than ten inches tall.");
                             System.out.println("\nLooking over the town, you spot a clearing in the forest at the other end of the room.");
                             System.out.println("\nSomething gold glints in it's center. A key?...");
-                            //double trap = 0.7;//Math.random() * 3;
-                            //System.out.println(trap);
-                            // if (trap < 1){
-                            //     currentPos = 0;
-                            //     System.out.println("Trap 1");
-                            //     System.out.println("\nYou move forward, trying your best to avoid the rest of the village.");
-                            //     System.out.println("\nUp head, there seems to be a large dirt circle");
-                            //     System.out.println("\nWhat a nice place to rest, after all the roads out here are just barely as wide as your two feet.");
-                            //     System.out.println("\nTake a rest (e), or stick to the path (b)");
-                            //     move = scanner.nextLine();
-                            //     if (move.toLowerCase().trim().equals("e")){
-                            //         System.out.println("\n\nYou flop down, so relieved to be off your feet.");
-                            //         System.out.println("\nHowever, you failed to notice the intricate webbing underneath you.");
-                            //         System.out.println("\nYou're pulled up towards the ceiling, it seems the rope--no, silk--is quite strong.");
-                            //         System.out.println("\nFour sets of rougish, beady eyes desend down towards you.");
-                            //         System.out.println("\nAt the sight of the spider's fangs, you faint.");
-                            //         trapDone = true;
-                            //         currentPos = 0;
-                            //     }
-                            //     else if (move.toLowerCase().trim().equals("b")){
-                            //         System.out.println("\n B");
-                            //         System.out.println("\n You continue on towards the ");
-                            //         trap = 1.5;
-                            //     }
-                            // }
-                            // if (trap >= 1 == trap < 2){
-                            //     currentPos = 1;
-                            //     System.out.println("Trap 2");
-                            // }
-                            // if (trap > 2){
-                            //     currentPos = 2;
-                            //     System.out.println("Trap 3");
-                            // }
-                            while (!trap1IsComplete || !trap2IsComplete || !trap3IsComplete){
+                            while ((!trap1IsComplete || !trap2IsComplete || !trap3IsComplete) && currentPos == 5){
 
                                 int index = (int)(Math.random()*3);
                                 if (index == 0 && !trap1IsComplete ){
-                                    System.out.println("\ntrap 1");
-                                    trap1IsComplete = true;
-                                }
-                                else if (index == 1 && !trap2IsComplete){
-                                    System.out.println("\ntrap 2");
-                                    trap2IsComplete = true;
-                                }
-                                else if (index == 2 && !trap3IsComplete){
-                                    System.out.println("\n");
-                                    System.out.println("\ntrap 3");
-                                    if (playerDead = true){
+                                    System.out.println("\nYou move forward, trying your best to avoid the rest of the village.");
+                                    System.out.println("\nUp head, there seems to be a large dirt circle");
+                                    System.out.println("\nWhat a nice place to rest, after all the roads out here are just barely as wide as your two feet.");
+                                    System.out.println("\nTake a rest (e), or stick to the path (b)");
+                                    move = scanner.nextLine();
+                                    if (move.toLowerCase().trim().equals("e")){
+                                        System.out.println("\n\nYou flop down, so relieved to be off your feet.");
+                                        System.out.println("\nHowever, you failed to notice the intricate webbing underneath you.");
+                                        System.out.println("\nYou're pulled up towards the ceiling, it seems the rope--no, silk--is quite strong.");
+                                        System.out.println("\nFour sets of rougish, beady eyes desend down towards you.");
+                                        System.out.println("\nAt the sight of the spider's fangs, you faint.");
                                         PlayerDeath();
-                                        break;
+                                        trap1IsComplete = true;
+                                    }else if (move.toLowerCase().trim().equals("b")){
+                                        System.out.println("\n");
+                                        System.out.println("\n You continue on towards the key");
+                                        System.out.println("\nBetter to be mindful where a misstep could be a mass murder.");
+                                        trap1IsComplete = true;
                                     }
-                                    else{
-                                        trap3IsComplete = true;
+                                        
+                                }else if (index == 1 && !trap2IsComplete){
+                                    System.out.println("\nMoving through the forest, you get a strange sense of peacefulness.");
+                                    System.out.println("\nBirds eye view at a whole nother level!");
+                                    System.out.println("\nA small stone path stands before you.");
+                                    System.out.println("\nAdorable! If only you had a sketchbook!");
+                                    System.out.println("\nAs you walk, a strange ticking rises above the whispering of the trees.");
+                                    System.out.println("\nYou stop, turning to see the broken tripwire behind you.");
+                                    System.out.println("\nBy the time you think to run, the poison from the tiny arrows is already working.");
+                                    trap2IsComplete = true;
+                                    PlayerDeath();
+
+                                }else if (index == 2 && !trap3IsComplete){
+                                    System.out.println("\nYou begin to skirt around a village farm.");
+                                    System.out.println("\nA herd of toy sized sheep are grazing nearby.");
+                                    System.out.println("\nA farmhouse and barn stand a few feet off, inbetween are crops.");
+                                    System.out.println("\nThe gap between the wall and the pasture narrows.");
+                                    System.out.println("\nYou see a farmer running towards you.");
+                                    System.out.println("\nRun (w) or confront her (z)");
+                                    move = scanner.nextLine();
+                                    if (move.toLowerCase().trim().equals("w")){
+                                        System.out.println("\nYou start backing away, carefully, but as you do so her frustration increases.");
+                                        System.out.println("\nShe may be one eighth you size, but that doesn't change howscary she is. ");
+                                        System.out.println("\nYou hesitate, then move with abandon.");
+                                        System.out.println("\nThe sheep cry out as you crush the fencing on the pasture.");
+                                        System.out.println("\nYou trip, causing what must seem to these people like an earthquake.");
+                                        System.out.println("\nSooner than you would have imagined, a crowd forms.");
+                                        System.out.println("\nFarmers, with weapons who don't seem too pleased.");
+                                        if (ammulet == true){
+                                            System.out.println("\nFarmers, with weapons who don't seem too pleased.");
+                                            System.out.println("\nYou sit up");
+                                            System.out.println("\nThe ammulet surfaces from under your tunic");
+                                            System.out.println("\nIt hangs, gleaming.");
+                                            System.out.println("\nAll eyes around you are transfixed upon it.");
+                                            System.out.println("\nMakes sense, they are dwarves.");
+                                        }
                                     }
+                                    else if (move.toLowerCase().trim().equals("z")){
+
+                                    }
+                                    trap3IsComplete = true;
                                 }
                                 
                             }
                             
                             
                             
-
+                            
                         } else if (move.toLowerCase().trim().equals("z")) {
                             currentPos = 1;
                         }else {
@@ -344,6 +359,24 @@ public class AdventureGame {
                     } else {
                         System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");
                     }
+                    break;
+                    
+                    case 51:
+                    System.out.println("\n");
+                    System.out.println("\n");
+                    System.out.println("\n");
+                    break;
+
+                    case 52:
+                    System.out.println("\n");
+                    System.out.println("\n");
+                    System.out.println("\n");
+                    break;
+
+                    case 53:
+                    System.out.println("\n");
+                    System.out.println("\n");
+                    System.out.println("\n");
                     break;
 
                     case 1000:
@@ -368,6 +401,9 @@ public class AdventureGame {
         System.out.println("\nIt seems like you've done this before.");
         lichAlive = true;
         scrolls = false;
+        trap1IsComplete = false;
+        trap3IsComplete = false;
+        currentPos = 0;
         
     }
 
