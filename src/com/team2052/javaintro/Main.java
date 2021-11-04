@@ -4,7 +4,7 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main { 
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
 
