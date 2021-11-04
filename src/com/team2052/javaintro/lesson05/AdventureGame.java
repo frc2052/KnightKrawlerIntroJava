@@ -59,27 +59,56 @@ public class AdventureGame {
             case 3: 
                 System.out.println("You look forward into a large banquet hall, with the table empty. Do you enter \"E\" or Go Back \"B\"?");
                 move = scanner.nextLine();
-                if (move.toLowerCase().trim().equals("e")) {
-                    System.out.println("You find a door, but it seems to be locked. You'll need a key to unlock it, but where could it be?");
-                    currentPos = 3;
+                boolean playerHasKey = false;
+                if (move.toLowerCase().trim().equals("e") && playerHasKey) {
+                    System.out.println("You find a door, but it seems to be locked. Luckily, you obtained a key. You unlock it.");
+                    System.out.println("As you unlock the door, you see the sun shine brightly outside. Congratulations, you've escaped!");
+                    currentPos = -1;
                 } else if (move.toLowerCase().trim().equals("b")) {
                     System.out.println("You decide to move back.");
                     currentPos = 1;
+                } else if (move.toLowerCase().trim().equals("e")) {
+                    System.out.println("You find a door, but it seems to be locked. You'll need a key to unlock it, but where could it be?");
+                    currentPos = 3;
                 } else {
                     System.out.println("Invalid direction. Only \"E\" and \"B\" are valid.");
                 }
                 break;
             case 4: 
-                System.out.println("You move west, and are standing inside of a hallway. You can only go North, \"N\" or Back \"B\". Where do you go?");
+                System.out.println("You are standing inside of a hallway with the only way to go being north. Do you go North, \"N\", or back West, \"W\"?");
                 move = scanner.nextLine();
                 if (move.toLowerCase().trim().equals("n")) {
                     System.out.println("You move forward in the hallway, and end up at an intersection.");
                     currentPos = 5;
-                } else if (move.toLowerCase().trim().equals("b")) {
-                    System.out.println("You decide to move back.");
+                } else if (move.toLowerCase().trim().equals("w")) {
+                    System.out.println("You decide to move back west.");
                     currentPos = 1;
                 } else {
-                    System.out.println("Invalid direction. Only \"N\" or \"B\" are valid.");
+                    System.out.println("Invalid direction. Only \"N\" or \"W\" are valid.");
+                }
+                break;
+            case 5: 
+                System.out.println("You are at an intersection with openings to the north or the west.");
+                System.out.println("Do you go North, \"N\", West, \"W\", or South \"S\"?");
+                move = scanner.nextLine();
+                if (move.toLowerCase().trim().equals("n")) {
+                    System.out.println("You move forward into a cellar, with kegs lining the walls.");
+                    System.out.println("As you squint into the dark, a blaze appears before you.");
+                    System.out.println("The blaze grows brighter and rushes towards you, as a great cackle erupts in the room.");
+                    System.out.println("The blaze opens up to reveal the very depths of the Underworld, and it consumes you.");
+                    System.out.println("You have died.");
+                    currentPos = -1;
+                } else if (move.toLowerCase().trim().equals("w")) {
+                    System.out.println("You move to the left into a grand kitchen, where you peer toward the adjacent wall.");
+                    System.out.println("You see a key attached to a hook, and you run up and grab it. Now what does this key unlock?");
+                    System.out.println("You move back to the intersection, curious as to where the key will go.");
+                    currentPos = 5;
+                    playerHasKey = true;
+                } else if (move.toLowerCase().trim().equals("s")) {
+                    System.out.println("You move downward toward the hallway.");
+                    currentPos = 4;
+                } else {
+                    System.out.println("Invalid direction. Only \"N\", \"W\", and \"S\" are valid.");
                 }
                 break;
             }
