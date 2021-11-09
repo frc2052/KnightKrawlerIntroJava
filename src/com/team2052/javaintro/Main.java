@@ -8,6 +8,7 @@ import com.team2052.javaintro.lesson03.Lesson3Runner;
 import com.team2052.javaintro.lesson04.Lesson4Runner;
 import com.team2052.javaintro.lesson05.AdventureGame;
 
+
 public class Main {
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
