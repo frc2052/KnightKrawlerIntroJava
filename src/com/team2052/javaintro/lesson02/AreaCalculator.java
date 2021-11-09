@@ -12,19 +12,23 @@ public class AreaCalculator {
     private int rectangleArea(int height, int width){
 
 
-        return height + width;
+        return height * width;
     }
     private void runCircle(){
         System.out.println("enter radius");
         int radius = scanner.nextInt();
-        circleArea(radius);
+        System.out.println(circleArea(radius));
+        
     }
     private void runRectangle(){
         System.out.println("enter height");
         int height = scanner.nextInt();
         System.out.println("enter width");
         int width = scanner.nextInt();
-        rectangleArea(height, width);
+        System.out.println(rectangleArea(height, width));
+        if (width == height) {
+        System.out.println("This is a square");
+        }
     }
     public void run(){
         System.out.println("What would you like to do?");
