@@ -6,7 +6,7 @@ public class AdventureGame {
     private int currentPos = 0; //keeps track of the current location, set to the beginning of the maze, position 0
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
-
+    boolean playerHasKey = false;
     public AdventureGame() {
         scanner = new Scanner(System.in);
     }
@@ -59,7 +59,7 @@ public class AdventureGame {
             case 3: 
                 System.out.println("You look forward into a large banquet hall, with the table empty. Do you enter \"E\" or Go Back \"B\"?");
                 move = scanner.nextLine();
-                boolean playerHasKey = false;
+
                 if (move.toLowerCase().trim().equals("e") && playerHasKey) {
                     System.out.println("You find a door, but it seems to be locked. Luckily, you obtained a key. You unlock it.");
                     System.out.println("As you unlock the door, you see the sun shine brightly outside. Congratulations, you've escaped!");
