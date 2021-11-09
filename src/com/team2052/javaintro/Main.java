@@ -4,6 +4,8 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 
 import java.util.Scanner;
 
+import com.team2052.javaintro.lesson02.*;
+
 public class Main { 
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
@@ -26,11 +28,15 @@ public class Main {
             } else if (val.trim().equals("1")) {
                 BasicCalculator calc = new BasicCalculator(); //create a new BasicCalculator ojbect
                 calc.run(); //call the "Run" method on the object
+            }   else if (val.trim().equals("2")) {
+                AreaCalculator calc = new AreaCalculator(); 
+                calc.run();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
     }
+
 
     //this is a private method, it can only be called from other methods in this class
     private static void showMenu() {
@@ -39,4 +45,5 @@ public class Main {
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
     }
+
 }
