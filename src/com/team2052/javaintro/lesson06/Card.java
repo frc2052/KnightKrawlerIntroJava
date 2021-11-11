@@ -42,4 +42,4 @@ public class Card {
         SPADES,
         CLUBS
     }
-}
+} 
