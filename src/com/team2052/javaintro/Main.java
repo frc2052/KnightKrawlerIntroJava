@@ -7,6 +7,7 @@ import com.team2052.javaintro.lesson02.AreaCalculator;
 import com.team2052.javaintro.lesson03.Lesson3Runner;
 import com.team2052.javaintro.lesson04.Lesson4Runner;
 import com.team2052.javaintro.lesson05.AdventureGame;
+import com.team2052.javaintro.lesson06.Lesson6Runner;
 
 
 public class Main {
@@ -43,6 +44,9 @@ public class Main {
             } else if (val.trim().equals("5")) {
                 AdventureGame game = new AdventureGame();
                 game.play();
+            } else if (val.trim().equals("6")) {
+                Lesson6Runner runner = new Lesson6Runner();
+                runner.run();
             }
         }
     }
@@ -56,5 +60,6 @@ public class Main {
         System.out.println("3 -> lesson 3, getters and setters");
         System.out.println("4 -> lesson 4, singletons");
         System.out.println("5 -> lesson 5, state machines");
+        System.out.println("6 -> lesson 6, constants and arrays");
     }
 }
