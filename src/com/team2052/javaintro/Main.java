@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import com.team2052.javaintro.lesson02.*;
 
+import com.team2052.javaintro.lesson03.MultiCalculator;
+
 public class Main { 
 
     private static Scanner input; //this is a private class level variable, only code in this class can use this
@@ -31,11 +33,14 @@ public class Main {
             }   else if (val.trim().equals("2")) {
                 AreaCalculator calc = new AreaCalculator(); 
                 calc.run();
+            } else if (val.trim().equals("3")) {
+                MultiCalculator calc = new MultiCalculator();
+                calc.run();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
-    }
+        }
 
 
     //this is a private method, it can only be called from other methods in this class
