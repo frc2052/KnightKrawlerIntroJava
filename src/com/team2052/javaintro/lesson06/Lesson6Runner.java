@@ -11,7 +11,7 @@ public class Lesson6Runner {
     } 
     private void printDeck(Card[] deck) {
         for(int i = 0; i < deck.length; i++) {
-            System.out.println(deck[i].getNumber() + " " + deck[i].getSuit());
+            System.out.println(deck[i].getName());
         } //Brian this is the part I'm confused and need checked
     }
 }
