@@ -22,4 +22,10 @@ public class Shuffler {
         }
         return deck;
     }
+
+    public Card[] shuffleDeck(Card[]){
+        for(int i = 0; i < deck[pos]; i++) {
+            
+        }
+    }
 }
