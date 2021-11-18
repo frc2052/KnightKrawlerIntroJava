@@ -47,6 +47,9 @@ public class Main {
             } else if (val.trim().equals("6")) {
                 Lesson6Runner runner = new Lesson6Runner();
                 runner.run();
+            } else if (val.trim().equals("7")) {
+                AdventureGame game = new AdventureGame();
+                game.play();
             }
         }
     }
@@ -61,5 +64,6 @@ public class Main {
         System.out.println("4 -> lesson 4, singletons");
         System.out.println("5 -> lesson 5, state machines");
         System.out.println("6 -> lesson 6, constants and arrays");
+        System.out.println("7 -> lesson 7, ");
     }
 }
