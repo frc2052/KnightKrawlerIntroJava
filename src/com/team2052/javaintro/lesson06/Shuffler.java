@@ -1,6 +1,11 @@
 package com.team2052.javaintro.lesson06;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Shuffler {
+int min = 1;
+int max = 52;
+int x;
+int y;
 
     public Card[] createDeck() {
         Card[] deck = new Card[52];
@@ -22,10 +27,13 @@ public class Shuffler {
         }
         return deck;
     }
-
-    public Card[] shuffleDeck(Card[]){
-        for(int i = 0; i < deck[pos]; i++) {
-            
+    
+    public Card[] shuffleDeck(Card[] deck) {
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+        swapCards(Card[] 52, x, y) {
+            int position = array [x];
+            array [x] = array [y];
+            array [x] = position;
         }
     }
 }
