@@ -12,12 +12,16 @@ public class AdventureGame {
     boolean lichAlive;
     boolean ammulet = false;
     boolean trapDone = false;
+    int index;
     boolean trap1IsComplete = false;
     boolean trap2IsComplete = false;
     boolean trap3IsComplete = false;
     boolean playerDead = false;
     boolean allTrapsDone = false;
     boolean key = false;
+    boolean runChair = false;
+    boolean runDesk = false;
+    boolean runMantel = false;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -196,11 +200,8 @@ public class AdventureGame {
                     }
 
                     case 21:
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println(" The trap door once guarded by the lich now opens.");
-                    System.out.println("");
-                    System.out.println(" Do you continue? ");
+                    System.out.println("\n\nThe trap door once guarded by the lich now opens.");
+                    System.out.println("\nDo you continue? ");
                     System.out.println(" 'E' to enter, 'B' to go back to the cavern");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
@@ -284,7 +285,7 @@ public class AdventureGame {
                                         System.out.println("\nLooking over the town, you spot a clearing in the forest at the other end of the room.");
                                         System.out.println("\nSomething gold glints in it's center. A key?...");
                                             while ((!trap1IsComplete || !trap2IsComplete || !trap3IsComplete) && currentPos == 5){
-                                                int index = (int)(Math.random()*3);
+                                                index = (int)(Math.random()*3);
                                                 if (index == 0 && !trap1IsComplete ){
                                                     System.out.println("\nYou move forward, trying your best to avoid the rest of the village.");
                                                     System.out.println("\nUp head, there seems to be a large dirt circle");
@@ -341,11 +342,13 @@ public class AdventureGame {
                                                             System.out.println("\nMakes sense, they are dwarves.");
                                                             System.out.println("\nYou remove the ammulet from your neck and set it on the ground.");
                                                             System.out.println("\nAs they crowd around it, you continue on towards the key.");
+                                                            ammulet = false;
                                                             trap3IsComplete = true;
                                                         }
                                                         else if (ammulet == false){
                                                             System.out.println("\nThe bleating of the animals intensifies with their shouts.");
                                                             System.out.println("\nSurrounded, they desend upon you.");
+                                                            trap3IsComplete = true;
                                                             break;
                                                         }
                                                     }else if (move.toLowerCase().trim().equals("z")){
@@ -365,8 +368,7 @@ public class AdventureGame {
                                                 }//trap 3 end bracket
                                             }//while loop end bracket
 
-                                    } 
-                                    else if (move.toLowerCase().trim().equals("z")) 
+                                    }else if (move.toLowerCase().trim().equals("z")) 
                                     {
                                         currentPos = 1;
                                     }
@@ -382,11 +384,68 @@ public class AdventureGame {
                                 }
                             }else{
                                 System.out.println("\nThe key is finally within reach!");
-                                System.out.println("\nIt's larger than you expected, but the bow fits snug in your hand. ");
+                                System.out.println("\nIt's larger than you expected, but the head of the key fits snug in your hand. ");
                                 System.out.println("\nIt's a shining copper tone, with a silver chain attached.");
                                 System.out.println("\nYou slip the chain over your head, and head to the center cavern.");
                                 key = true;
+                                currentPos = 1;
                                 }
+                    break;
+
+                    case 3:
+                        System.out.println("\nThe hallways leads to a massive wooden door.");
+                        System.out.println("\nA brass faced knocker hangs just above your head.");
+                        System.out.println("\nIt too, is enormous.");
+                        System.out.println("\nYou summon all of your strength, but fail to lift it.");
+                        System.out.println("\nYou jump to reach again, but the face on the knocker contorts in disgust.");                                
+                        System.out.println("\n  'Honestly! If you wanted to be in, you could have just rung!'");
+                        System.out.println("\nHer eyes flick down to a plaque at your waist.");
+                        System.out.println("\nIt reads,");
+                        System.out.println("\n  Ring bell if ye cannot grasp thy door knock.");
+                        System.out.println("\n  'Exactly! You ought to be more observant.'");
+                        System.out.println("\nShe sniffs, and once again becomes brass as you pull the bell cord.");
+                        System.out.println("\nThe door swings open.");
+                        currentPos = 32;
+                        break;
+
+                    case 32:
+                    System.out.println("\nYou get the sense that you must have shrunk.");
+                    System.out.println("\nThe fireplace is thrice your height and you would have to jump to get on the loveseat.");
+                    System.out.println("\nBesides your seemingly small stature, the room seems tall.");
+                    System.out.println("\nYou search to find the ceiling, but all you can see is darkness.");
+                    System.out.println("\nWell, darkness pierced by a dusty, yet warmly lit chandelier.");
+                    System.out.println("\nA miniature--or rather normal--sized doll house stands to your right.");
+                    System.out.println("\nA great array of goods and foodstuffs are laid out upon the table in it.");
+                    System.out.println("\nYour stomach rumbles, but the writing desk to your left also catches your attention.");
+                    System.out.println("\nA letter hangs off the desk, just out of reach.");
+                    System.out.println("\ne to satifisy your hunger, b to satisfy your curiosity.");
+                    move = scanner.nextLine();
+                    if (move.toLowerCase().trim().equals("e")) {
+                        PlayerDeath();
+                    }if (move.toLowerCase().trim().equals("b")) {
+                        System.out.println("\nYou jump, and though you don't quite grab it, the letter comes floating down.");
+                        System.out.println("\nNo sooner is it in your hands, than a little boy comes running in.");
+                        System.out.println("\n  'No, no, no!' he cries");
+                        System.out.println("\n  'You were supposed to go an eat!'");
+                        System.out.println("\nHe begins to chase you, but he is slow and clumsy due to his tear filled eyes.");
+                        while ((!runChair || !runDesk || !runMantel) && currentPos == 32){
+                            index = (int)(Math.random()*3);
+                            if(index == 0 && !runChair){
+                                System.out.println("\nHe gets to his feet and you take the moment to run un");
+                                System.out.println("\n");
+                            }
+                            if(index == 1 && !runDesk){
+
+                            }
+                            if(index == 2 && !runMantel){
+
+                            }
+
+                        }
+                        
+                        //end game
+                    }
+                    else{System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");}
 
                     break;
                     
@@ -394,6 +453,9 @@ public class AdventureGame {
                     case 4:
                     System.out.println("\nAt the end of the hall, a polished door stands ajar.");
                     System.out.println("\n");
+                    System.out.println("\nYou dart under the furniture, hearing the scrap of his trousers as he falls to his knees.");
+                    System.out.println("\nThe fireplace doors stand ajar, you slip through.");
+                    System.out.println("\nThe boy's fingers reach");
                     break;
 
             }
