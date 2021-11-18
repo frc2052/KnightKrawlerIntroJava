@@ -1,5 +1,7 @@
 package com.team2052.javaintro.lesson03;
 
+import com.team2052.javaintro.lesson03.Lesson3Runner.Operation;
+
 public class MultiCalculator {
     
 private int number1;
@@ -23,10 +25,22 @@ public void setNumber2(int val){
     } else {
         number2 = val;
     }
+    }
+    private Operation calcOperation = Operation.ADD;
+public Operation getcalcOperation() {
+    return calcOperation;
+}
+public void setcalcOperation(Operation val){
+    if (val < 0) {
+        calcOperation = 0;
+    } else {
+        calcOperation = val;
+    }
 }
 public int calculate() {
     return getNumber1() + getNumber2();
-}
-public void run() {
 }    
+public void run() {
+}
+
 }

@@ -16,6 +16,11 @@ public class Lesson3Runner {
         int number2 = scanner.nextInt();
         calc.setNumber2(number2);
         int sum = calc.calculate();
+    }    
+    public enum Operation {
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE
     }
-
 }
