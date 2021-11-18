@@ -7,6 +7,7 @@ public class Lesson6Runner {
     public void run() {
         Shuffler cardShuffle = new Shuffler();
         Card[] deck = cardShuffle.createDeck();
+        deck = cardShuffle.shuffleDeck(deck);
         printDeck(deck);
     } 
     private void printDeck(Card[] deck) {
