@@ -2,7 +2,7 @@ package com.team2052.javaintro.lesson03;
 import java.util.Scanner;
 public class Lesson3Runner {
     
-   private Scanner scanner = null;
+   private Scanner scanner = new Scanner(System.in);
 
  
     public void run() {
@@ -14,6 +14,7 @@ public class Lesson3Runner {
         int number2 = scanner.nextInt();
         calc.setNumber2(number2);
         int sum = calc.calculate();
+        System.out.println(sum);
     }
 
 }

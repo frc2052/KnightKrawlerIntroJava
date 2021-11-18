@@ -11,6 +11,8 @@ import com.team2052.javaintro.lesson03.MultiCalculator;
 
 public class Main {
 
+    String num = null;
+
     private static Scanner input; //this is a private class level variable, only code in this class can use this
 
     //the main method is the very first code that is called in a command line application
