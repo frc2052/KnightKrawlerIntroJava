@@ -1,6 +1,4 @@
 package com.team2052.javaintro.lesson06;
-import com.team2052.javaintro.lesson06.Shuffler;
-
 
 public class Lesson6Runner {
 
