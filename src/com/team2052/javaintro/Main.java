@@ -64,6 +64,6 @@ public class Main {
         System.out.println("4 -> lesson 4, singletons");
         System.out.println("5 -> lesson 5, state machines");
         System.out.println("6 -> lesson 6, constants and arrays");
-        System.out.println("7 -> lesson 7, ");
+        System.out.println("7 -> lesson 7, refactoring");
     }
 }
