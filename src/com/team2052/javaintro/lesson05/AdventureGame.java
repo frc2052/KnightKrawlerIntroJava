@@ -22,6 +22,7 @@ public class AdventureGame {
     boolean runChair = false;
     boolean runDesk = false;
     boolean runMantel = false;
+    int luck;
 
     public AdventureGame() {
         scanner = new Scanner(System.in);
@@ -34,6 +35,11 @@ public class AdventureGame {
         trap3IsComplete = false;
         trap1IsComplete = false;
         trap2IsComplete = false;
+        allTrapsDone = false;
+        key = false;
+        runChair = false;
+        runDesk = false;
+        runMantel = false;
         System.out.println("\n\n\n\n\n\n\n\n\n\nYou stare up at the dim light coming from the top of the hole you fell in.");
         System.out.println("\nThe slimey, moss covered stone is far to difficult to climb.");
         System.out.println("\nA voice echo's through the small cavern.");
@@ -423,32 +429,65 @@ public class AdventureGame {
                     if (move.toLowerCase().trim().equals("e")) {
                         PlayerDeath();
                     }if (move.toLowerCase().trim().equals("b")) {
-                        System.out.println("\nYou jump, and though you don't quite grab it, the letter comes floating down.");
-                        System.out.println("\nNo sooner is it in your hands, than a little boy comes running in.");
-                        System.out.println("\n  'No, no, no!' he cries");
-                        System.out.println("\n  'You were supposed to go an eat!'");
-                        System.out.println("\nHe begins to chase you, but he is slow and clumsy due to his tear filled eyes.");
-                        while ((!runChair || !runDesk || !runMantel) && currentPos == 32){
-                            index = (int)(Math.random()*3);
-                            if(index == 0 && !runChair){
-                                System.out.println("\nHe gets to his feet and you take the moment to run un");
-                                System.out.println("\n");
-                            }
-                            if(index == 1 && !runDesk){
-
-                            }
-                            if(index == 2 && !runMantel){
-
-                            }
-
-                        }
+                        currentPos = 33;
                         
                         //end game
                     }
                     else{System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");}
 
                     break;
-                    
+
+                    case 33:
+                    System.out.println("\nYou jump, and though you don't quite grab it, the letter comes floating down.");
+                    System.out.println("\nNo sooner is it in your hands, than a little boy comes running in.");
+                    System.out.println("\n  'No, no, no!' he cries");
+                    System.out.println("\n  'You were supposed to go an eat!'");
+                    System.out.println("\nHe begins to chase you, but he is slow and clumsy due to his tear filled eyes.");
+                    System.out.println("\nYou too, are clumsy, lugging the letter around.");
+                    while ((!runChair || !runDesk || !runMantel) && currentPos == 33){
+                        index = (int)(Math.random()*3);
+                        if(index == 0 && !runChair){
+                            System.out.println("\nYou dart under the chair");
+                            System.out.println("\nHe slows, perhaps he didn't see you?");
+                            System.out.println("\nThe chair legs are thin, but so are you at this scale.");
+                            System.out.println("\n  Hide [e], or seek more cover?[b]");
+                            move = scanner.nextLine();
+                            if (move.toLowerCase().trim().equals("e")) {
+                                System.out.println("\nYou lose your balance in what seems like an earthquake.");
+                                System.out.println("\nYou look up, the boy's face grotesquely large.");
+                                System.out.println("\nHis hand moves faster than you could possibly imagine.");
+                                System.out.println("\nHis grasp is sticky, stifilingly hot and crushing.");
+                                PlayerDeath();
+                            }if (move.toLowerCase().trim().equals("b")) {
+                                System.out.println("\nOnce you hear footsteps no longer, you move out.");
+                                System.out.println("\nYou can't see him at first");
+                                System.out.println("\nThen you spot him, looking around the door.");
+                                System.out.println("\nQuickly, while you have a moment, you run.");
+                                runChair = true;
+                            }
+                        }
+                        if(index == 1 && !runDesk){
+                            luck = (int)(Math.random()*10);
+                            if (luck >= 5){
+                                System.out.println("\nYou run, letter across your back under the desk.");
+                                System.out.println("\nIt is deeper than you thought, but the darkness is welcome.");
+                                System.out.println("\nYou position the letter in just enough light to read.");
+                                LetterRead();
+                                runDesk = true;
+                            }
+                            if (luck <= 4){}
+                            System.out.println("\n");                           
+                            
+                        }
+                        if(index == 2 && !runMantel){
+                            System.out.println(runMantel);
+                            runMantel = true;
+                        }
+
+                    }
+                    //key if statement
+                    currentPos = 0;
+                    break;
 
                     case 4:
                     System.out.println("\nAt the end of the hall, a polished door stands ajar.");
@@ -475,6 +514,18 @@ public class AdventureGame {
         
     }
 
+    public void LetterRead(){
+        System.out.println("\n My Darling,");
+        System.out.println("\n\n    I recieved your letter, but regret to say I cannot come home soon. Please do not pester or plead with your father. It does not make his or my time any easier if you do so.");
+        System.out.println("\nMy illness is not under his management, no matter how great he may seem to you. Man is only man, and I believe that my fate now lies with Our God.");
+        System.out.println("\nPerhaps this place is doing me more good than the last, though I miss you so. The doctors say that the air here is good for me, that miasmas, sickly air fills our home .");
+        System.out.println("\n  *this line has been erased, but from your perspective is visible* Sometimes, I do wonder if it affects you and your father, they say it changes one's demenor. ");
+        System.out.println("\n\n\nHave my packages for you arrived? I do not wish to spoil, but I cannot help but be flush with excitement. I sent then just a few weeks ago, so the post must have delievered.");
+        System.out.println("\nI thought they were the most charming of little things! The big house truly looks like where I am staying. Oh, when I do return, I hope you will have arranged it so.");
+        System.out.println("\nWhen we moved in, I could have sworn the noises weren't mice or cats. For once I found a tiny stocking cap along the baseboards. Oh your father.");
+        System.out.println("\nHe thought it jovial at first, but grew disapointed when I continued on with my 'fantasy.' Look for them, my darling, but do not tell him so.");
+        System.out.println("\n\nAll my love,\n Mother");
+    }
 
 
 }

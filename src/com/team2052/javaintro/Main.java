@@ -63,6 +63,6 @@ public class Main {
         System.out.println("2 -> lesson 2, classes");
         System.out.println("3 -> lesson 3, getters and setters");
         System.out.println("3 -> lesson 4, favorite numbers");
-        System.out.println("3 -> lesson 5, T.A.G");
+        System.out.println("3 -> lesson 5/7, T.A.G");
     }
 }
