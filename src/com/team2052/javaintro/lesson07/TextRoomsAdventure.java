@@ -41,7 +41,7 @@ public class TextRoomsAdventure {
                 }
                 break;
             case 2:
-                System.out.println("You see a small, with a large wooden door that is latched from the outside. Do you Enter \"E\" or Go Back \"B\"?");
+                System.out.println("You see a small room, with a large wooden door that is latched from the outside. Do you Enter \"E\" or Go Back \"B\"?");
                 move = scanner.nextLine();
                 if (move.toLowerCase().trim().equals("e")) {
                     System.out.println("You unlock the door and slowly push the door open.");
@@ -115,29 +115,36 @@ public class TextRoomsAdventure {
         }
     }
 
-    public class Room {
-        private boolean isExit;
-        public boolean getIsExit() { return isExit; }
-        public void setIsExit(boolean value) { isExit = value; }
-    
-        private boolean isDoorLocked;
-        public boolean getIsDoorLocked() { return isDoorLocked; }
-        public void setIsDoorLocked(boolean value) { isDoorLocked = value; }
-    
-        private boolean isMonsterInside;
-        public boolean getIsMonsterInside() { return isMonsterInside; }
-        public void setIsMonsterInside(boolean value) { isMonsterInside = value; }
-    
-        private boolean isKeyInside;
-        public boolean getIsKeyInside() { return isKeyInside; }
-        public void setIsKeyInside(boolean value) { isKeyInside = value; }
-    
-        private String doorDescription;
-        public String getDoorDescription() { return doorDescription; }
-        public void setDoorDescription(String value) { doorDescription = value; }
-    
-        private String monsterStory;
-        public String getMonsterStory() { return monsterStory; }
-        public void setMonsterStory(String value) { monsterStory = value; }
+    public void visitRoom(Room room) {
+        System.out.println(room.getDoorDescription());
+        move = scanner.nextLine();
+
+        if (move.toLowerCase().trim().equals("e")) {
+            if (room.getIsDoorLocked() && playerHasKey) {
+                System.out.println("You find a door, but it seems to be locked. Luckily, you obtained a key. You unlock it.");
+            } else if (room.getIsKeyInside()) {
+                System.out.println("You see a key attached to a hook, and you run up and grab it. Now what does this key unlock?");
+                playerHasKey = true;
+            } else if (room.getIsDoorLocked()) {
+                System.out.println("You find a door, but it seems to be locked. You'll need a key to unlock it, but where could it be?");
+            } else {
+                
+            }
+
+            if (room.getIsExit()) {
+                System.out.println("As you unlock the door, you see the sun shine brightly outside. Congratulations, you've escaped!");
+            }
+
+            currentPos = -1;
+        } else if (move.toLowerCase().trim().equals("b")) {
+            System.out.println("You decide to move back.");
+            currentPos = 1;
+        } else if (move.toLowerCase().trim().equals("e")) {
+            System.out.println("You find a door, but it seems to be locked. You'll need a key to unlock it, but where could it be?");
+            currentPos = 3;
+        } else {
+            System.out.println("Invalid direction. Only \"E\" and \"B\" are valid.");
+        }
     }
+
 }
