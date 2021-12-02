@@ -11,6 +11,8 @@ public class TextRoomsAdventure {
         scanner = new Scanner(System.in);
     }
 
+    Room[] rooms = newRoom[7];
+
     public void play() {
         System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
         while (currentPos >= 0) {
@@ -128,7 +130,7 @@ public class TextRoomsAdventure {
             } else if (room.getIsDoorLocked()) {
                 System.out.println("You find a door, but it seems to be locked. You'll need a key to unlock it, but where could it be?");
             } else {
-                
+
             }
 
             if (room.getIsExit()) {
@@ -146,5 +148,4 @@ public class TextRoomsAdventure {
             System.out.println("Invalid direction. Only \"E\" and \"B\" are valid.");
         }
     }
-
 }
