@@ -11,13 +11,15 @@ public class TextRoomsAdventure {
         scanner = new Scanner(System.in);
     }
 
-    Room[] rooms2 = {
-        new Room("Kitchen") 
-        new Room("Bedroom")
-    };
-
-    Room[] rooms = new Room[7];
-    rooms[0] = newRoom("Kitchen");
+    Room[] rooms = {
+        new Room("Kitchen", true, ..., ..., ...),
+        new Room("Grand Bedroom"),
+        new Room("Pantry"),
+        new Room("Laboratory"),
+        new Room("Armory"),
+        new Room("Living Room"),
+        new Room("Dining Hall")
+    }; 
 
     public void play() {
         System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");

@@ -1,6 +1,19 @@
 package com.team2052.javaintro.lesson07;
 
 public class Room {
+
+    public Room(String name, 
+        boolean isExit, 
+        boolean isDoorLocked, 
+        boolean isMonsterInside, 
+        boolean isKeyInside, 
+        String doorDescription, 
+        String monsterStory) {
+            this.isExit = isExit;
+            this.isDoorLocked = isDoorLocked;
+            
+    }
+
     private boolean isExit;
     public boolean getIsExit() { return isExit; }
     public void setIsExit(boolean value) { isExit = value; }

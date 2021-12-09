@@ -9,7 +9,7 @@ public class Card {
     private Suit suit;
     private int number;
 
-    public Card (Suit suit, int number) {
+    public Card(Suit suit, int number) {
         this.suit = suit;
         this.number = number; //the 'this' keyword outlines that THIS specific suit and number that is chosen will show there
     } // this constructor needs the paramaters of the card in order to return a proper card value 
