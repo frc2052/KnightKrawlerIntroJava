@@ -462,7 +462,7 @@ public class AdventureGame {
                                 System.out.println("\nOnce you hear footsteps no longer, you move out.");
                                 System.out.println("\nYou can't see him at first");
                                 System.out.println("\nThen you spot him, looking around the door.");
-                                System.out.println("\nQuickly, while you have a moment, you run.");
+                               
                                 runChair = true;
                             }
                         }
@@ -476,16 +476,36 @@ public class AdventureGame {
                                 runDesk = true;
                             }
                             if (luck <= 4){}
-                            System.out.println("\n");                           
+                            System.out.println("\nAs you run, the rug seems to swallow you, as if you were trying to run in water.");
+                            System.out.println("\nYou toss the letter in an attempt to distract him, but his sights are set.");
+                            System.out.println("You brace for impact, ready to meet your doom.");
+                            System.out.println("A voice booms and he stops suddenly, frozen as a frightened doe.");
+                            runDesk = true;
                             
                         }
                         if(index == 2 && !runMantel){
-                            System.out.println(runMantel);
-                            runMantel = true;
-                        }
+                            System.out.println("\nQuickly, while you have a moment, you run.");
+                            System.out.println("\nThe stone cools your flushed face.");
+                            System.out.println("\nA flash catches your eye, the fire place screen.");
+                            System.out.println("You slink behind it, the inside of the fireplace is cavernous.");
+                            System.out.println("\nThe soot soon covers your body creating, you hope, a sort of camaflodge.");
+                            System.out.println("\nIt seems that notches have been carved in the wall, just enough of a grip to climb on.");
+                            System.out.println("\nA larger hole has been carved at the joint between the floo and the sides.");
+                            System.out.println("\nBeing inside it, it reminds you of the niche at the begining of this place.");
+                            System.out.println("\nA trap door is above you, with a keyhole.");
+                            if(key = true){
+                                System.out.println("\nYou fumble for the key in your pocket.");
+                                System.out.println("\nIt slides into place.");
+                            }else{
 
+                            }
+                            runMantel = true;
+                            //key if statement
+                        }
+                        
                     }
-                    //key if statement
+                    System.out.println("The loop has ended");
+                    
                     currentPos = 0;
                     break;
 
@@ -519,7 +539,7 @@ public class AdventureGame {
         System.out.println("\n\n    I recieved your letter, but regret to say I cannot come home soon. Please do not pester or plead with your father. It does not make his or my time any easier if you do so.");
         System.out.println("\nMy illness is not under his management, no matter how great he may seem to you. Man is only man, and I believe that my fate now lies with Our God.");
         System.out.println("\nPerhaps this place is doing me more good than the last, though I miss you so. The doctors say that the air here is good for me, that miasmas, sickly air fills our home .");
-        System.out.println("\n  *this line has been erased, but from your perspective is visible* Sometimes, I do wonder if it affects you and your father, they say it changes one's demenor. ");
+        System.out.println("\n  *this line has been erased, but from your perspective is visible* Sometimes, I do wonder if the miasmas affects you and your father, they say it changes one's demenor. ");
         System.out.println("\n\n\nHave my packages for you arrived? I do not wish to spoil, but I cannot help but be flush with excitement. I sent then just a few weeks ago, so the post must have delievered.");
         System.out.println("\nI thought they were the most charming of little things! The big house truly looks like where I am staying. Oh, when I do return, I hope you will have arranged it so.");
         System.out.println("\nWhen we moved in, I could have sworn the noises weren't mice or cats. For once I found a tiny stocking cap along the baseboards. Oh your father.");
