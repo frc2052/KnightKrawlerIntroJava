@@ -11,6 +11,10 @@ public class Room {
         String monsterStory) {
             this.isExit = isExit;
             this.isDoorLocked = isDoorLocked;
+            this.isMonsterInside = isMonsterInside;
+            this.isKeyInside = isKeyInside;
+            this.doorDescription = doorDescription;
+            this.monsterStory = monsterStory;
             
     }
 

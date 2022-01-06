@@ -12,17 +12,17 @@ public class TextRoomsAdventure {
     }
 
     Room[] rooms = {
-        new Room("Kitchen", true, ..., ..., ...),
-        new Room("Grand Bedroom"),
-        new Room("Pantry"),
-        new Room("Laboratory"),
-        new Room("Armory"),
-        new Room("Living Room"),
-        new Room("Dining Hall")
+        new Room("Kitchen", true, true, false, false, "You enter a large room, the floor black and white tiles. The gray stone walls are lined with shelves full of glassware and fine china. At the other end of the room, there lies a lone door with a keyhole.", ""),
+        new Room("Grand Bedroom", false, false, false, false, "You enter a small room, the floor a pristine and darkened wood. The red walls are adorned with paintings of far off cities and landscapes. A bed lies across from the entrance, large and grand in nature. There is nothing of interest to be seen.", ""), 
+        new Room("Pantry", false, false, false, false, "You enter a small room, filled to the brim with storage items. Boxes of meat, vegetables, and other raw products cover up the faint stone walls, making the room feel cramped. The only light illuminating the room is a lone chandelier hanging high above. There is nothing of interest to be seen.", ""), 
+        new Room("Laboratory", false, false, false, false, "You enter a small room, with strange fluids and contraptions atop tables of wood. Noises, sparks, and lights flicker in tandem, making the room feel eery. There is nothing of interest here, although the contraptions make you wonder what occurs here.", ""), 
+        new Room("Armory", false, false, true, false, "You enter a large room, with cracked stone brick walls. The cracks allow a light draft inside, making your bones chill. As you enter, the door closes behind you suddenly. There could items of interest here, such as a weapon to fight.", "All of a sudden, a pale-skinned entity pounces out of the shadows, rushing toward you. It's hand juts out, piercing your chest. Your breath is sucked out, as the world turns black. The last thing you hear is an ominus laugh."), 
+        new Room("Living Room", false, false, false, false, "You enter a small room, with beautiful ivory walls highlighting the central chandelier. Couches of lavish fabrics and silks, and paintings of castles and royalty set the hosting mood. There is nothing of interest to be seen.", ""), 
+        new Room("Dining Hall", false, false, false, true, "You enter a large room, long and tall in stature. A long wooden table of a polished exotic wood highlights the royal aspect of the area. The room feels open and welcoming, but there is an eery undertone that seeps into the room. There is nothing of interest to be seen.", "") 
     }; 
 
     public void play() {
-        System.out.println("Welcome to the dungeon! Someone has barred the door behind you. The only way out is find another exit.");
+        System.out.println("Welcome to Grandstein Castle! Someone has barred the door behind you. The only way out is find another exit.");
         while (currentPos >= 0) {
             switch (currentPos)
             {
