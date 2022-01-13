@@ -4,6 +4,7 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 import com.team2052.javaintro.lesson05.AdventureGame;
 import com.team2052.javaintro.lesson06.Card;
 import com.team2052.javaintro.lesson06.Shuffler;
+import com.team2052.javaintro.lesson07.TextRoomsAdventure;
 
 import java.util.Scanner;
 
@@ -40,6 +41,9 @@ public class Main {
                 for(int i = 0; i < 52; i++) {
                     System.out.println(newDeck[i].getName());
                 }
+            } else if (val.trim().equals("7")) {
+                TextRoomsAdventure play = new TextRoomsAdventure();
+                play.play();
             } else {
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
@@ -54,5 +58,6 @@ public class Main {
         System.out.println("2 -> lesson 2, classes");
         System.out.println("5 -> lesson 5, state machine using switch");
         System.out.println("6 -> lesson 6, arrays");
+        System.out.println("7 -> lesson 7, refactoring");
     }
 }
