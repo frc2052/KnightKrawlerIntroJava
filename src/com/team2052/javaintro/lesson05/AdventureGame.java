@@ -104,7 +104,7 @@ public class AdventureGame {
                         System.out.println("There is nothing here. As you leave the room, a monster comes from the ceiling and blocks your exit. Do you fight \"f\" or try to run \"r\" away by tricking it?");
                         move = scanner.nextLine();
                         if (move.toLowerCase().trim().equals("f") && !hasKey) {
-                            System.out.println("You try to fight the monstor with your fists but you have nothing to defend yourself. The monster dooms you and you die.");
+                            System.out.println("You try to fight the monster with your fists but you have nothing to defend yourself. The monster dooms you and you die.");
                             currentPos = -1;
                         } else if (move.toLowerCase().trim().equals("f") && hasKey) {
                             System.out.println("You pull out your key. You fight the monster, dodge its swipes, and manage to jab the key into its eye.");
@@ -112,7 +112,7 @@ public class AdventureGame {
                             System.out.println("You have escaped. However, you lost your key in the process. Good thing you remember feeling another key at the bottom of the vase...");
                             currentPos = 5;
                         } else if (move.toLowerCase().trim().equals("r") && !hasKey) {
-                            System.out.println("You try to juke out the monstor, but you have nothing to distract it. It easily swipes you and dooms you. You have died.");
+                            System.out.println("You try to juke out the monster, but you have nothing to distract it. It easily swipes you and dooms you. You have died.");
                             currentPos = -1;
                         } else if (move.toLowerCase().trim().equals("r") && hasKey) {
                             System.out.println("You pull out your key. You juke the monster, and manage to throw the key into its eye.");
@@ -120,7 +120,6 @@ public class AdventureGame {
                             System.out.println("You have escaped. However, you lost your key in the process. Good thing you remember feeling another key at the bottom of the vase...");
                             currentPos = 5;
                         }
-                        currentPos = 5;
                     } else if (move.toLowerCase().trim().equals("b")) {
                         currentPos = 5;
                     } else {
