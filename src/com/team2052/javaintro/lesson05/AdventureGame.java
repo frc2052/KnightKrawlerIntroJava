@@ -8,20 +8,19 @@ public class AdventureGame {
     private Scanner scanner = null; //object to get user input from command line
     private String move = null; //reuse the variable to collect user input
     //int scrolls = 10;
-    boolean scrolls;
-    boolean lichAlive;
-    boolean ammulet = false;
-    boolean trapDone = false;
-    int index;
-    boolean trap1IsComplete = false;
-    boolean trap2IsComplete = false;
-    boolean trap3IsComplete = false;
-    boolean playerDead = false;
-    boolean allTrapsDone = false;
-    boolean key = false;
-    boolean runChair = false;
-    boolean runDesk = false;
-    boolean runMantel = false;
+    private boolean scrolls;
+    private boolean lichAlive;
+    private boolean ammulet = false;
+    private boolean trapDone = false;
+    private int index;
+    private boolean trap1IsComplete = false;
+    private boolean trap2IsComplete = false;
+    private boolean trap3IsComplete = false;
+    private boolean allTrapsDone = false;
+    private boolean key = false;
+    private boolean runChair = false;
+    private boolean runDesk = false;
+    private boolean runMantel = false;
     int luck;
 
     public AdventureGame() {
@@ -427,11 +426,15 @@ public class AdventureGame {
                     System.out.println("\ne to satifisy your hunger, b to satisfy your curiosity.");
                     move = scanner.nextLine();
                     if (move.toLowerCase().trim().equals("e")) {
+                        System.out.println("\nYou creep inside what must be a dollhouse.");
+                        System.out.println("\nAs you asses the feast laid out before you, the house quakes.");
+                        System.out.println("\nYou turn, seeing the side of the house close off.");
+                        System.out.println("\nA little boy looks in at you with delight.");
+                        System.out.println("\nThere's no escape now...");
                         PlayerDeath();
                     }if (move.toLowerCase().trim().equals("b")) {
                         currentPos = 33;
                         
-                        //end game
                     }
                     else{System.out.println("Invalid choice. Only \"E\" and \"B\" are valid");}
 
@@ -480,6 +483,7 @@ public class AdventureGame {
                             System.out.println("\nYou toss the letter in an attempt to distract him, but his sights are set.");
                             System.out.println("You brace for impact, ready to meet your doom.");
                             System.out.println("A voice booms and he stops suddenly, frozen as a frightened doe.");
+                            System.out.println("\nThe boy forgets all about you in the face of his father's annoyance.");
                             runDesk = true;
                             
                         }
@@ -488,16 +492,20 @@ public class AdventureGame {
                             System.out.println("\nThe stone cools your flushed face.");
                             System.out.println("\nA flash catches your eye, the fire place screen.");
                             System.out.println("You slink behind it, the inside of the fireplace is cavernous.");
-                            System.out.println("\nThe soot soon covers your body creating, you hope, a sort of camaflodge.");
+                            System.out.println("\nThe soot soon covers your body creating, you hope, a sort of camouflage.");
                             System.out.println("\nIt seems that notches have been carved in the wall, just enough of a grip to climb on.");
-                            System.out.println("\nA larger hole has been carved at the joint between the floo and the sides.");
+                            System.out.println("\nA larger hole has been carved at the joint between the floor and the sides.");
                             System.out.println("\nBeing inside it, it reminds you of the niche at the begining of this place.");
                             System.out.println("\nA trap door is above you, with a keyhole.");
                             if(key = true){
                                 System.out.println("\nYou fumble for the key in your pocket.");
                                 System.out.println("\nIt slides into place.");
+                                EscapeCavern();
                             }else{
-
+                                System.out.println("\nIt's locked, and you have no key...");
+                                System.out.println("\nYour efforts to open it by force are futile.");
+                                System.out.println("\nThis must be the way out of this place.");
+                                System.out.println("\nIf only you had that key.");
                             }
                             runMantel = true;
                             //key if statement
@@ -532,6 +540,14 @@ public class AdventureGame {
         trap3IsComplete = false;
         currentPos = 0;
         
+    }
+
+    public void EscapeCavern(){
+        System.out.println("\nThe air clears a little, you can breathe deeper now.");
+        System.out.println("\nThe sound of the world above begins to filter through.");
+        System.out.println("\nYou reach farther, so close to escaping.");
+        System.out.println("\n");
+        System.out.println("\n");
     }
 
     public void LetterRead(){
