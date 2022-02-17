@@ -16,5 +16,10 @@ public class Lesson3Runner {
         int sum = calc.calculate();
         System.out.println(sum);
     }
-
+    public enum Operation {
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE
+    }
 }

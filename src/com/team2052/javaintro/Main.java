@@ -35,7 +35,7 @@ public class Main {
                 calc.run(); //call the "Run" method on the object
             } else if (val.trim().equals("2")) {
                 AreaCalculator calc = new AreaCalculator(); //create a new BasicCalculator ojbect
-                calc.run(); //call the "Run" method on the object
+                calc.run(); //call the "Run" method on the object3
             } else if (val.trim().equals("3")) {
                 Lesson3Runner runner = new Lesson3Runner();
               runner.run();
