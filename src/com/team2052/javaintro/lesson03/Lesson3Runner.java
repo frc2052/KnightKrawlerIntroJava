@@ -15,7 +15,6 @@ public class Lesson3Runner {
         System.out.println("Please enter the second number");
         int number2 = scanner.nextInt();
         calc.setNumber2(number2);
-        int sum = calc.calculate();
     }    
     public enum Operation {
         ADD,
