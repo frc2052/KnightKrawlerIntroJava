@@ -4,18 +4,29 @@ public class Lesson3Runner {
     
    private Scanner scanner = new Scanner(System.in);
 
- 
+
+
     public void run() {
         MultiCalculator calc = new MultiCalculator();
-        System.out.println("Please enter the first number.");
+        System.out.println("enter first number");
         int number1 = scanner.nextInt();
-        calc.setNumber1(number1);
-        System.out.println("Please enter the second number");
+        System.out.println("enter second number");
         int number2 = scanner.nextInt();
-        calc.setNumber2(number2);
-        int sum = calc.calculate();
-        System.out.println(sum);
+        System.out.println("enter 1 for addition, 2 for subtraction, 3 for multiplication, or 4 for division");
+        int val = scanner.nextInt();
+        if (val == 1) {
+            calc.setCalcOperation(Operation.ADD);
+        } else if (val == 2) {
+            calc.setCalcOperation(Operation.SUBTRACT);
+        } else if (val == 3) {
+            calc.setCalcOperation(Operation.MULTIPLY);
+        } else if (val == 4) {
+            calc.setCalcOperation(Operation.DIVIDE);
+        }
+        
     }
+  
+   
     public enum Operation {
         ADD,
         SUBTRACT,

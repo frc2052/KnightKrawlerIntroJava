@@ -1,10 +1,12 @@
 package com.team2052.javaintro.lesson03;
 
+import java.util.PrimitiveIterator;
 import java.util.Scanner;
+
 
 public class MultiCalculator {
    private Scanner scanner = null;
-    private int number1;
+    public int number1;
     
     public MultiCalculator() {
         scanner = new Scanner(System.in);
@@ -21,7 +23,7 @@ public class MultiCalculator {
             number1 = val;
         }
     }
-    private int number2;
+    public int number2;
     public int getNumber2() {
         return number2;
     }
@@ -33,7 +35,33 @@ public class MultiCalculator {
         }
     }
     public int calculate() {
-        return getNumber1() + getNumber2();
+        if (getCalcOperation() == Operation.ADD) {
+            return this.getNumber1() + this.getNumber2();
+        } else if (getCalcOperation() == Operation.SUBTRACT) {
+            return this.getNumber1() - this.getNumber2();
+        } else if (getCalcOperation() == Operation.MULTIPLY) {
+            return this.getNumber1() * this.getNumber2();
+        } else if (getCalcOperation() == Operation.DIVIDE) {
+            return this.getNumber1() / this.getNumber2();
+        } else {
+            return 0;
+        }
+    }
+
+    private Operation calcOperation = Operation.ADD;
+    
+    public Operation getCalcOperation() {
+        return calcOperation;
+    }
+
+    public void setCalcOperation(com.team2052.javaintro.lesson03.Lesson3Runner.Operation add) {
+        this.calcOperation = Operation.ADD;
+    }
+
+    public enum Operation {
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        DIVIDE
     }   
-        
 }
