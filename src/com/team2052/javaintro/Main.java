@@ -4,8 +4,8 @@ import com.team2052.javaintro.lesson01.BasicCalculator;
 
 import java.util.Scanner;
 
-import com.team2052.javaintro.lesson02.*;
-
+import com.team2052.javaintro.lesson02.AreaCalculator;
+import com.team2052.javaintro.lesson03.Lesson3Runner;
 import com.team2052.javaintro.lesson03.MultiCalculator;
 
 public class Main { 
@@ -36,7 +36,9 @@ public class Main {
             } else if (val.trim().equals("3")) {
                 MultiCalculator calc = new MultiCalculator();
                 calc.run();
-            } else {
+            } else if (val.trim().equals("4")) {
+                Lesson3Runner calc = new Lesson3Runner();
+                calc.run();
                 System.out.println("Option not recognized. Enter \"help\" for assistance");
             }
         }
@@ -49,6 +51,7 @@ public class Main {
         System.out.println("help -> print the menu");
         System.out.println("1 -> lesson 1, variables and methods");
         System.out.println("2 -> lesson 2, classes");
+        System.out.println("3 -> lesson 3, lesson3");
     }
 
 }

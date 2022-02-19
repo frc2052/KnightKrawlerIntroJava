@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AreaCalculator {
 
-private Scanner scanner=new Scanner(System.in);
+private Scanner scanner = new Scanner(System.in);
 
 private double circleArea(int radius) {
     return radius * radius * Math.PI;
