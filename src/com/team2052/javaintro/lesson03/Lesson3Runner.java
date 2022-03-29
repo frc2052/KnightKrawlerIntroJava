@@ -2,11 +2,11 @@ package com.team2052.javaintro.lesson03;
 import java.util.Scanner;
 public class Lesson3Runner {
     
-   private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
+    private int answer = 0;
 
 
-
-    public void run() {
+    public int run() {
         MultiCalculator calc = new MultiCalculator();
         System.out.println("enter first number");
         int number1 = scanner.nextInt();
@@ -15,15 +15,15 @@ public class Lesson3Runner {
         System.out.println("enter 1 for addition, 2 for subtraction, 3 for multiplication, or 4 for division");
         int val = scanner.nextInt();
         if (val == 1) {
-            calc.setCalcOperation(Operation.ADD);
+            answer = number1 + number2;
         } else if (val == 2) {
-            calc.setCalcOperation(Operation.SUBTRACT);
+            answer = number1 - number2;
         } else if (val == 3) {
-            calc.setCalcOperation(Operation.MULTIPLY);
+            answer = number1 * number2;
         } else if (val == 4) {
-            calc.setCalcOperation(Operation.DIVIDE);
+            answer = number1 / number2;
         }
-        
+        return answer;
     }
   
    
